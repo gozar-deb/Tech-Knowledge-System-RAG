@@ -1,4 +1,4 @@
-# Tech Knowledge System RAG – Improved Edition (v2.0)
+# Tech Knowledge System RAG 
 
 Complete hierarchical technology knowledge base + production-ready Retrieval-Augmented Generation (RAG) pipeline.
 
