@@ -1,0 +1,77 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Authentication_Protocols/Passwordless_Auth
+DOMAIN: Cybersecurity
+LEVEL: 5
+TAGS: passwordless authentication, FIDO, WebAuthn, biometrics, magic links, OTP, MFA, identity management, access control, security, user experience, phishing resistance, authentication protocols, zero trust, decentralized identity
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Authentication_Protocols: parent_category
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Multi_Factor_Authentication: related_concept
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Passwordless authentication eliminates traditional passwords, relying instead on alternative verification methods like biometrics, magic links, or FIDO tokens. This approach enhances security by removing phishing vectors and improves user experience by simplifying login flows. It represents a paradigm shift from 'something you know' to 'something you have' or 'something you are'.
+
+[CHUNK: CORE_CONCEPTS]
+- FIDO (Fast Identity Online): An open standard for passwordless authentication, enabling strong, phishing-resistant authentication.
+- WebAuthn: A web API that allows web applications to integrate FIDO authentication directly into browsers.
+- Biometrics: Verification using unique biological characteristics such as fingerprints, facial recognition, or iris scans.
+- Magic Links: One-time use URLs sent to a user's email or phone, which authenticate them upon clicking.
+- OTP (One-Time Passwords): Time-based or HMAC-based codes delivered via SMS or authenticator apps for single use.
+- Device Biometrics: Leveraging built-in biometric sensors on user devices (e.g., Touch ID, Face ID) for authentication.
+- Cryptographic Keys: Underlying technology for FIDO, where public/private key pairs secure authentication.
+- Phishing Resistance: A key benefit, as there are no passwords to steal or phish, significantly reducing attack surface.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Implementing passwordless auth requires robust identity providers, secure credential storage, and integration with various authentication factors. It shifts security responsibility from user memory to device and protocol integrity. Design must account for recovery mechanisms and diverse user device ecosystems. → See: Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Authentication_Protocols
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: JavaScript (for WebAuthn client-side), Python, Go, Java (for backend integration with IdPs)
+- Frameworks: NextAuth.js, Auth0, Okta, Firebase Authentication, Keycloak
+- Infrastructure: FIDO authenticators (hardware keys, TPMs), biometric sensors, secure email/SMS gateways
+
+[CHUNK: REAL_WORLD_USE]
+Google and Microsoft offer passwordless login options using FIDO2/WebAuthn for enterprise and consumer accounts. Financial institutions are adopting biometric authentication for mobile banking apps. Slack and Medium utilize magic links for simplified user onboarding and login experiences.
+
+[CHUNK: FAILURE_MODES]
+Device loss or compromise can lead to account lockout or unauthorized access if recovery mechanisms are weak. Poor implementation of magic links can expose users to link interception. Biometric sensor failures or spoofing attempts pose risks. Server-side vulnerabilities in IdPs can compromise authentication flows.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Prioritize FIDO2/WebAuthn for strong phishing resistance and broad browser support. Implement adaptive authentication based on context (device, location, behavior). Streamline user enrollment and recovery processes. Leverage platform authenticators for seamless user experience. Optimize server-side validation for low latency.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Eliminates password-related attacks like brute-force, credential stuffing, and phishing. Shifts attack surface to device security, biometric integrity, and IdP robustness. Requires strong MFA for recovery flows. Enhances compliance with data protection regulations by reducing credential exposure.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Multi_Factor_Authentication → Passwordless often leverages MFA concepts
+- Tech_Knowledge_System/Cybersecurity/Cryptography → Underlying principles for FIDO and secure key management
+- Tech_Knowledge_System/Software_Development/User_Experience → Improved login flows and reduced friction
+
+[CHUNK: ADVANCED_TOPICS]
+Decentralized Identity (DID) integration with passwordless flows. Quantum-resistant cryptography for future-proofing FIDO. Continuous authentication based on behavioral biometrics. Integration with Zero Trust architectures for dynamic access decisions.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

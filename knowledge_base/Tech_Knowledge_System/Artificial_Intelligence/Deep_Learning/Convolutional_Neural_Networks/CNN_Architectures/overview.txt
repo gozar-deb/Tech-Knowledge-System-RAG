@@ -1,0 +1,76 @@
+NODE_PATH: Tech_Knowledge_System/Artificial_Intelligence/Deep_Learning/Convolutional_Neural_Networks/CNN_Architectures
+DOMAIN: Artificial_Intelligence
+LEVEL: 5
+TAGS: CNN architectures, deep learning, convolutional neural networks, image recognition, computer vision, LeNet, AlexNet, VGG, ResNet, Inception, DenseNet, neural network design, model optimization
+
+RELATED_NODES:
+- Tech_Knowledge_System/Artificial_Intelligence/Deep_Learning/Convolutional_Neural_Networks: parent
+- Tech_Knowledge_System/Artificial_Intelligence/Deep_Learning/Recurrent_Neural_Networks: sibling
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+CNN Architectures define the specific layer configurations, connectivity patterns, and hyperparameters used in Convolutional Neural Networks. These designs are crucial for achieving state-of-the-art performance in various computer vision tasks, balancing computational efficiency with representational power.
+
+[CHUNK: CORE_CONCEPTS]
+- LeNet-5: Early CNN for digit recognition, foundational for convolutional and pooling layers.
+- AlexNet: Pioneering deep CNN, demonstrated power of GPUs and ReLU, sparked deep learning revolution.
+- VGGNet: Emphasized depth with small 3x3 convolutional filters, highlighted importance of network depth.
+- ResNet: Introduced residual connections to overcome vanishing gradients in very deep networks.
+- Inception: Utilized multi-scale convolutions within a single layer to capture diverse features.
+- DenseNet: Connected each layer to every other layer in a feed-forward fashion, promoting feature reuse.
+- MobileNet: Designed for mobile and embedded vision applications, using depthwise separable convolutions.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Designing CNN architectures involves trade-offs between model complexity, inference speed, and accuracy. Efficient architectures often leverage techniques like grouped convolutions, attention mechanisms, and neural architecture search to optimize for specific deployment environments and performance metrics.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python, C++
+- Frameworks: TensorFlow, PyTorch, Keras, MXNet
+- Infrastructure: NVIDIA CUDA, cuDNN, TensorRT, AWS SageMaker, Google Cloud AI Platform
+
+[CHUNK: REAL_WORLD_USE]
+CNN architectures are fundamental to autonomous driving systems for object detection and semantic segmentation. They power medical image analysis for disease diagnosis and enable facial recognition in security and authentication systems. E-commerce platforms use them for product recommendation based on visual similarity.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include overfitting due to insufficient data or overly complex models, leading to poor generalization. Vanishing or exploding gradients can hinder training of very deep networks. Adversarial attacks can cause misclassification by introducing imperceptible perturbations to input images.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Techniques include transfer learning from pre-trained models to accelerate training and improve performance on new tasks. Quantization reduces model size and speeds up inference on edge devices. Knowledge distillation transfers learned representations from a large teacher model to a smaller student model.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+CNNs are vulnerable to adversarial examples, where small, imperceptible input perturbations lead to incorrect classifications. Model inversion attacks can reconstruct training data from model parameters. Data poisoning during training can introduce backdoors or degrade model performance.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning/Transfer_Learning → common optimization strategy
+- Tech_Knowledge_System/Artificial_Intelligence/Computer_Vision/Object_Detection → core application area
+- Tech_Knowledge_System/Artificial_Intelligence/Deep_Learning/Neural_Architecture_Search → advanced design methodology
+
+[CHUNK: ADVANCED_TOPICS]
+Neural Architecture Search (NAS) automates the design of optimal CNN architectures. Vision Transformers (ViT) adapt transformer models from NLP to computer vision, challenging traditional CNN dominance. Self-supervised learning pre-trains CNNs without human-labeled data, improving data efficiency.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

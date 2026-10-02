@@ -1,0 +1,75 @@
+NODE_PATH: Tech_Knowledge_System/Data_Engineering/Data_Quality_and_Governance
+DOMAIN: Data_Engineering
+LEVEL: 3
+TAGS: data quality, data governance, data integrity, data accuracy, data consistency, data completeness, data validity, master data management, metadata management, data stewardship, data lineage, data privacy, compliance, regulatory frameworks, data engineering best practices
+
+RELATED_NODES:
+- Tech_Knowledge_System/Data_Engineering/Data_Modeling: foundational_concepts
+- Tech_Knowledge_System/Data_Engineering/ETL_ELT_Processes: operational_impact
+- Tech_Knowledge_System/Cybersecurity/Data_Privacy_and_Compliance: regulatory_overlap
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Data Quality and Governance encompasses the processes, policies, and standards ensuring data assets are accurate, consistent, and reliable. It establishes accountability and defines controls to manage data throughout its lifecycle. This discipline is crucial for informed decision-making and regulatory compliance.
+
+[CHUNK: CORE_CONCEPTS]
+- Data Integrity: Maintaining accuracy and consistency of data over its entire lifecycle.
+- Data Lineage: Understanding the data's journey from source to consumption.
+- Master Data Management (MDM): Creating a single, consistent view of core business data.
+- Metadata Management: Organizing and managing information about data.
+- Data Stewardship: Assigning responsibility for data assets within an organization.
+- Data Catalog: A comprehensive inventory of an organization's data assets.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, data quality and governance are integrated into data pipelines and architectures. This involves defining data contracts, implementing validation rules at ingestion, and establishing monitoring frameworks. It ensures data trustworthiness across distributed systems and microservices. → See: Tech_Knowledge_System/Data_Engineering/Data_Modeling
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: SQL, Python (Pandas, Great Expectations), Scala (Spark)
+- Frameworks: Apache Spark, Apache Nifi, Apache Atlas
+- Infrastructure: Data Catalog (Collibra, Alation), MDM Solutions (Informatica, Semarchy), Data Observability (Monte Carlo, Datafold)
+
+[CHUNK: REAL_WORLD_USE]
+Financial institutions use data governance to ensure compliance with regulations like GDPR and CCPA, maintaining audit trails for transactions. E-commerce platforms implement data quality checks to prevent duplicate customer records and ensure accurate product information, improving customer experience and operational efficiency.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include data silos leading to inconsistent definitions, lack of clear data ownership causing data decay, and inadequate validation rules resulting in corrupted data. Poor data lineage tracking can hinder root cause analysis for data errors, impacting trust and decision-making.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizing involves automating data quality checks within CI/CD pipelines for data, implementing active metadata management for discoverability, and adopting a data mesh architecture for decentralized ownership. Leveraging machine learning for anomaly detection in data streams enhances proactive issue resolution.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Data governance directly impacts security by defining access controls, data classification, and retention policies. Poor governance can lead to unauthorized data access, data breaches, and non-compliance with privacy regulations. Robust governance ensures sensitive data is protected and handled appropriately. → See: Tech_Knowledge_System/Cybersecurity/Data_Privacy_and_Compliance
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Business_Intelligence/Data_Warehousing → ensures reliable data for reporting and analytics
+- Tech_Knowledge_System/Machine_Learning/MLOps → provides high-quality data for model training and deployment
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include data quality as a service (DQaaS), federated data governance across hybrid cloud environments, and the application of blockchain for immutable data lineage. Explainable AI (XAI) for data quality rule generation and adaptive data governance frameworks are also emerging areas.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

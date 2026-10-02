@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Human_Computer_Interaction/Interaction_Design/Mental_Models_and_Affordances
+DOMAIN: Human_Computer_Interaction
+LEVEL: 4
+TAGS: Mental Models, Affordances, Interaction Design, Human-Computer Interaction, UX Design, User Experience, Cognitive Psychology, Usability, Learnability, User Interface, System Design, User Perception, Intuitive Design, Direct Manipulation, Feedback, User Expectations, System Behavior, Perceived Properties, Action Possibilities
+
+RELATED_NODES:
+- Tech_Knowledge_System/Human_Computer_Interaction/Interaction_Design: parent
+- Tech_Knowledge_System/Human_Computer_Interaction/Cognitive_Psychology: related
+- Tech_Knowledge_System/Human_Computer_Interaction/Usability_Engineering: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Mental models are internal representations users form about how a system works, based on prior experiences and understanding. Affordances are the perceived properties of an object that suggest how it can be used, guiding user interaction without explicit instructions. Both are fundamental to intuitive and effective interaction design.
+
+[CHUNK: CORE_CONCEPTS]
+- Internal Representation: User's cognitive construct of a system's functionality.
+- System Image: The actual design and presentation of a system that informs the user's mental model.
+- Perceived Affordance: The apparent properties of an object that suggest its use.
+- Real Affordance: The actual properties of an object that determine its possible uses.
+- Signifiers: Visual or auditory cues that communicate affordances, especially when they are not immediately obvious.
+- Gulf of Execution: The gap between a user's intention and the actions required by the system.
+- Gulf of Evaluation: The gap between the system's output and the user's interpretation of it.
+- Conceptual Model: The designer's intended model of how a system should work.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, aligning the system's conceptual model with the user's mental model is crucial for usability. Designers leverage affordances and signifiers to communicate possible interactions, reducing cognitive load and errors. Misaligned mental models or hidden affordances lead to user frustration and inefficiency.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Methodologies: User Research, Cognitive Walkthroughs, Heuristic Evaluation, Task Analysis, User Journey Mapping
+- Design Software: Figma, Sketch, Adobe XD (for prototyping and visualizing affordances)
+- Analytics: User behavior analytics platforms (to identify discrepancies between mental models and actual use)
+
+[CHUNK: REAL_WORLD_USE]
+Examples include a door handle's shape suggesting pulling or pushing, or a button's raised appearance indicating it can be pressed. In software, a hyperlink's blue, underlined text affords clicking. A file icon affording dragging and dropping, or a progress bar affording waiting, are also concrete implementations.
+
+[CHUNK: FAILURE_MODES]
+Common failures include false affordances (elements appearing interactive but are not), hidden affordances (interactive elements that are not discoverable), and conflicting mental models (when a system behaves contrary to user expectations). This leads to user errors, increased learning curves, and reduced user satisfaction.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization involves conducting extensive user research to understand existing mental models, employing consistent design patterns, providing clear signifiers, and offering immediate feedback. Iterative prototyping and usability testing help refine designs to better match user expectations and leverage natural affordances.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+While not directly a security domain, poorly designed interfaces that violate mental models or obscure affordances can lead to security vulnerabilities. Users might misunderstand security prompts, bypass critical warnings, or inadvertently expose sensitive information due to a lack of clear interaction cues or confusing system behavior.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Human_Computer_Interaction/Cognitive_Psychology/Perception: influences how affordances are perceived.
+- Tech_Knowledge_System/Human_Computer_Interaction/Usability_Engineering/Heuristic_Evaluation: uses principles of mental models and affordances for evaluation.
+- Tech_Knowledge_System/Software_Engineering/User_Interface_Design: directly applies these concepts in UI creation.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include the study of shared mental models in collaborative systems, the impact of cultural differences on mental models and perceived affordances, and the application of AI to predict and adapt interfaces based on evolving user mental models and context-aware affordance presentation.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

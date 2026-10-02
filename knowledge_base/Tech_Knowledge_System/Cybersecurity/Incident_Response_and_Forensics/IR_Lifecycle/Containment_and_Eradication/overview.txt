@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Incident_Response_and_Forensics/IR_Lifecycle/Containment_and_Eradication
+DOMAIN: Cybersecurity
+LEVEL: 5
+TAGS: incident response, containment, eradication, incident handling, cybersecurity, forensics, threat mitigation, malware removal, system hardening, incident recovery, security operations, cyber defense, breach response, digital forensics, security incident management
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Incident_Response_and_Forensics/IR_Lifecycle: parent_phase
+- Tech_Knowledge_System/Cybersecurity/Incident_Response_and_Forensics/IR_Lifecycle/Preparation: preceding_phase
+- Tech_Knowledge_System/Cybersecurity/Incident_Response_and_Forensics/IR_Lifecycle/Detection_and_Analysis: preceding_phase
+- Tech_Knowledge_System/Cybersecurity/Incident_Response_and_Forensics/IR_Lifecycle/Recovery: succeeding_phase
+- Tech_Knowledge_System/Cybersecurity/Incident_Response_and_Forensics/IR_Lifecycle/Post_Incident_Activity: succeeding_phase
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Containment and Eradication are critical phases in the Incident Response Lifecycle aimed at limiting the scope of an incident and eliminating its root cause. Containment focuses on isolating affected systems to prevent further damage, while Eradication involves removing the threat and its artifacts from the environment. These phases ensure the incident is controlled before recovery efforts begin.
+
+[CHUNK: CORE_CONCEPTS]
+- Containment Strategy: Methods to stop an incident's spread, ranging from segmentation to complete system shutdown.
+- Eradication Techniques: Processes for removing malware, malicious configurations, and unauthorized access.
+- Evidence Preservation: Balancing containment actions with the need to collect forensic evidence.
+- Root Cause Analysis: Identifying the underlying vulnerability or action that led to the incident.
+- Threat Intelligence Integration: Using current threat data to inform containment and eradication decisions.
+- Communication Protocols: Establishing clear communication channels during critical incident phases.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Effective containment relies on robust network segmentation, access controls, and endpoint detection and response (EDR) capabilities. Eradication requires centralized patch management, configuration management, and secure baseline images for rapid system restoration. Automated playbooks and orchestration tools are crucial for consistent and swift execution across diverse system architectures.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python (for scripting automation), PowerShell (Windows system management)
+- Frameworks: NIST SP 800-61 (Incident Handling Guide), MITRE ATT&CK (threat modeling)
+- Infrastructure: SIEM (Splunk, QRadar), EDR (CrowdStrike, SentinelOne), Network Segmentation (VLANs, NAC), Firewalls (Palo Alto, Fortinet)
+
+[CHUNK: REAL_WORLD_USE]
+In a ransomware attack, containment involves isolating infected subnets and blocking C2 communication. Eradication then focuses on decrypting affected files, removing the ransomware executable, and patching the initial access vector. For a data breach, containment might involve revoking compromised credentials and isolating affected databases, followed by eradicating persistent backdoors.
+
+[CHUNK: FAILURE_MODES]
+Failure to contain can lead to rapid lateral movement and widespread compromise. Incomplete eradication leaves residual threats, allowing re-infection or persistent access. Overly aggressive containment can disrupt critical business operations, while insufficient eradication can lead to repeated incidents. Poor communication can hinder coordinated response efforts.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Automate containment actions via SOAR platforms to reduce response time. Implement micro-segmentation to limit blast radius. Develop pre-approved eradication playbooks for common threats. Regularly test incident response plans through tabletop exercises and simulations. Leverage cloud-native security features for rapid isolation and snapshot recovery.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Containment directly impacts the attacker's ability to achieve objectives, minimizing data exfiltration or system destruction. Eradication eliminates the attack vector, preventing future exploitation. These phases are critical for maintaining confidentiality, integrity, and availability, and for demonstrating compliance with regulatory requirements.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Network_Security: network_segmentation_techniques
+- Tech_Knowledge_System/Cybersecurity/Endpoint_Security: EDR_integration
+- Tech_Knowledge_System/Cybersecurity/Vulnerability_Management: root_cause_analysis_link
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced containment explores deception technologies and honeypots to misdirect attackers. Eradication in complex environments involves AI-driven threat hunting and automated remediation of polymorphic malware. Research into self-healing systems and autonomous response agents aims to minimize human intervention during critical incident phases.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

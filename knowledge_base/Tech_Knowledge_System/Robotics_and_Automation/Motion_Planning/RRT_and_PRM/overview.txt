@@ -1,0 +1,76 @@
+NODE_PATH: Tech_Knowledge_System/Robotics_and_Automation/Motion_Planning/RRT_and_PRM
+DOMAIN: Robotics_and_Automation
+LEVEL: 4
+TAGS: Rapidly-exploring Random Trees, Probabilistic Roadmaps, motion planning, robotics, pathfinding, sampling-based algorithms, collision avoidance, high-dimensional spaces, robot navigation, autonomous systems, configuration space, path optimization, kinematic constraints, dynamic environments, real-time planning
+
+RELATED_NODES:
+- Tech_Knowledge_System/Robotics_and_Automation/Motion_Planning: parent
+- Tech_Knowledge_System/Robotics_and_Automation/Path_Planning_Algorithms: related_concept
+- Tech_Knowledge_System/Robotics_and_Automation/Collision_Detection: related_concept
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+RRT (Rapidly-exploring Random Trees) and PRM (Probabilistic Roadmaps) are sampling-based motion planning algorithms used in robotics. They efficiently explore high-dimensional configuration spaces to find collision-free paths between start and goal states, particularly effective for complex environments and redundant manipulators.
+
+[CHUNK: CORE_CONCEPTS]
+- Sampling-based planning: Algorithms that explore the configuration space by randomly sampling points.
+- Configuration Space (C-space): The space of all possible positions and orientations of a robot.
+- Collision Detection: Process of checking if a robot's configuration results in an overlap with obstacles.
+- RRT: Builds a tree by incrementally extending random samples towards unexplored regions, rapidly exploring the space.
+- PRM: Constructs a roadmap (graph) of collision-free configurations and then searches for a path on this graph.
+- Path Smoothing: Post-processing step to optimize the generated path for smoothness and efficiency.
+- Goal Biasing: Technique to guide the sampling process towards the goal region, improving efficiency.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, RRT and PRM serve as core components for autonomous navigation and manipulation. They abstract complex kinematic and dynamic constraints into C-space, enabling robust path generation for robotic systems operating in unstructured or partially known environments. Their probabilistic completeness makes them suitable for high-dimensional problems.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python, C++
+- Frameworks: ROS (Robot Operating System), OMPL (Open Motion Planning Library), MoveIt!
+- Infrastructure: Simulation environments (Gazebo, V-REP), Robot hardware interfaces
+
+[CHUNK: REAL_WORLD_USE]
+RRT and PRM are implemented in autonomous vehicles for navigating complex urban environments, industrial robots for assembly tasks in cluttered workspaces, and humanoid robots for dexterous manipulation. They are crucial for tasks requiring real-time adaptation to dynamic obstacles and high-degree-of-freedom systems.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include getting stuck in local minima, failing to find a path in narrow passages, high computational cost for very high-dimensional spaces, and sensitivity to sampling strategy. Inaccurate collision models or sensor noise can also lead to path failures or collisions.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization strategies involve using RRT* or PRM* for asymptotic optimality, employing goal biasing and intelligent sampling techniques to accelerate convergence, and utilizing parallel processing for faster exploration. Path smoothing algorithms like shortcutting or B-splines improve path quality post-planning.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Security implications arise from potential adversarial manipulation of environmental data or sensor inputs, leading to planned paths that cause collisions or expose the robot to harm. Integrity of collision models and robust state estimation are critical defenses against such attacks.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Robotics_and_Automation/Control_Systems → path execution and trajectory tracking
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning/Reinforcement_Learning → learning optimal sampling strategies
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include kinodynamic planning (considering robot dynamics), multi-robot motion planning, anytime planning algorithms that continuously improve paths, and integrating learning-based methods to guide sampling or learn environmental representations for more efficient planning.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

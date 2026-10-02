@@ -1,0 +1,75 @@
+NODE_PATH: Tech_Knowledge_System/Robotics_and_Automation/Robot_Kinematics_and_Dynamics/Trajectory_Planning
+DOMAIN: Robotics_and_Automation
+LEVEL: 4
+TAGS: robotics, automation, trajectory planning, motion control, path generation, robot kinematics, robot dynamics, collision avoidance, optimal control, motion planning, industrial robots, autonomous systems, control theory, algorithms, real-time systems
+
+RELATED_NODES:
+- Tech_Knowledge_System/Robotics_and_Automation/Robot_Kinematics_and_Dynamics: parent
+- Tech_Knowledge_System/Robotics_and_Automation/Robot_Kinematics_and_Dynamics/Inverse_Kinematics: related_concept
+- Tech_Knowledge_System/Robotics_and_Automation/Motion_Control_Systems: related_field
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Trajectory planning defines a time-parameterized path for a robot, specifying position, velocity, and acceleration over time. It ensures smooth, efficient, and collision-free movement from a start to a goal configuration. This process is critical for robot autonomy and safe operation in dynamic environments.
+
+[CHUNK: CORE_CONCEPTS]
+- Path Generation: Creating a geometric path without considering time.
+- Time Parameterization: Assigning time to each point on the path.
+- Kinematic Constraints: Limits on joint angles, velocities, and accelerations.
+- Dynamic Constraints: Limits imposed by robot mass, inertia, and motor torque.
+- Collision Avoidance: Ensuring the robot does not intersect with obstacles.
+- Optimization Criteria: Minimizing time, energy, jerk, or maximizing smoothness.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Trajectory planning modules are typically integrated into higher-level motion planning systems. They receive desired end-effector poses or joint configurations and output a sequence of control points. Real-time re-planning is often necessary in unstructured or dynamic environments, requiring robust and efficient algorithms.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python, C++, MATLAB
+- Frameworks: ROS (MoveIt!), OMPL, Drake
+- Infrastructure: Real-time operating systems (RTOS), embedded controllers
+
+[CHUNK: REAL_WORLD_USE]
+Industrial robots use trajectory planning for assembly lines, welding, and pick-and-place operations. Autonomous vehicles employ it for navigation and obstacle avoidance. Surgical robots utilize precise trajectory planning for delicate medical procedures, ensuring safety and accuracy.
+
+[CHUNK: FAILURE_MODES]
+Common failures include collisions due to inaccurate environment models or dynamic obstacles. Joint limit violations can cause robot damage or instability. Poorly optimized trajectories may lead to excessive wear, energy consumption, or jerky, inefficient movements, impacting task completion time.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Strategies include polynomial interpolation (e.g., cubic, quintic splines) for smooth profiles. Optimal control methods like Pontryagin's Minimum Principle or dynamic programming minimize cost functions. Sampling-based algorithms (RRT, PRM) combined with post-smoothing enhance efficiency and path quality.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Malicious injection of altered trajectory commands could lead to unintended robot movements, causing physical damage or harm. Unauthorized access to planning parameters might enable denial-of-service attacks or sabotage of automated processes. Integrity checks and secure communication protocols are vital.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Robotics_and_Automation/Motion_Control_Systems → provides the control loops to execute planned trajectories
+- Tech_Knowledge_System/Artificial_Intelligence/Reinforcement_Learning → can be used for learning optimal trajectory policies
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include learning-based trajectory planning, where AI models predict optimal paths. Human-robot collaboration (HRC) planning focuses on safe and efficient shared workspaces. Online trajectory generation adapts paths in real-time to unforeseen events or dynamic human interaction.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

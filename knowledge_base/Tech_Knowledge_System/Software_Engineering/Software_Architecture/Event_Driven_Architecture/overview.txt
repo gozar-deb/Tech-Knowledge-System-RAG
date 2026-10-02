@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Software_Engineering/Software_Architecture/Event_Driven_Architecture
+DOMAIN: Software_Engineering
+LEVEL: 4
+TAGS: event-driven architecture, EDA, asynchronous communication, event producers, event consumers, event brokers, message queues, stream processing, microservices, distributed systems, reactive programming, CQRS, Sagas, event sourcing, loose coupling, scalability, resilience
+
+RELATED_NODES:
+- Tech_Knowledge_System/Software_Engineering/Software_Architecture/Microservices: often implemented with
+- Tech_Knowledge_System/Software_Engineering/Software_Architecture/Message_Queues: core component
+- Tech_Knowledge_System/Software_Engineering/Software_Architecture/Distributed_Systems: foundational pattern for
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Event-Driven Architecture (EDA) is a software design paradigm promoting loose coupling between services through asynchronous communication via events. Components react to state changes (events) rather than direct invocation, enabling high scalability and resilience in distributed systems.
+
+[CHUNK: CORE_CONCEPTS]
+- Event: A significant change in state, representing a fact that occurred in the past, immutable and timestamped.
+- Event Producer: A component that detects and generates events, publishing them to an event channel without knowing the consumers.
+- Event Consumer: A component that subscribes to and processes events, reacting to specific event types to perform actions.
+- Event Broker/Bus: An intermediary service (e.g., message queue, stream platform) that routes events from producers to consumers.
+- Asynchronous Communication: Interactions where components do not wait for immediate responses, fostering independence and non-blocking operations.
+- Loose Coupling: Components operate independently, reducing dependencies and allowing individual scaling and evolution.
+- Event Sourcing: Storing all changes to application state as a sequence of immutable events, forming an auditable log.
+- Saga Pattern: A sequence of local transactions coordinated by events, ensuring data consistency across multiple services in a distributed transaction.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+EDA systems prioritize responsiveness and fault tolerance by decoupling services. Events serve as the primary communication mechanism, allowing components to operate autonomously and scale independently. This pattern is crucial for building reactive and resilient distributed applications.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Java (Spring Cloud Stream), Python (Celery, Kafka-Python), Node.js (KafkaJS, Rabbit.js), Go (Sarama)
+- Frameworks: Apache Kafka, RabbitMQ, Apache Pulsar, AWS Kinesis, Azure Event Hubs, Google Cloud Pub/Sub
+- Infrastructure: Kubernetes (for orchestration), Docker (for containerization), Prometheus (for monitoring)
+
+[CHUNK: REAL_WORLD_USE]
+E-commerce platforms use EDA for order processing, inventory updates, and shipping notifications. Financial services leverage it for real-time fraud detection and transaction processing. IoT applications rely on EDA for sensor data ingestion and immediate device responses.
+
+[CHUNK: FAILURE_MODES]
+Event duplication or loss can lead to inconsistent state. Backpressure from slow consumers can overwhelm brokers. Incorrect event ordering may cause logical errors. Distributed transaction failures (Sagas) require complex compensation logic. Debugging asynchronous flows is inherently challenging.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Implement idempotent consumers to handle duplicate events safely. Utilize dead-letter queues for failed event processing. Optimize event payload size and schema for efficient transmission. Employ stream processing frameworks for real-time analytics and complex event processing. Scale consumers horizontally.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Event brokers can be attack vectors if not properly secured, leading to data breaches or unauthorized event injection. Event tampering or replay attacks can compromise system integrity. Access control (authentication/authorization) is critical for event producers and consumers. Data encryption in transit and at rest is essential.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Software_Engineering/Software_Architecture/Microservices → EDA is a common architectural style for microservices.
+- Tech_Knowledge_System/Data_Engineering/Stream_Processing → Event streams are often processed using stream processing techniques.
+- Tech_Knowledge_System/Cloud_Computing/Serverless → Serverless functions are frequently triggered by events in cloud environments.
+
+[CHUNK: ADVANCED_TOPICS]
+Complex Event Processing (CEP) for identifying patterns across multiple events. Event Mesh for dynamic event routing across heterogeneous environments. Serverless EDA patterns. Distributed tracing for debugging event flows. Event-driven micro-frontends for UI synchronization.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

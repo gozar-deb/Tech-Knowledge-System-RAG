@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Databases_and_Storage/Distributed_Transactions
+DOMAIN: Databases_and_Storage
+LEVEL: 3
+TAGS: distributed transactions, ACID, two-phase commit, 2PC, saga pattern, transactional outbox, CDC, data consistency, microservices, distributed systems, concurrency control, fault tolerance, atomicity, isolation, durability
+
+RELATED_NODES:
+- Tech_Knowledge_System/Databases_and_Storage/Databases: parent
+- Tech_Knowledge_System/Databases_and_Storage/NoSQL_Databases: sibling
+- Tech_Knowledge_System/Databases_and_Storage/ACID_Properties: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+A distributed transaction is a set of operations that updates data across two or more distinct nodes or services in a distributed system. It ensures that all operations either succeed completely (commit) or fail entirely (rollback), maintaining data consistency and integrity across disparate data sources. This guarantees atomicity, consistency, isolation, and durability (ACID) properties in a distributed environment.
+
+[CHUNK: CORE_CONCEPTS]
+- Two-Phase Commit (2PC): A protocol that ensures all participating nodes in a distributed transaction either commit or abort the transaction. It involves a prepare phase and a commit/rollback phase.
+- Saga Pattern: A sequence of local transactions, where each transaction updates data within a single service and publishes an event to trigger the next local transaction. If a step fails, compensating transactions are executed to undo previous changes.
+- Transactional Outbox Pattern: Ensures atomicity between a local database transaction and sending messages to a message broker. Messages are stored in an outbox table within the same transaction as the business data, then asynchronously relayed.
+- Change Data Capture (CDC): A set of software design patterns used to determine and track the changes in data so that action can be taken using the changed data. Often used for data synchronization and replication in distributed systems.
+- Atomicity: Guarantees that all operations within a transaction are treated as a single, indivisible unit of work. Either all operations complete successfully, or none of them do.
+- Consistency: Ensures that a transaction brings the database from one valid state to another, maintaining all defined rules and constraints.
+- Isolation: Guarantees that concurrent transactions execute independently without interfering with each other. The intermediate state of one transaction is not visible to other transactions.
+- Durability: Ensures that once a transaction has been committed, its changes are permanent and survive system failures, such as power outages or crashes.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Distributed transactions are critical in microservices architectures and distributed databases to maintain data integrity across service boundaries. They introduce complexity due to network latency, partial failures, and coordination overhead. Architectural patterns like 2PC, Saga, and Transactional Outbox are employed to manage these challenges, balancing strong consistency guarantees with system availability and performance requirements. → See: Tech_Knowledge_System/Software_Architecture/Microservices
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Java (JTA, Spring Distributed Transactions), .NET (System.Transactions), Go (libraries for distributed coordination)
+- Frameworks: Spring Framework (for Java), Microsoft Distributed Transaction Coordinator (MSDTC), Apache Kafka (for transactional outbox/CDC), Temporal.io (durable execution for sagas)
+- Infrastructure: Distributed databases (CockroachDB, Google Spanner), Message brokers (RabbitMQ, Apache Kafka), Transaction managers (JBoss Narayana)
+
+[CHUNK: REAL_WORLD_USE]
+In e-commerce, a distributed transaction ensures that when a customer places an order, the inventory is updated, payment is processed, and a shipping request is initiated, all as a single atomic operation across different services. Financial systems use them to guarantee funds transfer between accounts in different banks or ledgers. Cloud-native applications leverage these patterns for reliable data updates across independently deployed microservices.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include network partitions leading to inconsistent states, coordinator failures in 2PC causing blocking, and compensating transaction failures in Saga patterns. Deadlocks can occur when multiple distributed transactions contend for shared resources. Latency and timeouts can also lead to transaction failures or prolonged blocking, impacting system availability and user experience.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizations include using eventually consistent models where strong consistency is not strictly required, employing lighter-weight coordination mechanisms like the Saga pattern over 2PC, and optimizing network communication. Batching operations, using idempotent operations, and implementing robust retry mechanisms with exponential backoff can improve resilience and performance. Leveraging distributed tracing helps in identifying bottlenecks.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Distributed transactions can introduce new attack surfaces, such as vulnerabilities in the communication protocols between transaction participants or unauthorized access to transaction logs. Ensuring secure communication (TLS/SSL), proper authentication and authorization for all participating services, and auditing transaction outcomes are crucial. Data integrity must be protected against tampering during all phases of the distributed transaction.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Software_Architecture/Microservices → Distributed transactions are fundamental for data consistency in microservice architectures.
+- Tech_Knowledge_System/Networking/Network_Protocols → Underlying communication protocols are essential for distributed transaction coordination.
+- Tech_Knowledge_System/Security/Data_Security → Distributed transactions must ensure data security and integrity across multiple nodes.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include multi-version concurrency control (MVCC) in distributed databases, consensus algorithms like Paxos and Raft for distributed transaction coordination, and serverless-native distributed transaction patterns. Research is ongoing into blockchain-based distributed ledgers for tamper-proof transaction logs and quantum-safe cryptographic methods for securing future distributed transaction systems.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Network_Security/Intrusion_Detection_and_Prevention
+DOMAIN: Cybersecurity
+LEVEL: 4
+TAGS: intrusion detection, intrusion prevention, IDS, IPS, network security, host security, threat detection, threat prevention, security monitoring, anomaly detection, signature detection, security operations
+
+RELATED_NODES:
+- Cybersecurity/Network_Security/Firewalls: complements
+- Cybersecurity/Network_Security/VPNs: interacts
+- Cybersecurity/Security_Operations/SIEM: integrates
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS) are security mechanisms that monitor network or system activities for malicious behavior or policy violations. IDS primarily detects and alerts, while IPS actively blocks or prevents identified threats. They are crucial for maintaining network integrity and confidentiality.
+
+[CHUNK: CORE_CONCEPTS]
+- IDS (Intrusion Detection System): Monitors traffic for suspicious patterns, generating alerts without intervention.
+- IPS (Intrusion Prevention System): Actively blocks or drops malicious traffic based on predefined rules or detected anomalies.
+- Signature-based Detection: Identifies threats by matching known attack patterns or signatures.
+- Anomaly-based Detection: Detects deviations from established baseline normal behavior.
+- Network-based IDS/IPS (NIDS/NIPS): Monitors network segments for suspicious activity.
+- Host-based IDS/IPS (HIDS/HIPS): Monitors individual endpoints for malicious processes or file changes.
+- False Positives: Legitimate activity incorrectly identified as malicious, leading to unnecessary alerts.
+- False Negatives: Malicious activity that goes undetected, posing a significant security risk.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+IDS/IPS are typically deployed at network perimeters, internal network segments, or on critical servers. NIDS/NIPS often sit inline or passively monitor traffic, while HIDS/HIPS are agents on endpoints. Their placement is critical for effective threat visibility and enforcement, often integrated with firewalls and SIEM systems.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python (scripting, automation), C/C++ (performance-critical components)
+- Frameworks: Suricata, Snort (open-source IDS/IPS engines), Zeek (network security monitor)
+- Infrastructure: Network Taps, SPAN ports (traffic mirroring), Virtual Appliances (cloud deployments)
+
+[CHUNK: REAL_WORLD_USE]
+In enterprise networks, IPS devices are deployed inline at internet gateways to block known exploits and malware. HIDS agents monitor critical database servers for unauthorized access attempts or suspicious process execution. Cloud environments utilize virtual IPS appliances to protect workloads from lateral movement attacks.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include signature obsolescence, leading to missed zero-day attacks. Overly aggressive rules can cause false positives, disrupting legitimate business operations. Resource exhaustion (CPU, memory) under heavy traffic can lead to dropped packets or bypassed detection. Improper tuning results in alert fatigue.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Regularly update threat signatures and anomaly detection models. Implement intelligent alert correlation and suppression to reduce noise. Optimize rule sets for specific network environments to minimize false positives. Utilize hardware acceleration and load balancing for high-throughput deployments. Integrate with threat intelligence feeds.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+IDS/IPS directly addresses attack surfaces by detecting and preventing exploits, malware, and unauthorized access. However, they can be bypassed by sophisticated evasion techniques. Proper configuration is vital to avoid becoming a single point of failure or a performance bottleneck. They enhance overall defense-in-depth strategies.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Cybersecurity/Network_Security/Firewalls → provides complementary perimeter defense
+- Cybersecurity/Security_Operations/SIEM → centralizes and correlates IDS/IPS alerts
+- Cybersecurity/Threat_Intelligence → consumes threat feeds for enhanced detection
+
+[CHUNK: ADVANCED_TOPICS]
+Behavioral analytics and machine learning are increasingly used for advanced anomaly detection, moving beyond signature-based methods. Deception technologies (honeypots) can lure and detect attackers, integrating with IPS to block them. Orchestration and automation of response actions based on IDS/IPS alerts are also emerging areas.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

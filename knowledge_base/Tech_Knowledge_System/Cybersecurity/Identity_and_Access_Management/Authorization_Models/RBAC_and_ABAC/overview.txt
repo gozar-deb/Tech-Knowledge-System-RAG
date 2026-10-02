@@ -1,0 +1,79 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Authorization_Models/RBAC_and_ABAC
+DOMAIN: Cybersecurity
+LEVEL: 5
+TAGS: RBAC, ABAC, Role-Based Access Control, Attribute-Based Access Control, authorization, access management, identity, security models, policy enforcement, access control, permissions, attributes, roles, cybersecurity, IAM
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management: parent
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Authorization_Models: parent
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Authentication: sibling
+- Tech_Knowledge_System/Cybersecurity/Network_Security: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+RBAC (Role-Based Access Control) grants permissions based on a user's assigned role within an organization. ABAC (Attribute-Based Access Control) dynamically evaluates access requests using a set of attributes associated with the user, resource, action, and environment. ABAC offers finer-grained control and greater flexibility than RBAC by moving beyond static roles.
+
+[CHUNK: CORE_CONCEPTS]
+- Role: A collection of permissions assigned to users based on their function.
+- Permission: An approval to perform a specific action on a resource.
+- Attribute: A characteristic or property of a user, resource, action, or environment.
+- Policy: A set of rules defining access based on attribute evaluation.
+- Subject: The entity requesting access (e.g., user, application).
+- Object/Resource: The entity being accessed (e.g., file, database, service).
+- Context: Environmental factors like time of day, location, or device.
+- Policy Decision Point (PDP): Evaluates policies and attributes to make an access decision.
+- Policy Enforcement Point (PEP): Enforces the access decision made by the PDP.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+RBAC systems are typically implemented with a role hierarchy and user-to-role assignments, simplifying management for large user bases. ABAC requires a robust policy engine and attribute management system, enabling dynamic, context-aware access decisions. Hybrid models often combine RBAC for broad access and ABAC for specific, sensitive operations.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Rego (Open Policy Agent), XACML (eXtensible Access Control Markup Language)
+- Frameworks: Open Policy Agent (OPA), AWS IAM (for ABAC features), Google Cloud IAM (for ABAC features)
+- Infrastructure: Identity Providers (IdPs), Attribute Sources (LDAP, directories), Policy Decision Points (PDPs), Policy Enforcement Points (PEPs)
+
+[CHUNK: REAL_WORLD_USE]
+RBAC is widely used in enterprise applications and operating systems for managing user permissions based on job functions. ABAC is increasingly adopted in cloud environments, microservices architectures, and data lakes where dynamic, fine-grained access control is critical, such as granting access to data based on its classification and the user's security clearance.
+
+[CHUNK: FAILURE_MODES]
+RBAC failures include role explosion (too many roles), role creep (unnecessary permissions accumulate), and static roles failing to adapt to dynamic contexts. ABAC failures can stem from complex policy logic, attribute inconsistencies, performance overhead due to extensive attribute evaluation, and misconfigured policies leading to unintended access or denial.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+For RBAC, optimize by consolidating roles, implementing role reviews, and using role mining. For ABAC, optimize by simplifying policy sets, caching attribute values, using efficient attribute sources, and leveraging policy optimization tools. Hybrid approaches can combine RBAC's simplicity for common cases with ABAC's flexibility for exceptions.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+RBAC's security implications include potential for over-privileging users if roles are not well-defined or regularly audited. ABAC enhances security by enforcing least privilege dynamically, reducing attack surface by restricting access based on real-time context. However, ABAC complexity can introduce misconfiguration vulnerabilities if policies are not rigorously tested.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Data_Security/Data_Loss_Prevention → ABAC policies can be integrated with DLP solutions to prevent unauthorized data exfiltration based on data attributes.
+- Tech_Knowledge_System/Software_Engineering/Microservices/API_Gateway → API Gateways can enforce RBAC/ABAC policies for microservice access control.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include policy orchestration across distributed systems, integration of machine learning for adaptive access control, and formal verification of ABAC policies to ensure correctness and prevent unintended access. The evolution towards Relationship-Based Access Control (ReBAC) and next-generation policy languages is also a key area.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

@@ -1,0 +1,43 @@
+NODE_PATH: Tech_Knowledge_System/Operating_Systems/Process_Management/Scheduling_Algorithms/CFS_Linux_Scheduler
+DOMAIN: Operating Systems
+LEVEL: 4
+TAGS: CFS, Linux, Scheduler, Process Management, CPU Scheduling, Task Group, Run Queue, Red-Black Tree, Virtual Runtime, Scheduling Algorithms, Kernel, Load Balancing, Time Slice, Fairness
+
+RELATED_NODES:
+- Tech_Knowledge_System/Operating_Systems/Process_Management/Scheduling_Algorithms: is a type of
+- Tech_Knowledge_System/Operating_Systems/Process_Management: is part of
+- Tech_Knowledge_System/Operating_Systems/Kernel: interacts with
+- Tech_Knowledge_System/Operating_Systems/Process_Management/Scheduling_Algorithms/CPU_Scheduling: is an example of
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+The Completely Fair Scheduler (CFS) is the default CPU scheduler for the Linux kernel since version 2.6.23. It aims to provide a fair allocation of CPU time to all runnable processes, prioritizing fairness over strict time-slicing. CFS models an ideal, perfectly fair multi-tasking processor, ensuring each task receives a proportional share of CPU time.
+
+[CHUNK: CORE_CONCEPTS]
+- Virtual Runtime (vruntime): A monotonically increasing value representing the CPU time a task has
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

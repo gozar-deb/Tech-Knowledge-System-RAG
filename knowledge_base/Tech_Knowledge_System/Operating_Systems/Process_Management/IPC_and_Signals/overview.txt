@@ -1,0 +1,77 @@
+NODE_PATH: Tech_Knowledge_System/Operating_Systems/Process_Management/IPC_and_Signals
+DOMAIN: Operating Systems
+LEVEL: 4
+TAGS: Inter-Process Communication, IPC, Signals, Process Management, Operating Systems, Concurrency, Synchronization, Shared Memory, Message Queues, Pipes, Semaphores, Sockets, Event Notification, Process Communication, System Calls
+
+RELATED_NODES:
+- Tech_Knowledge_System/Operating_Systems/Process_Management: parent
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Inter-Process Communication (IPC) refers to mechanisms allowing independent processes to exchange data and synchronize actions. Signals are a specific, lightweight form of IPC used to notify processes of asynchronous events or errors, acting as software interrupts. Both are fundamental for cooperative multitasking and resource sharing in multi-process environments.
+
+[CHUNK: CORE_CONCEPTS]
+- Pipes: Unidirectional communication channels for related processes.
+- Message Queues: Linked lists of messages for inter-process data exchange.
+- Shared Memory: Fastest IPC, allowing processes to directly access common memory regions.
+- Semaphores: Synchronization primitives to control access to shared resources.
+- Sockets: Network-based IPC for communication between processes on different machines or locally.
+- Signals: Asynchronous notifications sent to processes to handle specific events.
+- Signal Handler: A function executed by a process upon receiving a specific signal.
+- Race Condition: Undesirable situation where the outcome depends on the sequence or timing of other uncontrollable events.
+- Deadlock: A state where two or more processes are blocked indefinitely, waiting for each other to release resources.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+IPC and Signals are critical for designing robust, concurrent systems. IPC mechanisms facilitate data exchange and coordination between modular components, enabling distributed computing and parallel processing. Signals provide a low-overhead way to manage exceptional conditions or control process lifecycle, essential for responsive and resilient system architectures. → See: Tech_Knowledge_System/Operating_Systems/Process_Management
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: C, C++, Python, Java (for specific IPC libraries)
+- Frameworks: POSIX (for standard IPC APIs), System V IPC
+- Infrastructure: Linux Kernel, Unix-like operating systems
+
+[CHUNK: REAL_WORLD_USE]
+Web servers use shared memory for caching frequently accessed data across worker processes to improve performance. Database systems employ semaphores to manage concurrent access to data files, preventing corruption. Command-line utilities often use pipes to chain operations, directing the output of one program as input to another. Modern applications leverage sockets for client-server communication.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include race conditions leading to data corruption in shared memory, deadlocks when processes contend for resources managed by semaphores, and unhandled signals causing process termination. Incorrect signal mask configurations can lead to missed critical events, while improper use of message queues can result in message loss or buffer overflows.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimize IPC by selecting the most efficient mechanism for the task; shared memory offers highest throughput for large data, while pipes are simpler for stream-based communication. Minimize context switching by reducing the frequency of IPC calls. Efficient signal handling involves setting appropriate signal masks and writing reentrant signal handlers to avoid race conditions within the handler itself.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+IPC mechanisms can introduce security vulnerabilities if not properly secured. Shared memory segments can be exploited for unauthorized data access or injection. Malicious processes can send signals to disrupt or terminate other processes. Proper access control, validation of IPC data, and careful signal handling are crucial to prevent denial-of-service attacks, privilege escalation, and information leakage.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Operating_Systems/Concurrency: relates to synchronization and parallel execution
+- Tech_Knowledge_System/Networking/Sockets: specific IPC mechanism for network communication
+- Tech_Knowledge_System/Security/Process_Isolation: relates to preventing unauthorized IPC access
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include real-time IPC for deterministic communication in embedded systems, distributed IPC mechanisms like RPC (Remote Procedure Call) and message passing interfaces (MPI) for cluster computing, and the use of event loops and asynchronous I/O with signals for highly scalable applications. Modern containerization technologies also introduce new layers of IPC management.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

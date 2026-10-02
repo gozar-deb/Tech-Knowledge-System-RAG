@@ -1,0 +1,76 @@
+NODE_PATH: Tech_Knowledge_System/Hardware_and_Computer_Architecture/Storage_Architecture/RAID_and_Erasure_Coding
+DOMAIN: Hardware_and_Computer_Architecture
+LEVEL: 4
+TAGS: RAID, Erasure Coding, data redundancy, fault tolerance, storage systems, data integrity, distributed storage, parity, striping, mirroring, RAID levels, Reed-Solomon codes, data recovery, storage efficiency, data availability, disk failure, hot spares, storage architecture, data resilience
+
+RELATED_NODES:
+- Tech_Knowledge_System/Hardware_and_Computer_Architecture/Storage_Architecture: parent
+- Tech_Knowledge_System/Hardware_and_Computer_Architecture/Storage_Architecture/SSD_and_HDD_Technologies: sibling
+- Tech_Knowledge_System/Hardware_and_Computer_Architecture/Memory_Hierarchy: related_concept
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+RAID (Redundant Array of Independent Disks) combines multiple physical disk drives into a single logical unit for data redundancy, performance improvement, or both. Erasure Coding is a method of data protection in which data is broken into fragments, expanded and encoded with redundant data pieces, and stored across a set of different locations or storage devices.
+
+[CHUNK: CORE_CONCEPTS]
+- RAID Levels: Different configurations (e.g., RAID 0, 1, 5, 6, 10) offering varying balances of performance, redundancy, and cost.
+- Striping: Distributing data across multiple disks to improve performance (RAID 0).
+- Mirroring: Duplicating data across multiple disks for redundancy (RAID 1).
+- Parity: Using calculated redundant data to reconstruct lost data from a failed disk (RAID 5, 6).
+- Reed-Solomon Codes: A common type of erasure code used for forward error correction in distributed storage.
+- Data Reconstruction: The process of rebuilding lost data using redundant information after a disk failure.
+- Hot Spares: Unused disks kept online to automatically replace a failed disk in a RAID array.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+RAID and Erasure Coding are fundamental for designing resilient and high-performance storage systems. They dictate how data is distributed, protected, and recovered, directly impacting system uptime and data access speeds. Selection depends on workload, cost, and required fault tolerance. → See: Tech_Knowledge_System/Hardware_and_Computer_Architecture/Storage_Architecture
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: C, C++, Python (for management/scripting)
+- Frameworks: Linux MD (mdadm), ZFS, Btrfs
+- Infrastructure: Hardware RAID controllers, Software RAID implementations, Distributed storage systems (Ceph, GlusterFS)
+
+[CHUNK: REAL_WORLD_USE]
+Used extensively in enterprise servers, network-attached storage (NAS) devices, and large-scale cloud storage platforms like Amazon S3 and Google Cloud Storage for object storage resilience. Critical for databases requiring high availability and data integrity.
+
+[CHUNK: FAILURE_MODES]
+Common failures include simultaneous multiple disk failures exceeding the array's redundancy level, controller failures, and silent data corruption. Improper RAID rebuilds or human error during maintenance can also lead to data loss. Firmware bugs in RAID controllers can also cause unexpected data issues.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizations include selecting appropriate RAID levels for specific workloads, using SSDs for caching or entire arrays, implementing hot spares for rapid recovery, and optimizing stripe size. Erasure coding parameters (k, m) can be tuned for storage efficiency vs. reconstruction time.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+While primarily for data availability and integrity, these technologies indirectly contribute to security by ensuring data persistence against hardware failures. However, they do not protect against data breaches, malware, or logical corruption. Encryption at rest is a separate security layer.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Software_Engineering/Distributed_Systems/Fault_Tolerance: provides broader context on system resilience
+- Tech_Knowledge_System/Cybersecurity/Data_Security/Data_Encryption: complementary data protection method
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include heterogeneous RAID arrays, tiered storage with different RAID levels, and dynamic erasure coding schemes that adapt to changing storage conditions. Research into new coding techniques for ultra-large-scale distributed systems and quantum-resistant erasure codes is ongoing.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

@@ -1,0 +1,65 @@
+NODE_PATH: Tech_Knowledge_System/Cloud_and_Distributed_Computing/Cloud_Service_Models/FaaS_and_Serverless
+DOMAIN: Cloud_and_Distributed_Computing
+LEVEL: 4
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.90
+SOURCES: curated-expansion, domain-synthesis
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 10m
+TAGS: serverless, FaaS, Lambda, Cloud Functions, event-driven, cold start, scale to zero
+PREREQUISITES: See parent node
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/Cloud_Service_Models: parent
+
+[CHUNK: DEFINITION]
+Function-as-a-Service and serverless computing let developers deploy individual functions that are automatically scaled, including to zero, and billed per invocation, shifting operational responsibility to the platform.
+
+[CHUNK: CORE_CONCEPTS]
+- Core definitions and taxonomy of FaaS and Serverless
+- Key methods, algorithms, or architectural patterns
+- Trade-offs and when to apply
+- Integration points with surrounding systems
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+System design must account for the performance, reliability, cost, and operational characteristics that FaaS and Serverless introduces. Choices here ripple into the broader architecture.
+
+[CHUNK: TOOLS_AND_TECH]
+Common languages, libraries, frameworks, and managed services used with this technology.
+
+[CHUNK: REAL_WORLD_USE]
+Production systems that rely on FaaS and Serverless for capability, scale, latency, or regulatory reasons.
+
+[CHUNK: FAILURE_MODES]
+Misconfiguration, incorrect operating assumptions, scalability cliffs, and insufficient observability are typical failure modes.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Select the appropriate variant, tune parameters, combine with complementary techniques, and measure real workload impact.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Attack surface introduced by the technology, data-protection requirements, and compliance considerations.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Parent node in Cloud_and_Distributed_Computing
+- Cross-links to related mathematical, software, or hardware topics
+
+[CHUNK: ADVANCED_TOPICS]
+Active research, emerging standards, and open problems.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Common over-simplifications and confusions surrounding FaaS and Serverless
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Standard benchmarks, quality metrics, and efficiency numbers used by practitioners.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Master prerequisites and core concepts
+2. Build or configure a correct baseline
+3. Evaluate on realistic cases
+4. Optimize, harden, and document
+
+[CHUNK: FURTHER_READING]
+- Canonical papers and textbooks
+- Official documentation
+- High-quality surveys on FaaS and Serverless

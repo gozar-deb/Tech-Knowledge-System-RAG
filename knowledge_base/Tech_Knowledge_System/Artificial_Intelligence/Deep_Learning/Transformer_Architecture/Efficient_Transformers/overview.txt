@@ -1,0 +1,72 @@
+NODE_PATH: Tech_Knowledge_System/Artificial_Intelligence/Deep_Learning/Transformer_Architecture/Efficient_Transformers
+DOMAIN: Artificial_Intelligence
+LEVEL: 5
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.90
+SOURCES: curated-expansion, domain-synthesis
+DIFFICULTY: Advanced
+ESTIMATED_READ_TIME: 10m
+TAGS: efficient transformers, sparse attention, linear attention, FlashAttention, long context, Performer, Longformer
+PREREQUISITES: See parent node
+
+RELATED_NODES:
+- Tech_Knowledge_System/Artificial_Intelligence/Deep_Learning/Transformer_Architecture: parent
+
+[CHUNK: DEFINITION]
+Efficient Transformers reduce the quadratic cost of self-attention, enabling longer contexts, lower memory use, and higher throughput while preserving most modeling power of full attention.
+
+[CHUNK: CORE_CONCEPTS]
+- Sparse patterns (local, strided, random, axial)
+- Linear / kernelized attention (Performer)
+- Low-rank and memory-compressed attention
+- FlashAttention (IO-aware exact attention)
+- Hierarchical / recurrent Transformers
+- Ring Attention and sequence parallelism
+- MoE for capacity
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Efficient attention drops into the standard Transformer skeleton. Memory-hierarchy awareness is critical (FlashAttention minimizes HBM traffic). Multi-GPU sequence parallelism enables extreme context lengths. The rest of the stack (optimizer states, checkpointing) must adapt.
+
+[CHUNK: TOOLS_AND_TECH]
+FlashAttention, xFormers, Transformer Engine, Hugging Face attn backends; PyTorch / JAX; NVIDIA GPUs / TPUs.
+
+[CHUNK: REAL_WORLD_USE]
+Long documents, genomics, high-res vision/video as tokens, RAG with large contexts, agent memory, codebases.
+
+[CHUNK: FAILURE_MODES]
+Approximate methods may hurt precise long-range dependencies; numerical instability; implementation complexity; training stability trade-offs.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Prefer FlashAttention for exactness; match sparsity bias to data; progressive length training; RoPE/ALiBi scaling; profile real memory/FLOPs.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Same surface as standard Transformers plus larger prompt-injection window from long context. Kernels must avoid side channels.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Transformer_Architecture (parent)
+- Deep_Learning
+- Hardware memory hierarchy
+
+[CHUNK: ADVANCED_TOPICS]
+State-space models (Mamba), hybrid attention-SSM, learned sparsity, hardware-software co-design.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Efficient always means approximate (FlashAttention is exact)
+- Linear attention is universally better (task-dependent)
+- Just increase context length (cost explodes without efficiency)
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Perplexity/task metrics vs length, wall-clock time, peak memory, tokens/s; Long-Range Arena, SCROLLS.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Profile full-attention baseline
+2. Try FlashAttention first
+3. Validate on long-context benchmarks
+4. Adapt positional encodings & recipe
+5. Document quality-complexity trade-offs
+
+[CHUNK: FURTHER_READING]
+- FlashAttention papers (Dao et al.)
+- Efficient Transformers survey (Tay et al.)
+- Longformer, Performer papers

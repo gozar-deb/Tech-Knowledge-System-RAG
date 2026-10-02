@@ -1,0 +1,83 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Cryptography/Asymmetric_Cryptography
+DOMAIN: Cybersecurity
+LEVEL: 3
+TAGS: Asymmetric cryptography, public-key cryptography, private key, public key, encryption, decryption, digital signatures, key exchange, RSA, ECC, Diffie-Hellman, security, authentication, non-repudiation, confidentiality, integrity, key management, cryptographic algorithms, prime numbers, elliptic curves, discrete logarithm, zero-knowledge proofs, quantum resistance
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Cryptography/Symmetric_Cryptography: contrast
+- Tech_Knowledge_System/Cybersecurity/Cryptography/Hashing: related_concept
+- Tech_Knowledge_System/Cybersecurity/Network_Security/TLS_SSL: application
+- Tech_Knowledge_System/Cybersecurity/Authentication/PKI: application
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Asymmetric cryptography, also known as public-key cryptography, uses a pair of mathematically linked keys: a public key for encryption and a private key for decryption. This system enables secure communication without prior shared secrets, facilitating digital signatures, key exchange, and non-repudiation. It underpins modern secure internet protocols.
+
+[CHUNK: CORE_CONCEPTS]
+- Public Key: Freely distributed key used for encryption or signature verification.
+- Private Key: Secret key held by the owner, used for decryption or signing.
+- Key Pair: The mathematically linked public and private keys.
+- Encryption: Process of converting plaintext into ciphertext using the recipient's public key.
+- Decryption: Process of converting ciphertext back to plaintext using the recipient's private key.
+- Digital Signature: Cryptographic mechanism to verify authenticity and integrity of a message using a sender's private key.
+- Key Exchange: Method for two parties to establish a shared secret key over an insecure channel.
+- Trapdoor Function: A function easy to compute in one direction but hard to reverse without special information (the private key).
+- Non-repudiation: Assurance that a party cannot deny the authenticity of their signature on a document or message.
+- Confidentiality: Protection of information from unauthorized access, ensured by encryption.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, asymmetric cryptography establishes trust and secure channels in distributed environments. It's crucial for initial secure handshakes, identity verification, and non-repudiation in protocols like TLS/SSL. Its computational overhead means it's often used to securely exchange symmetric keys for bulk data encryption, balancing security with performance.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Algorithms: RSA, ECC (Elliptic Curve Cryptography), DSA (Digital Signature Algorithm), ElGamal, Diffie-Hellman (key exchange)
+- Libraries: OpenSSL, Bouncy Castle, libsodium, GnuTLS, Crypto++
+- Standards: PKCS (Public-Key Cryptography Standards), X.509 (certificate format), FIPS 186 (Digital Signature Standard)
+- Infrastructure: PKI (Public Key Infrastructure), Certificate Authorities (CAs), Hardware Security Modules (HSMs)
+
+[CHUNK: REAL_WORLD_USE]
+Asymmetric cryptography secures web traffic via HTTPS, where TLS/SSL handshakes use it to establish session keys. It's fundamental to email security (PGP/S/MIME) for encryption and digital signing. Cryptocurrencies like Bitcoin rely on ECC for transaction signing and ownership verification. SSH uses it for secure remote access authentication.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include weak key generation leading to predictable keys, compromised private keys due to poor storage or malware, and revocation failures where compromised certificates are not effectively invalidated. Implementation flaws in cryptographic libraries or protocols can create vulnerabilities. Side-channel attacks can extract private key information.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizations focus on selecting efficient algorithms (e.g., ECC over RSA for smaller key sizes with equivalent security), hardware acceleration (e.g., dedicated crypto chips), and offloading cryptographic operations to specialized modules. Pre-computation of modular exponentiations and careful parameter selection can reduce latency. Caching public keys minimizes repeated lookups.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Asymmetric cryptography provides strong security guarantees for confidentiality, integrity, and non-repudiation. However, it introduces attack surfaces related to key management, such as private key theft or brute-force attacks on weak keys. Public key infrastructure (PKI) is critical for trust, making CA compromise a significant threat. → See: Tech_Knowledge_System/Cybersecurity/Authentication/PKI
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Network_Security/TLS_SSL → Secures internet communication by establishing encrypted channels.
+- Tech_Knowledge_System/Cybersecurity/Authentication/PKI → Provides the framework for managing and validating digital certificates and public keys.
+- Tech_Knowledge_System/Blockchain/Cryptocurrencies → Underpins transaction security and user identity verification.
+- Tech_Knowledge_System/Cloud_Computing/Cloud_Security → Used for secure data transfer and access control in cloud environments.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include post-quantum cryptography, exploring algorithms resistant to quantum computer attacks (e.g., lattice-based, code-based). Zero-knowledge proofs leverage asymmetric concepts for verifiable computation without revealing underlying data. Homomorphic encryption allows computations on encrypted data, maintaining confidentiality throughout processing.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

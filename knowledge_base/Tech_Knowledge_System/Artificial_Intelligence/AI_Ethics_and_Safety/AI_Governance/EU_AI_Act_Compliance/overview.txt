@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Artificial_Intelligence/AI_Ethics_and_Safety/AI_Governance/EU_AI_Act_Compliance
+DOMAIN: Artificial_Intelligence
+LEVEL: 5
+TAGS: EU AI Act, AI regulation, compliance, risk assessment, AI governance, ethical AI, legal framework, high-risk AI, conformity assessment, post-market monitoring
+
+RELATED_NODES:
+- Tech_Knowledge_System/Artificial_Intelligence/AI_Ethics_and_Safety/AI_Governance: parent
+- Tech_Knowledge_System/Artificial_Intelligence/AI_Ethics_and_Safety: sibling
+- Tech_Knowledge_System/Artificial_Intelligence: ancestor
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+EU AI Act Compliance refers to the adherence to the European Union's Artificial Intelligence Act, the world's first comprehensive legal framework for AI. It establishes obligations for AI systems based on their risk level, aiming to ensure AI is safe, transparent, and non-discriminatory. Compliance involves continuous assessment, monitoring, and robust governance practices.
+
+[CHUNK: CORE_CONCEPTS]
+- Risk-Based Approach: Categorization of AI systems into unacceptable, high, limited, and minimal risk, with varying regulatory burdens.
+- High-Risk AI Systems (HRAIS): AI systems used in critical areas like employment, law enforcement, and critical infrastructure, subject to stringent requirements.
+- Conformity Assessment: Procedures to verify that high-risk AI systems meet the Act's requirements before being placed on the market.
+- Post-Market Monitoring: Ongoing surveillance of AI systems after deployment to ensure continued compliance and address emerging risks.
+- Transparency Obligations: Requirements for certain AI systems to provide clear information about their capabilities and limitations.
+- Human Oversight: Mandates for human intervention and control over high-risk AI systems to prevent or mitigate risks.
+- Data Governance: Rules concerning the quality, management, and oversight of data used to train and operate AI systems.
+- Fundamental Rights Impact Assessment: Evaluation of potential impacts of high-risk AI systems on fundamental rights.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Compliance necessitates a privacy-by-design and ethics-by-design approach in AI system development. It requires integrating risk assessment, data governance, and transparency mechanisms directly into the AI lifecycle, from conception to deployment and monitoring. Systems must be auditable, explainable, and capable of human oversight, impacting architectural choices and data flows.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python, Java, C++ (for AI development, not directly compliance tools)
+- Frameworks: TensorFlow, PyTorch (for AI development, not directly compliance tools)
+- Infrastructure: Cloud platforms (AWS, Azure, GCP) for hosting AI systems; Compliance management software, AI governance platforms, risk assessment tools.
+
+[CHUNK: REAL_WORLD_USE]
+An autonomous vehicle developer implements robust risk management systems and conducts thorough conformity assessments for its AI-powered driving assistance features. A healthcare provider deploying an AI diagnostic tool ensures continuous post-market monitoring and transparent communication of the AI's limitations to medical staff. A financial institution uses an AI governance platform to track and document compliance for its AI-driven credit scoring models.
+
+[CHUNK: FAILURE_MODES]
+Failure to conduct adequate risk assessments can lead to deployment of non-compliant high-risk AI systems. Insufficient data governance results in biased or inaccurate AI outputs, violating fundamental rights. Lack of continuous post-market monitoring can allow deployed systems to drift out of compliance or develop unforeseen risks. Inadequate documentation hinders auditing and accountability efforts.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Automate compliance checks and documentation where possible using specialized software. Implement modular AI architectures that allow for easier auditing and updates to meet evolving regulatory requirements. Foster a culture of ethical AI development and continuous learning within development teams. Leverage AI governance platforms for centralized oversight and reporting.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Non-compliance can expose organizations to significant financial penalties and reputational damage. The Act's focus on data quality and robustness indirectly enhances security by reducing vulnerabilities stemming from poor data. Secure development practices are crucial to prevent manipulation of AI systems that could lead to non-compliance or harm.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning/Responsible_AI: ethical principles, fairness, accountability
+- Tech_Knowledge_System/Artificial_Intelligence/AI_Ethics_and_Safety/Data_Privacy_and_GDPR: data protection, privacy by design
+- Tech_Knowledge_System/Cybersecurity/Regulatory_Compliance: general regulatory frameworks, audit trails
+
+[CHUNK: ADVANCED_TOPICS]
+Development of AI-powered tools for automated compliance auditing and risk assessment. The interplay between the EU AI Act and other international AI regulations, leading to global harmonization or fragmentation. The challenge of regulating General Purpose AI (GPAI) models and their downstream applications. Real-time compliance monitoring and adaptive governance frameworks.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

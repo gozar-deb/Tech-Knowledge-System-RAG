@@ -1,0 +1,82 @@
+NODE_PATH: Tech_Knowledge_System/Artificial_Intelligence/AI_Ethics_and_Safety/Fairness_and_Bias/Bias_Measurement_Metrics
+DOMAIN: Artificial_Intelligence
+LEVEL: 5
+TAGS: AI bias, fairness metrics, machine learning fairness, algorithmic bias, bias detection, bias mitigation, demographic parity, equalized odds, statistical parity, predictive parity, disparate impact, group fairness, individual fairness, counterfactual fairness, model evaluation, data bias, measurement bias
+
+RELATED_NODES:
+- Tech_Knowledge_System/Artificial_Intelligence/AI_Ethics_and_Safety/Fairness_and_Bias: parent
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning/Model_Evaluation: related
+- Tech_Knowledge_System/Artificial_Intelligence/AI_Ethics_and_Safety/Fairness_and_Bias/Bias_Mitigation_Techniques: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Bias measurement metrics are quantitative tools used to identify, quantify, and monitor unfairness in AI systems. They assess whether an AI model's predictions or decisions disproportionately affect certain demographic groups or individuals, ensuring equitable treatment. These metrics are crucial for upholding ethical AI principles and regulatory compliance.
+
+[CHUNK: CORE_CONCEPTS]
+- Demographic Parity: Ensures that a positive outcome is equally likely across different sensitive groups, irrespective of their attributes.
+- Equalized Odds: Requires that a model's true positive rates and false positive rates are equal across different sensitive groups.
+- Statistical Parity: Similar to demographic parity, it aims for equal selection rates for different groups.
+- Predictive Parity: States that the positive predictive value (precision) should be equal across different sensitive groups.
+- Disparate Impact: Measures if a selection rate for a protected group is less than 80% of the rate for the group with the highest selection rate.
+- Group Fairness: Focuses on ensuring fair outcomes for predefined groups based on sensitive attributes like race or gender.
+- Individual Fairness: Aims for similar treatment of similar individuals, meaning similar inputs should lead to similar outputs.
+- Counterfactual Fairness: Requires that an individual's outcome would remain the same even if their sensitive attributes were changed.
+- Measurement Bias: Occurs when proxies or flawed labeling in data distort AI models, leading to inaccurate or unfair representations.
+- Data Bias: Bias originating from the training data, reflecting societal prejudices or collection methodologies.
+- Calibration: The degree to which predicted probabilities reflect true probabilities across different groups.
+- Sufficiency: Requires that the prediction is sufficient for the sensitive attribute, meaning the sensitive attribute does not add information to the prediction.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Integrating bias measurement metrics into system design involves establishing fairness objectives early in the AI lifecycle. These metrics guide data collection, model training, and post-deployment monitoring. They inform the selection of appropriate algorithms and help evaluate trade-offs between fairness and performance, ensuring continuous ethical oversight.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Frameworks: Fairlearn, AI Fairness 360 (AIF360), Google's What-If Tool, Amazon SageMaker Clarify, Microsoft Responsible AI Toolbox
+- Libraries: scikit-learn (for general ML metrics), TensorFlow Privacy (for differential privacy)
+- Platforms: Fiddler AI, TruEra, IBM Watson OpenScale
+
+[CHUNK: REAL_WORLD_USE]
+In credit scoring, demographic parity can ensure loan approval rates are equitable across different racial groups. In hiring, equalized odds can verify that qualified candidates from underrepresented groups are not disproportionately rejected. In healthcare, these metrics help ensure diagnostic AI tools perform consistently across diverse patient populations, preventing disparities in care.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include selecting inappropriate fairness metrics for a given context, leading to unintended biases or performance degradation. Metrics can also fail to capture subtle forms of bias, or their application can be computationally expensive. Over-reliance on a single metric without considering its limitations can also result in an incomplete understanding of fairness.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization strategies involve iterative model retraining with fairness constraints, re-sampling techniques to balance sensitive groups in training data, and post-processing adjustments to model outputs. Utilizing ensemble methods that combine models optimized for different fairness criteria can also improve overall fairness. Regular auditing and feedback loops are essential.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Bias in AI systems can create security vulnerabilities by leading to discriminatory access controls or flawed threat detection. Adversarial attacks can exploit biased models to bypass security measures or amplify existing biases. Ensuring fairness through robust measurement helps prevent these exploits and maintains the integrity and trustworthiness of AI-driven security systems.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Artificial_Intelligence/AI_Ethics_and_Safety/Fairness_and_Bias/Bias_Mitigation_Techniques → techniques to address identified biases
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning/Model_Evaluation → general principles of model assessment
+- Tech_Knowledge_System/Artificial_Intelligence/AI_Ethics_and_Safety/Explainable_AI → understanding model decisions that may reveal bias
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include the development of causal fairness metrics that account for underlying causal relationships, multi-objective optimization for balancing multiple fairness criteria and performance, and the application of differential privacy to protect sensitive attributes while maintaining model utility. Research also explores intersectional fairness, addressing biases in overlapping demographic groups.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

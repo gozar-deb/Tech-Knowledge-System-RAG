@@ -1,0 +1,79 @@
+NODE_PATH: Tech_Knowledge_System/Cloud_and_Distributed_Computing/Azure_Architecture/Azure_Compute
+DOMAIN: Cloud_and_Distributed_Computing
+LEVEL: 4
+TAGS: Azure Compute, Cloud Computing, Virtual Machines, Containers, Serverless, Azure Functions, Kubernetes, Infrastructure as a Service, Platform as a Service, Function as a Service, Scalability, Elasticity, Cloud Architecture, Microsoft Azure, Compute Services, Cloud Workloads, Resource Management, Cost Optimization, High Availability, Disaster Recovery
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/Azure_Architecture: parent
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/Azure_Architecture/Azure_Networking: sibling
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/Azure_Architecture/Azure_Storage: sibling
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/Virtual_Machines: related
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/Containers: related
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/Serverless_Computing: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Azure Compute refers to the suite of cloud-based services offered by Microsoft Azure that provide on-demand processing power and resources. It enables users to run applications, process data, and host services without managing underlying hardware. This encompasses various models like IaaS, PaaS, and FaaS, supporting diverse workload requirements.
+
+[CHUNK: CORE_CONCEPTS]
+- Virtual Machines (VMs): Emulated computer systems running operating systems and applications, offering infrastructure control.
+- Containers: Lightweight, portable, and isolated environments for applications and their dependencies, ensuring consistent execution.
+- Serverless Computing (Azure Functions): Event-driven execution model where code runs without provisioning or managing servers.
+- Azure Kubernetes Service (AKS): Managed container orchestration service for deploying, scaling, and managing containerized applications.
+- Azure App Service: Platform for building, deploying, and scaling web apps and APIs across various programming languages.
+- Azure Batch: Managed service for running large-scale parallel and high-performance computing (HPC) applications efficiently.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, Azure Compute forms the core execution layer for cloud applications, dictating resource allocation and scalability. Architects choose compute services based on workload characteristics, cost, and management overhead, integrating them with networking, storage, and identity services. This enables resilient, distributed, and highly available application architectures.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: .NET, Java, Node.js, Python, PHP, Ruby, Go
+- Frameworks: ASP.NET Core, Spring Boot, Express.js, Django, Flask
+- Infrastructure: Azure Virtual Machines, Azure Container Instances, Azure Kubernetes Service, Azure Functions, Azure App Service, Azure Batch, Azure Logic Apps
+
+[CHUNK: REAL_WORLD_USE]
+Azure Compute is used for hosting e-commerce websites on App Service, running big data analytics with Azure Batch, and deploying microservices architectures via AKS. It powers mission-critical enterprise applications on VMs, handles real-time data processing with Azure Functions, and supports development/testing environments across various services.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include insufficient resource allocation leading to performance bottlenecks, misconfigured auto-scaling rules causing over-provisioning or under-provisioning, and regional outages affecting availability. Application-level errors, dependency failures, and security misconfigurations can also lead to compute service disruptions. → See: Tech_Knowledge_System/Cloud_and_Distributed_Computing/Resilience_Engineering
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization involves right-sizing compute resources to match demand, implementing auto-scaling for elasticity, and leveraging serverless options for cost efficiency. Utilizing reserved instances or Azure Hybrid Benefit can reduce VM costs. Containerization and orchestration improve resource utilization and deployment efficiency. Monitoring and performance tuning are crucial.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Security implications include securing VM images, container registries, and serverless function code. Network isolation, access control (RBAC), and encryption for data in transit and at rest are critical. Regular vulnerability scanning, patch management, and adherence to compliance standards are essential to mitigate risks. → See: Tech_Knowledge_System/Cybersecurity/Cloud_Security
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/Azure_Architecture/Azure_Networking → Compute resources rely heavily on networking for communication.
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/Azure_Architecture/Azure_Storage → Compute services often interact with storage for data persistence.
+- Tech_Knowledge_System/Software_Engineering/DevOps → Compute services are central to CI/CD pipelines and automated deployments.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include leveraging confidential computing for sensitive workloads, integrating AI/ML inference directly into compute services, and optimizing for edge computing scenarios. Exploring custom runtimes for serverless functions and advanced traffic management with service meshes in AKS represent cutting-edge applications.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

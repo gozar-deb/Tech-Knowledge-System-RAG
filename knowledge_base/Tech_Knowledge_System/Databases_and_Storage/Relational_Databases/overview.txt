@@ -1,0 +1,80 @@
+NODE_PATH: Tech_Knowledge_System/Databases_and_Storage/Relational_Databases
+DOMAIN: Databases_and_Storage
+LEVEL: 3
+TAGS: SQL, RDBMS, ACID, normalization, primary key, foreign key, transactions, indexing, stored procedures, views, triggers, data integrity, schema, database management, relational model, OLTP, data warehousing, concurrency control, query optimization
+
+RELATED_NODES:
+- Tech_Knowledge_System/Databases_and_Storage/NoSQL_Databases: alternative_data_models
+- Tech_Knowledge_System/Databases_and_Storage/Database_Design: foundational_principles
+- Tech_Knowledge_System/Software_Engineering/Data_Structures_and_Algorithms: underlying_concepts
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Relational Databases (RDBs) are database systems based on the relational model, organizing data into tables with predefined schemas. Each table consists of rows (records) and columns (attributes), linked by common fields. They ensure data integrity and consistency through structured query language (SQL) and ACID properties.
+
+[CHUNK: CORE_CONCEPTS]
+- Relational Model: Data organized into relations (tables) with rows and columns.
+- SQL: Standard language for managing and querying relational databases.
+- ACID Properties: Atomicity, Consistency, Isolation, Durability ensure reliable transaction processing.
+- Normalization: Process of organizing columns and tables to minimize data redundancy and improve data integrity.
+- Primary Key: Unique identifier for each record in a table.
+- Foreign Key: Establishes a link between data in two tables, enforcing referential integrity.
+- Indexing: Data structure technique to quickly locate and access data in a database table.
+- Transactions: A sequence of operations performed as a single logical unit of work.
+- Stored Procedures: Pre-compiled SQL code stored in the database for reuse and performance.
+- Views: Virtual tables based on the result-set of a SQL query.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Relational databases are central to Online Transaction Processing (OLTP) systems, providing robust data storage and retrieval for applications requiring high consistency. Their structured nature facilitates complex querying and data integrity, making them suitable for business-critical operations. Scaling often involves vertical scaling or read replicas.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: SQL, PL/SQL, T-SQL
+- Frameworks: Hibernate (Java), SQLAlchemy (Python), Entity Framework (.NET)
+- Infrastructure: MySQL, PostgreSQL, Oracle Database, Microsoft SQL Server, IBM Db2, Amazon RDS, Google Cloud SQL, Azure SQL Database
+
+[CHUNK: REAL_WORLD_USE]
+Used extensively in banking systems for transaction management, e-commerce platforms for order and inventory tracking, and enterprise resource planning (ERP) systems for managing business processes. Also prevalent in content management systems and customer relationship management (CRM) applications.
+
+[CHUNK: FAILURE_MODES]
+Common failures include data corruption due to hardware issues, deadlocks from concurrent transactions, performance degradation from unoptimized queries or missing indexes, and schema migration errors. Insufficient backup and recovery strategies can lead to data loss. → See: Tech_Knowledge_System/Databases_and_Storage/Database_Administration
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Query optimization through proper indexing, query rewriting, and execution plan analysis. Database normalization and denormalization for specific workloads. Connection pooling, caching mechanisms, and partitioning for scalability. Regular maintenance like statistics updates and defragmentation.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Vulnerable to SQL injection attacks, unauthorized data access, and privilege escalation. Defense involves parameterized queries, least privilege principle, strong authentication, encryption of data at rest and in transit, and regular security audits. → See: Tech_Knowledge_System/Cybersecurity/Database_Security
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Software_Engineering/API_Design: database_interaction_patterns
+- Tech_Knowledge_System/Cloud_Computing/Managed_Database_Services: cloud_deployment_options
+- Tech_Knowledge_System/Data_Science/Data_Warehousing: OLAP_vs_OLTP
+
+[CHUNK: ADVANCED_TOPICS]
+Distributed relational databases, NewSQL databases blending ACID with NoSQL scalability, graph extensions for relational models, and advanced replication techniques. In-memory databases for ultra-low latency applications and columnar storage for analytical workloads.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

@@ -1,0 +1,77 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Application_Security/Secure_SDLC/SAST_and_DAST
+DOMAIN: Cybersecurity
+LEVEL: 5
+TAGS: SAST, DAST, Static Application Security Testing, Dynamic Application Security Testing, application security, secure SDLC, vulnerability scanning, code analysis, runtime analysis, security testing, DevSecOps, white-box testing, black-box testing, security automation, software development security
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Application_Security/Secure_SDLC: parent
+- Tech_Knowledge_System/Cybersecurity/Application_Security/Secure_SDLC/Threat_Modeling: related
+- Tech_Knowledge_System/Cybersecurity/Application_Security/Secure_SDLC/SCA: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+SAST (Static Application Security Testing) analyzes application source code, bytecode, or binaries for vulnerabilities without executing the code. DAST (Dynamic Application Security Testing) examines a running application from the outside to identify vulnerabilities that manifest during execution. Both are crucial for comprehensive application security.
+
+[CHUNK: CORE_CONCEPTS]
+- SAST: White-box testing, early SDLC integration, identifies vulnerabilities in static code, high false positive rate, no runtime context.
+- DAST: Black-box testing, later SDLC integration, identifies vulnerabilities in running applications, low false positive rate, runtime context.
+- Shift-Left Security: Integrating security testing earlier in the SDLC, often facilitated by SAST.
+- False Positives: Incorrectly identified vulnerabilities, more common in SAST.
+- False Negatives: Missed vulnerabilities, can occur in both SAST and DAST.
+- Coverage: SAST covers code paths, DAST covers executed paths and configurations.
+- Remediation Guidance: Both provide insights for developers to fix identified issues.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In a secure SDLC, SAST is integrated into CI/CD pipelines for continuous code analysis, providing immediate feedback to developers. DAST is typically run against staging or production-like environments to find runtime vulnerabilities, configuration errors, and authentication flaws. The combination offers a robust security posture by covering different vulnerability types and stages.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- SAST Tools: SonarQube, Checkmarx, Fortify, Veracode, Snyk Code, GitLab SAST
+- DAST Tools: OWASP ZAP, Burp Suite, Acunetix, Invicti (Netsparker), HCL AppScan, GitLab DAST
+- Integration: Jenkins, GitLab CI, GitHub Actions, Azure DevOps
+
+[CHUNK: REAL_WORLD_USE]
+SAST is used by development teams to scan code commits and pull requests, preventing vulnerable code from entering the main branch. DAST is employed by security teams to perform regular scans of deployed web applications, identifying vulnerabilities like SQL injection or XSS that are only detectable at runtime. This dual approach ensures broad coverage.
+
+[CHUNK: FAILURE_MODES]
+SAST can suffer from high false positive rates, overwhelming developers with noise and leading to alert fatigue. DAST might miss vulnerabilities in code paths not exercised during the scan, or struggle with complex authentication flows. Both can be limited by the completeness of their rule sets or the depth of their analysis.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+To optimize SAST, fine-tune rules, prioritize critical findings, and integrate it with developer workflows for immediate feedback. For DAST, ensure comprehensive test coverage, use authenticated scans, and integrate with CI/CD for automated execution. Combine both with IAST and SCA for a layered security approach.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+SAST identifies design flaws and coding errors that could lead to vulnerabilities like buffer overflows or insecure cryptographic practices. DAST uncovers runtime vulnerabilities such as misconfigurations, broken access control, and injection flaws. Together, they significantly reduce the attack surface of applications by proactively identifying and mitigating security risks.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Application_Security/Secure_SDLC/DevSecOps → integration of security into development operations
+- Tech_Knowledge_System/Cybersecurity/Application_Security/Secure_SDLC/IAST → complementary security testing methodology
+- Tech_Knowledge_System/Cybersecurity/Application_Security/Secure_SDLC/SCA → component analysis for open-source vulnerabilities
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced SAST explores AI/ML-driven vulnerability detection and semantic analysis to reduce false positives. DAST advancements include intelligent crawling, API-specific testing, and integration with behavioral analysis for more effective runtime vulnerability discovery. The convergence of these techniques with threat intelligence is a key research area.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

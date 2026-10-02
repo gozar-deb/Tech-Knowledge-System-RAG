@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Software_Engineering/Design_Patterns/Creational_Patterns
+DOMAIN: Software_Engineering
+LEVEL: 4
+TAGS: creational patterns, design patterns, object creation, software design, factory method, abstract factory, builder, prototype, singleton, dependency injection, object-oriented programming, software architecture, design principles, instantiation, class design, object lifecycle, reusable code, maintainability, flexibility, extensibility, design solutions
+
+RELATED_NODES:
+- Tech_Knowledge_System/Software_Engineering/Design_Patterns: parent
+- Tech_Knowledge_System/Software_Engineering/Design_Patterns/Structural_Patterns: sibling
+- Tech_Knowledge_System/Software_Engineering/Design_Patterns/Behavioral_Patterns: sibling
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Creational Patterns are design patterns that deal with object creation mechanisms, seeking to create objects in a manner suitable for the situation. They abstract the instantiation process, making the system independent of how its objects are created, composed, and represented. This enhances flexibility and reusability in software design.
+
+[CHUNK: CORE_CONCEPTS]
+- Factory Method: Defines an interface for creating an object, but lets subclasses decide which class to instantiate.
+- Abstract Factory: Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
+- Builder: Separates the construction of a complex object from its representation, allowing the same construction process to create different representations.
+- Prototype: Specifies the kinds of objects to create using a prototypical instance, and creates new objects by copying this prototype.
+- Singleton: Ensures a class has only one instance and provides a global point of access to it.
+- Dependency Injection: A technique where an object receives other objects that it depends on, rather than creating them itself.
+- Object Instantiation: The process of creating a new instance of a class, often managed by creational patterns.
+- Decoupling: Reducing the direct dependencies between components, a key benefit of using creational patterns.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, creational patterns promote loose coupling by abstracting object creation, allowing systems to easily switch implementations or configurations without modifying client code. They are crucial for building flexible, scalable, and maintainable architectures, especially in large-scale enterprise applications and microservices. They enable dynamic object provisioning.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Java, C#, Python, C++, TypeScript, Go, Ruby
+- Frameworks: Spring Framework (Java), .NET Core (C#), Angular (TypeScript), React (JavaScript), Django (Python)
+- Infrastructure: IoC Containers (e.g., Spring IoC, Autofac, Unity), Dependency Injection frameworks
+
+[CHUNK: REAL_WORLD_USE]
+Factory Method is used in logging frameworks to create different loggers (file, console). Abstract Factory creates UI component families (buttons, checkboxes) for different operating systems. Builder constructs complex objects like SQL queries or HTTP requests step-by-step. Singleton manages a single database connection pool or configuration manager instance.
+
+[CHUNK: FAILURE_MODES]
+Misuse of Singleton can lead to tight coupling, global state issues, and difficulties in testing. Over-engineering with complex factories for simple object creation adds unnecessary complexity. Incorrect implementation of object lifecycle management can result in resource leaks or unexpected behavior, especially with shared instances. Ignoring thread safety in creation can cause race conditions.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Employ lazy initialization for costly object creation, especially with Singleton or Prototype patterns, to defer resource allocation until needed. Use object pooling for frequently created and destroyed objects to reduce overhead. Optimize factory methods by caching common instances. Leverage dependency injection for efficient resource management and testability.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Singleton patterns, if not carefully implemented, can expose global mutable state, making it vulnerable to unauthorized modification. Improperly managed object creation can lead to denial-of-service attacks if resource-intensive objects are created excessively. Dependency Injection can mitigate some risks by centralizing control over object instantiation and configuration, but requires secure configuration management.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Software_Engineering/Design_Patterns/Structural_Patterns → complements by defining relationships between objects
+- Tech_Knowledge_System/Software_Engineering/Design_Principles/SOLID_Principles → supports the Open/Closed Principle and Dependency Inversion Principle
+- Tech_Knowledge_System/Software_Engineering/Testing/Unit_Testing → facilitates testing by allowing mock object injection
+
+[CHUNK: ADVANCED_TOPICS]
+Exploring advanced factory techniques like generic factories or factories with dynamic loading. Investigating the integration of creational patterns with aspect-oriented programming (AOP) for cross-cutting concerns. Studying the application of functional programming paradigms to object creation, such as using higher-order functions for factories. Metaprogramming for dynamic pattern generation.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

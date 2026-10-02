@@ -1,0 +1,79 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Application_Security/API_Security/OAuth2_and_OpenID_Connect
+DOMAIN: Cybersecurity
+LEVEL: 5
+TAGS: OAuth2, OpenID Connect, OIDC, authorization, authentication, API security, identity management, access delegation, security protocols, tokens, grants, scopes, claims, identity provider, service provider, client applications, resource server, consent, single sign-on, SSO
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Application_Security/API_Security: Parent
+- Tech_Knowledge_System/Cybersecurity/Application_Security/Authentication: Related
+- Tech_Knowledge_System/Cybersecurity/Application_Security/Authorization: Related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+OAuth 2.0 is an authorization framework enabling third-party applications to obtain limited access to a user's protected resources on an HTTP service, without exposing user credentials. OpenID Connect (OIDC) is an authentication layer built on top of OAuth 2.0, allowing clients to verify the identity of the end-user based on the authentication performed by an Authorization Server, as well as to obtain basic profile information about the end-user in an interoperable and REST-like manner.
+
+[CHUNK: CORE_CONCEPTS]
+- Authorization Server: The server that issues access tokens to the client after successfully authenticating the resource owner and obtaining authorization.
+- Resource Server: The server hosting the protected resources, capable of accepting and responding to protected resource requests using access tokens.
+- Client Application: An application making protected resource requests on behalf of the resource owner and with its authorization.
+- Resource Owner: The entity capable of granting access to a protected resource (e.g., the end-user).
+- Access Token: A credential used to access protected resources. It represents the authorization granted by the resource owner to the client.
+- ID Token: A security token that contains claims about the authentication of an end-user by an Authorization Server and about the end-user itself.
+- Scopes: Mechanisms in OAuth 2.0 to limit an application's access to a user's account.
+- Claims: Pieces of information asserted about a subject, such as a user, typically found within an ID Token.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+OAuth 2.0 and OIDC are foundational for modern distributed systems, enabling secure API access and single sign-on (SSO) across disparate services. They decouple authentication from authorization, allowing identity providers to manage user identities while resource servers enforce access policies. This architecture promotes scalability, reduces credential exposure, and simplifies user experience by centralizing identity management.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Libraries/SDKs: Passport.js, Spring Security OAuth, Authlib, OIDC-client-js
+- Identity Providers (IdPs): Okta, Auth0, Google Identity Platform, Azure Active Directory, Keycloak
+- Frameworks: Express.js, Spring Boot, ASP.NET Core
+- Infrastructure: Load balancers, API gateways, containerization (Docker, Kubernetes)
+
+[CHUNK: REAL_WORLD_USE]
+OAuth 2.0 is used by social media platforms for third-party app integration, allowing users to grant access to their data without sharing passwords. OIDC extends this to provide identity verification, commonly seen in single sign-on (SSO) scenarios for web and mobile applications, where a user logs in once and gains access to multiple services. For example, logging into a third-party application using your Google or Facebook account leverages OIDC for authentication and OAuth 2.0 for authorization.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include improper token validation, insecure client implementations (e.g., hardcoding client secrets), replay attacks, authorization code interception, and insufficient scope management leading to over-privileged access. Misconfigurations in Authorization Servers or Identity Providers can also expose sensitive user data or grant unauthorized access. Lack of proper refresh token rotation or secure storage can lead to compromise.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Implement token caching and reuse to reduce latency and load on Authorization Servers. Utilize fine-grained access control with minimal necessary scopes to enhance security. Employ Content Delivery Networks (CDNs) for static assets and API Gateways for request routing and rate limiting. Optimize database queries for identity stores and leverage distributed caching for session management. Implement robust logging and monitoring for early detection of anomalies.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+OAuth 2.0 and OIDC introduce new attack surfaces, primarily around token issuance, validation, and storage. Threats include authorization code interception, cross-site request forgery (CSRF), and phishing attacks targeting the consent screen. Proper implementation requires secure redirect URIs, Proof Key for Code Exchange (PKCE) for public clients, strict token validation, and secure handling of client credentials. Regular security audits and penetration testing are crucial.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Network_Security/TLS_and_SSL → Securing communication channels for token exchange.
+- Tech_Knowledge_System/Software_Engineering/Microservices/API_Gateways → Centralized enforcement of OAuth/OIDC policies.
+- Tech_Knowledge_System/Data_Science/Data_Privacy/GDPR_and_CCPA → Compliance considerations for handling personal data via OIDC claims.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include OAuth 2.1 (a streamlined and more secure version of OAuth 2.0), Financial-grade API (FAPI) security profiles for high-value transactions, Decentralized Identifiers (DIDs) and Verifiable Credentials (VCs) for self-sovereign identity, and the integration of WebAuthn for strong, phishing-resistant authentication within OIDC flows. Also, exploring the use of Continuous Authentication and Adaptive Access Control with OIDC.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

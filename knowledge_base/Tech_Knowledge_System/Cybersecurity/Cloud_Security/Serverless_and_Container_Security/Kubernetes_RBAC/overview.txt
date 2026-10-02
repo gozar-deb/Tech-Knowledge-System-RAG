@@ -1,0 +1,80 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Cloud_Security/Serverless_and_Container_Security/Kubernetes_RBAC
+DOMAIN: Cybersecurity
+LEVEL: 5
+TAGS: Kubernetes, RBAC, Role-Based Access Control, authorization, access control, security, cluster security, roles, clusterroles, rolebindings, clusterrolebindings, subjects, permissions, API groups, resources, verbs
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Cloud_Security/Serverless_and_Container_Security: parent
+- Tech_Knowledge_System/Cybersecurity/Cloud_Security/Serverless_and_Container_Security/Kubernetes_Security: sibling
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Kubernetes Role-Based Access Control (RBAC) is a method for regulating access to Kubernetes cluster resources based on the roles of individual users or service accounts. It dynamically configures authorization policies through the Kubernetes API, ensuring that users and workloads only have necessary permissions [1].
+
+[CHUNK: CORE_CONCEPTS]
+- Role: Defines permissions within a specific namespace, granting access to resources like pods, deployments, or services.
+- ClusterRole: A non-namespaced resource that defines permissions cluster-wide, applicable to cluster-scoped resources (e.g., nodes) or namespaced resources across all namespaces.
+- RoleBinding: Grants the permissions defined in a Role to a user, group, or service account within a specific namespace.
+- ClusterRoleBinding: Grants the permissions defined in a ClusterRole to a user, group, or service account across the entire cluster.
+- Subject: The entity (user, group, or service account) to which a role\'s permissions are granted.
+- API Groups: Logical groupings of related API resources within Kubernetes, used to define permissions in Roles and ClusterRoles.
+- Resources: Specific Kubernetes objects (e.g., \'pods\', \'deployments\', \'secrets\') that permissions apply to.
+- Verbs: Actions (e.g., \'get\', \'list\', \'watch\', \'create\', \'update\', \'patch\', \'delete\') that can be performed on resources.
+- Additive Permissions: RBAC permissions are purely additive; there are no \'deny\' rules, meaning access is granted if any binding allows it.
+- Auto-reconciliation: The API server automatically updates default cluster roles and bindings on startup to ensure consistency and incorporate new permissions from Kubernetes releases.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+RBAC is fundamental to Kubernetes security architecture, acting as an authorization layer that controls interactions with the API server. It enables fine-grained access policies, separating duties and minimizing the blast radius of compromised credentials by enforcing the principle of least privilege [1].
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: YAML (for defining RBAC objects), Go (Kubernetes core development)
+- Frameworks: Kubernetes API (for dynamic policy configuration)
+- Infrastructure: kubectl (command-line tool for managing RBAC objects), kube-apiserver (enforces RBAC policies)
+
+[CHUNK: REAL_WORLD_USE]
+RBAC is used to restrict a developer\'s access to only their designated namespaces, allowing them to deploy and manage applications without affecting other teams\' resources. It also limits CI/CD pipelines to specific actions, such as deploying new images to a staging environment, preventing unauthorized production changes.
+
+[CHUNK: FAILURE_MODES]
+Misconfigured RBAC policies can lead to privilege escalation, where a user or service account gains unintended access to sensitive resources. Overly permissive roles can create security vulnerabilities, while overly restrictive roles can hinder legitimate operations and cause application failures due to insufficient permissions.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Implement the principle of least privilege by granting only the necessary permissions. Regularly audit RBAC configurations to identify and remove stale or excessive permissions. Utilize aggregated ClusterRoles for common permission sets and namespace-specific RoleBindings for granular control, simplifying management and reducing errors.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+RBAC directly impacts cluster security by controlling who can perform what actions. Improperly configured RBAC can expose sensitive data, allow unauthorized resource modification, or facilitate denial-of-service attacks. Strict RBAC policies are crucial for preventing unauthorized access and maintaining cluster integrity.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Network_Security/Authentication_and_Authorization → RBAC is a core authorization mechanism.
+- Tech_Knowledge_System/Cybersecurity/Cloud_Security/Container_Security/Pod_Security_Policies → RBAC complements Pod Security Policies for comprehensive workload security.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced RBAC patterns include dynamic RBAC policy generation using admission controllers, integration with external identity providers for centralized user management, and fine-grained attribute-based access control (ABAC) in conjunction with RBAC for highly complex authorization scenarios.
+
+[1] Using RBAC Authorization | Kubernetes: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Artificial_Intelligence/MLOps/Model_Serving_and_Deployment/Batch_vs_Online_Inference
+DOMAIN: Artificial_Intelligence
+LEVEL: 5
+TAGS: batch inference, online inference, real-time prediction, offline prediction, low-latency, high-throughput, MLOps, model deployment, model serving, prediction systems, machine learning inference, streaming data, feature engineering
+
+RELATED_NODES:
+- Tech_Knowledge_System/Artificial_Intelligence/MLOps/Model_Serving_and_Deployment: parent
+- Tech_Knowledge_System/Artificial_Intelligence/MLOps/Feature_Stores: relates_to
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning/Real-time_ML: relates_to
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Batch inference processes large volumes of data asynchronously, generating predictions in bulk at scheduled intervals. Online inference, conversely, provides predictions synchronously, responding to individual requests with low latency, often in real-time applications.
+
+[CHUNK: CORE_CONCEPTS]
+- Batch Inference: Predictions generated for a collection of inputs, typically at scheduled times, suitable for non-time-sensitive applications.
+- Online Inference: Real-time predictions for single data points, requiring low latency and high availability, common in interactive systems.
+- Latency: The delay between a request for a prediction and the delivery of that prediction.
+- Throughput: The number of predictions a system can process per unit of time.
+- Feature Engineering: The process of transforming raw data into features suitable for machine learning models, often differing between batch and online.
+- Model Serving: The infrastructure and processes used to deploy and expose trained machine learning models for inference.
+- Real-time Systems: Systems designed to respond to events within a guaranteed time frame, crucial for online inference.
+- Offline Processing: Data processing that occurs without immediate user interaction, characteristic of batch inference.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Batch inference systems prioritize cost-efficiency and high throughput, often leveraging distributed processing frameworks for large datasets. Online inference demands robust, low-latency serving infrastructure, often employing microservices, caching, and optimized model formats to meet strict SLA requirements.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python, Java, Scala
+- Frameworks: TensorFlow Serving, TorchServe, KServe, Seldon Core, Spark, Flink, Kafka, Kubernetes
+- Infrastructure: AWS SageMaker, Google Cloud AI Platform, Azure Machine Learning, Docker, Kubernetes, GPUs
+
+[CHUNK: REAL_WORLD_USE]
+Batch inference is used for daily fraud detection reports, personalized email recommendations, or inventory forecasting. Online inference powers real-time recommendation engines on e-commerce sites, dynamic pricing adjustments, and autonomous driving decisions.
+
+[CHUNK: FAILURE_MODES]
+Batch inference can fail due to data pipeline issues, resource exhaustion during large runs, or model staleness. Online inference failures include high latency spikes, service outages, cascading failures from dependent microservices, or incorrect feature transformations.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+For batch, optimize data loading, parallelize processing, and use efficient storage formats. For online, employ model quantization, hardware acceleration (GPUs/TPUs), caching, auto-scaling, and efficient API gateways to minimize latency and maximize throughput.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Batch systems face risks from unauthorized access to large datasets and model artifacts. Online systems are vulnerable to denial-of-service attacks, data injection for adversarial examples, and API misuse, requiring robust authentication, authorization, and input validation.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Artificial_Intelligence/MLOps/Feature_Stores → provides consistent features for both batch and online inference.
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning/Real-time_ML → online inference is a core component of real-time machine learning systems.
+- Tech_Knowledge_System/Data_Engineering/Stream_Processing → online inference often relies on stream processing technologies for real-time data.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include hybrid inference patterns, serverless inference architectures, edge AI for localized online predictions, and techniques for continuous model adaptation in online settings (online learning) to reduce model drift.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

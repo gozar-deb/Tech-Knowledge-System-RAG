@@ -1,0 +1,74 @@
+NODE_PATH: Tech_Knowledge_System/DevOps_and_SRE/CI_CD_Pipelines/ArgoCD_and_GitOps
+DOMAIN: DevOps_and_SRE
+LEVEL: 3
+TAGS: GitOps, ArgoCD, Kubernetes, continuous delivery, declarative infrastructure, CI/CD, deployment automation, configuration management, version control, reconciliation, desired state, application deployment, cloud native, DevOps, SRE, infrastructure as code, application lifecycle management
+
+RELATED_NODES:
+- Tech_Knowledge_System/DevOps_and_SRE/CI_CD_Pipelines: parent
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+ArgoCD is a declarative, GitOps continuous delivery tool for Kubernetes. It automates the deployment and lifecycle management of applications, ensuring the cluster state always matches the desired state defined in Git repositories. GitOps is an operational framework that uses Git as the single source of truth for declarative infrastructure and applications.
+
+[CHUNK: CORE_CONCEPTS]
+- Declarative Configuration: System state is described in configuration files, typically YAML, stored in Git.
+- Git as Single Source of Truth: All desired operational states are version-controlled in Git, enabling auditability and rollback.
+- Reconciliation Loop: ArgoCD continuously monitors the live cluster state against the desired state in Git, automatically synchronizing discrepancies.
+- Application Synchronization: Automatic or manual application of Git-defined configurations to the Kubernetes cluster.
+- Health Monitoring: ArgoCD provides visibility into the health and status of deployed applications.
+- Rollback and Roll-forward: Version control in Git enables easy reversion to previous states or progression to newer ones.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+ArgoCD integrates into CI/CD pipelines by pulling application manifests directly from Git, rather than receiving pushes from CI. This pull-based model enhances security and stability, as the cluster agent initiates deployments. It acts as a control plane for Kubernetes application deployments, ensuring consistency across environments. → See: Tech_Knowledge_System/DevOps_and_SRE/CI_CD_Pipelines
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: YAML (for Kubernetes manifests), Go (ArgoCD core)
+- Frameworks: Kubernetes, Helm, Kustomize, Jsonnet
+- Infrastructure: Git (GitHub, GitLab, Bitbucket), Container Registries (Docker Hub, Quay), Cloud Providers (AWS, GCP, Azure)
+
+[CHUNK: REAL_WORLD_USE]
+Organizations use ArgoCD to manage microservices deployments on Kubernetes, ensuring consistent application states across development, staging, and production environments. It facilitates rapid disaster recovery by allowing entire infrastructure and application states to be restored from Git. Used for managing complex multi-cluster Kubernetes deployments.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include Git repository access issues, misconfigured Kubernetes manifests leading to failed synchronizations, network connectivity problems between ArgoCD and the cluster, and resource exhaustion within the Kubernetes cluster itself. Drift detection can fail if the reconciliation loop is interrupted or misconfigured.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizations involve structuring Git repositories effectively (e.g., monorepo vs. multi-repo), optimizing Kubernetes manifest sizes, leveraging Helm or Kustomize for templating, and implementing robust health checks and resource limits. Scaling ArgoCD involves deploying multiple instances for high availability and distributing application management.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Security implications include securing Git repositories (access control, signing commits), managing Kubernetes RBAC for ArgoCD's service accounts, protecting secrets used in deployments, and ensuring the integrity of container images. The pull-based model inherently reduces the attack surface compared to push-based deployments.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/DevOps_and_SRE/CI_CD_Pipelines: foundational CI/CD concepts
+- Tech_Knowledge_System/Cloud_Native/Kubernetes: core orchestration platform
+- Tech_Knowledge_System/Security/Supply_Chain_Security: securing Git repositories and container images
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include multi-cluster GitOps management, integrating with service meshes like Istio for traffic management, implementing progressive delivery strategies (Canary, Blue/Green) with Argo Rollouts, and extending ArgoCD with custom resource definitions (CRDs) for specialized workflows.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

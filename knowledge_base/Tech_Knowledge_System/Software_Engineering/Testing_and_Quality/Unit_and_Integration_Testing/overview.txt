@@ -1,0 +1,76 @@
+NODE_PATH: Tech_Knowledge_System/Software_Engineering/Testing_and_Quality/Unit_and_Integration_Testing
+DOMAIN: Software_Engineering
+LEVEL: 4
+TAGS: unit testing, integration testing, software quality, test-driven development, behavior-driven development, mocking, stubbing, test automation, continuous integration, regression testing, test frameworks, code coverage, assertion libraries, dependency injection, test doubles
+
+RELATED_NODES:
+- Tech_Knowledge_System/Software_Engineering/Testing_and_Quality: parent
+- Tech_Knowledge_System/Software_Engineering/Software_Development_Life_Cycle: foundational_concept
+- Tech_Knowledge_System/Software_Engineering/DevOps/Continuous_Integration_and_Delivery: related_practice
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Unit testing isolates and validates individual components or functions of a software application to ensure they perform as expected. Integration testing verifies the interactions and data flow between different modules or services, ensuring they work together correctly as a cohesive system. Both are crucial for early defect detection and maintaining code quality.
+
+[CHUNK: CORE_CONCEPTS]
+- Test Isolation: Running tests independently without external dependencies.
+- Test Doubles: Using mocks, stubs, or fakes to control dependencies during testing.
+- Assertions: Statements that verify expected outcomes within a test.
+- Test Coverage: Metric indicating the percentage of code executed by tests.
+- Test-Driven Development (TDD): Writing tests before writing the code they validate.
+- Behavior-Driven Development (BDD): Collaboration-focused approach using natural language to describe system behavior.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Effective unit and integration testing are fundamental to robust system architectures, enabling modularity and reducing coupling. They support microservices by validating individual service logic and inter-service communication patterns. Well-designed tests act as living documentation, reflecting intended component behavior and integration contracts, which is vital for scalable and maintainable systems.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python (pytest, unittest), Java (JUnit, TestNG), JavaScript (Jest, Mocha, Jasmine), C# (NUnit, xUnit.net)
+- Frameworks: Pytest, JUnit, Jest, Mocha, NUnit, xUnit.net, Mockito, Sinon.js
+- Infrastructure: CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions), Docker (for isolated test environments)
+
+[CHUNK: REAL_WORLD_USE]
+In an e-commerce platform, unit tests validate individual functions like `calculate_discount()` or `validate_email()`. Integration tests confirm that the `checkout` service correctly interacts with the `payment` gateway and `inventory` management system. For a banking application, unit tests ensure transaction logic is sound, while integration tests verify secure communication between the mobile app and backend APIs.
+
+[CHUNK: FAILURE_MODES]
+Common failures include brittle tests that break with minor code changes, false positives/negatives due to improper test setup or assertions, and insufficient test coverage leading to undetected bugs. Over-mocking can hide actual integration issues, while tightly coupled tests make refactoring difficult. Slow test suites can also hinder developer productivity and continuous integration efforts.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimize test execution by parallelizing tests and leveraging in-memory databases for faster integration tests. Focus on writing focused, atomic unit tests and high-value integration tests that cover critical paths. Implement code coverage analysis to identify untested areas and prioritize testing efforts. Employ dependency injection to simplify testing and reduce test setup complexity.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Unit and integration tests can identify security vulnerabilities early by validating input sanitization, authentication flows, and authorization checks. Integration tests are crucial for verifying secure communication protocols (e.g., HTTPS, OAuth) between services and detecting misconfigurations that could expose data. However, tests themselves must not expose sensitive data or credentials.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Software_Engineering/DevOps/Continuous_Integration_and_Delivery → CI/CD pipelines automate test execution, crucial for frequent releases.
+- Tech_Knowledge_System/Software_Engineering/Architectural_Patterns/Microservices → Unit and integration testing are vital for validating individual services and their interconnections.
+- Tech_Knowledge_System/Software_Engineering/Programming_Paradigms/Object_Oriented_Programming → Principles like encapsulation and polymorphism facilitate easier unit testing.
+
+[CHUNK: ADVANCED_TOPICS]
+Property-based testing automatically generates diverse inputs to find edge cases beyond explicit examples. Contract testing verifies API compatibility between services without full integration, using consumer-driven contracts. Mutation testing assesses test suite effectiveness by intentionally introducing small code changes to see if tests fail, revealing weak tests.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

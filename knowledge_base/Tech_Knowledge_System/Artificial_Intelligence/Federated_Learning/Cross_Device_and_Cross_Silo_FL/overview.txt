@@ -1,0 +1,77 @@
+NODE_PATH: Tech_Knowledge_System/Artificial_Intelligence/Federated_Learning/Cross_Device_and_Cross_Silo_FL
+DOMAIN: Artificial_Intelligence
+LEVEL: 4
+TAGS: cross-device federated learning, cross-silo federated learning, distributed machine learning, privacy-preserving AI, on-device training, data silos, collaborative AI, edge computing, mobile AI, privacy, security, machine learning
+
+RELATED_NODES:
+- Tech_Knowledge_System/Artificial_Intelligence/Federated_Learning: parent_of
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning: related_concept
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Cross-Device Federated Learning (FL) involves training models on a large number of edge devices (e.g., smartphones, IoT devices) without centralizing raw data. Cross-Silo FL applies to organizations (silos) collaborating on a shared model using their private datasets. Both aim to leverage distributed data while preserving privacy and reducing communication overhead.
+
+[CHUNK: CORE_CONCEPTS]
+- Client-Server Architecture: A central server orchestrates training rounds, aggregating model updates from clients.
+- Model Aggregation: Techniques like Federated Averaging (FedAvg) combine local model updates into a global model.
+- Data Heterogeneity (Non-IID): Client data distributions often differ significantly, posing challenges for model convergence and performance.
+- Communication Efficiency: Minimizing data transfer between clients and server is crucial due to bandwidth constraints on edge devices.
+- Privacy Preservation: Mechanisms like Differential Privacy and Secure Multi-Party Computation protect individual client data.
+- Device Availability: In cross-device FL, clients may be intermittently available, requiring robust fault tolerance.
+- Vertical Federated Learning: Different organizations hold different features of the same set of users.
+- Horizontal Federated Learning: Different organizations hold the same features for different sets of users.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Cross-device FL systems are designed for massive scale and intermittent connectivity, often involving millions of devices. Cross-silo FL focuses on secure, robust collaboration between a smaller number of stable, high-resource entities. Both require careful consideration of communication protocols, aggregation strategies, and privacy guarantees to ensure model quality and data confidentiality.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python, TensorFlow.js (for on-device inference)
+- Frameworks: TensorFlow Federated (TFF), PySyft, FATE (Federated AI Technology Enabler), OpenFL
+- Infrastructure: Edge computing platforms, secure enclaves, cloud-based aggregation servers
+
+[CHUNK: REAL_WORLD_USE]
+Google's Gboard uses cross-device FL to improve next-word prediction models directly on user phones. Healthcare consortia utilize cross-silo FL to train diagnostic models across hospitals without sharing patient records. Financial institutions employ cross-silo FL for fraud detection by collaboratively building models from disparate transaction data.
+
+[CHUNK: FAILURE_MODES]
+Model divergence due to highly non-IID data can lead to poor global model performance. Communication bottlenecks or dropped client connections can slow down or halt training. Malicious clients injecting poisoned updates can compromise model integrity. Privacy leakage through gradient inversion attacks remains a significant concern.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Techniques like client selection, sparse communication, and quantization reduce communication costs. Personalized FL approaches address data heterogeneity by allowing clients to adapt the global model. Asynchronous aggregation can improve training speed in environments with unreliable clients. Model compression reduces update sizes.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Gradient leakage can expose sensitive client data, necessitating techniques like differential privacy or secure aggregation. Model poisoning attacks by adversarial clients can degrade model performance or introduce backdoors. Robustness against sybil attacks (multiple fake clients) is critical for maintaining model integrity.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Artificial_Intelligence/Privacy_Preserving_AI: fundamental_dependency
+- Tech_Knowledge_System/Computer_Science/Distributed_Systems: architectural_foundation
+- Tech_Knowledge_System/Computer_Science/Cryptography: security_mechanisms
+
+[CHUNK: ADVANCED_TOPICS]
+Meta-learning for federated settings, federated reinforcement learning, blockchain-based federated learning for enhanced transparency and immutability, and the integration of large language models (LLMs) with federated learning for personalized on-device AI experiences are active research areas.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

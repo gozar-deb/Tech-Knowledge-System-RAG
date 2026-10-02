@@ -1,0 +1,77 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Cryptography/Hash_Functions_and_MACs
+DOMAIN: Cybersecurity
+LEVEL: 4
+TAGS: hash functions, message authentication codes, MACs, cryptography, data integrity, authentication, collision resistance, preimage resistance, second preimage resistance, HMAC, CMAC, GMAC, cryptographic primitives, digital signatures, key derivation functions, KDFs, password hashing, secure communication
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Cryptography/Symmetric_Key_Encryption: foundational_concept
+- Tech_Knowledge_System/Cybersecurity/Cryptography/Asymmetric_Key_Encryption: foundational_concept
+- Tech_Knowledge_System/Cybersecurity/Cryptography/Digital_Signatures: related_mechanism
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Hash functions are one-way mathematical algorithms that map data of arbitrary size to a fixed-size bit string, known as a hash value or message digest. They are primarily used for data integrity verification. Message Authentication Codes (MACs) are symmetric-key cryptographic primitives that provide both data integrity and authenticity by using a secret key.
+
+[CHUNK: CORE_CONCEPTS]
+- Hash Value (Digest): The fixed-size output of a hash function, unique for each input.
+- Collision Resistance: The computational infeasibility of finding two distinct inputs that produce the same hash output.
+- Preimage Resistance: The computational infeasibility of finding an input that hashes to a specific output.
+- Second Preimage Resistance: The computational infeasibility of finding a second input that hashes to the same output as a given input.
+- Keyed Hash Function: A hash function that incorporates a secret key, forming the basis of MACs.
+- Data Integrity: Assurance that data has not been altered or corrupted.
+- Message Authenticity: Assurance that data originates from a legitimate sender.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, hash functions are crucial for verifying file integrity, storing passwords securely, and constructing data structures like hash tables. MACs are integrated into communication protocols to ensure message authenticity and integrity, preventing tampering and spoofing. Their proper selection and implementation are critical for overall system security.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python (hashlib), Java (MessageDigest), C# (System.Security.Cryptography), Go (crypto/sha256)
+- Frameworks: OpenSSL, Bouncy Castle, libsodium
+- Infrastructure: TLS/SSL, IPsec, VPNs, blockchain
+
+[CHUNK: REAL_WORLD_USE]
+Hash functions are used in Git for commit integrity, in package managers for software verification, and in password databases for secure storage. MACs secure financial transactions, authenticate VPN connections, and protect data in secure messaging applications like Signal, ensuring messages are untampered and from the expected sender.
+
+[CHUNK: FAILURE_MODES]
+Weak hash algorithms (e.g., MD5, SHA-1) are vulnerable to collision attacks, compromising integrity. Improper MAC key management can lead to unauthorized message forgery. Side-channel attacks on implementations can reveal secret keys. Replay attacks can occur if MACs lack sequence numbers or timestamps.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Hardware acceleration (e.g., AES-NI for CMAC) can significantly boost performance. Efficient algorithm selection based on security requirements and performance needs is vital. Parallel processing of data blocks can optimize hashing large files. Pre-computation of hashes for static data reduces runtime overhead.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Compromised hash functions can lead to data manipulation without detection. Weak MACs enable message forgery and impersonation. Proper key management, secure random number generation, and regular algorithm updates are paramount. → See: Tech_Knowledge_System/Cybersecurity/Cryptography/Key_Management
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Data_Structures_and_Algorithms/Hashing: hash_table_implementation
+- Tech_Knowledge_System/Networking/Network_Security_Protocols: protocol_integration
+- Tech_Knowledge_System/Software_Engineering/Secure_Coding_Practices: implementation_guidelines
+
+[CHUNK: ADVANCED_TOPICS]
+Zero-Knowledge Proofs often utilize hash functions for commitment schemes. Post-quantum cryptography explores hash-based signatures (e.g., XMSS, SPHINCS+). Probabilistic MACs offer enhanced security properties. Homomorphic hashing allows computations on encrypted data without decryption.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

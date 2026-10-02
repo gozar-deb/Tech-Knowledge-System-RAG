@@ -1,0 +1,77 @@
+NODE_PATH: Tech_Knowledge_System/Databases_and_Storage/Database_Security/Access_Control_and_RBAC
+DOMAIN: Database_Security
+LEVEL: 3
+TAGS: access control, role-based access control, RBAC, database security, authorization, authentication, least privilege, identity management, security policies, data access, permissions, roles, users, groups, security models
+
+RELATED_NODES:
+- Tech_Knowledge_System/Databases_and_Storage/Database_Security: parent
+- Tech_Knowledge_System/Databases_and_Storage: grandparent
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Access Control and RBAC (Role-Based Access Control) define mechanisms to restrict system resource access to authorized users. It ensures that only legitimate entities can perform specific actions on database objects, enforcing security policies. RBAC simplifies management by assigning permissions to roles, which are then assigned to users.
+
+[CHUNK: CORE_CONCEPTS]
+- Authentication: Verifying user identity before granting access.
+- Authorization: Determining what an authenticated user is permitted to do.
+- Roles: Collections of permissions that define a user's functional responsibilities.
+- Permissions: Specific rights to perform actions on database objects (e.g., SELECT, INSERT, UPDATE).
+- Least Privilege: Granting only the minimum necessary access rights for a user to perform their job.
+- Identity Management: Processes for managing user identities and their associated access rights.
+- Policy Enforcement: Mechanisms that ensure access control rules are consistently applied.
+- Session Management: Controlling access duration and re-authentication requirements.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, access control is a fundamental security layer, often implemented via a centralized identity and access management (IAM) system. RBAC structures simplify authorization logic, mapping user roles to application functions and underlying database permissions. This abstraction reduces complexity and improves maintainability in large-scale systems.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: SQL (GRANT/REVOKE), PL/SQL, T-SQL
+- Frameworks: Spring Security, Apache Shiro, OAuth2/OpenID Connect (for identity)
+- Infrastructure: LDAP, Active Directory, AWS IAM, Azure AD, HashiCorp Vault
+
+[CHUNK: REAL_WORLD_USE]
+RBAC is widely used in enterprise applications to manage user access to sensitive data. For instance, in a banking system, a 'Teller' role might have permissions to view customer accounts and process transactions, while a 'Manager' role has additional approval capabilities. This prevents unauthorized data manipulation and ensures compliance.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include overly permissive roles, leading to privilege escalation or data breaches. Misconfigured access policies can inadvertently expose sensitive data or allow unauthorized operations. Inadequate auditing of access attempts can also hide malicious activity, making detection and response difficult.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizing access control involves regularly reviewing and refining roles to adhere to the principle of least privilege. Implementing attribute-based access control (ABAC) can provide more granular, context-aware authorization. Caching authorization decisions can reduce overhead, while robust auditing helps identify and mitigate risks.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Access control directly impacts the confidentiality, integrity, and availability of data. Weak access controls are a primary attack vector, enabling unauthorized data access, modification, or deletion. Strong RBAC implementation, coupled with multi-factor authentication, significantly reduces the attack surface and enhances overall security posture.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Authentication_Methods → foundational for verifying user identity
+- Tech_Knowledge_System/Databases_and_Storage/Database_Encryption → complementary data protection mechanism
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management → broader context for managing digital identities
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include Attribute-Based Access Control (ABAC) for dynamic, context-aware authorization policies. Graph-based access control models offer flexible relationship-driven permissions. Decentralized identity solutions and blockchain-based access management are emerging areas for enhanced security and privacy.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

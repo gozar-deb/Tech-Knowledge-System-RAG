@@ -1,0 +1,75 @@
+NODE_PATH: Tech_Knowledge_System/Cloud_and_Distributed_Computing/AWS_Architecture/Storage_S3_EBS_EFS
+DOMAIN: Cloud_and_Distributed_Computing
+LEVEL: 4
+TAGS: AWS, S3, EBS, EFS, cloud storage, object storage, block storage, file storage, distributed systems, cloud architecture, data persistence, scalability, availability, performance, cost optimization
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/AWS_Architecture: parent
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/AWS_Architecture/Compute_EC2_Lambda_ECS: sibling
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+AWS Storage services (S3, EBS, EFS) provide diverse data persistence solutions for cloud applications. S3 offers highly scalable object storage, EBS provides persistent block storage for EC2 instances, and EFS delivers scalable file storage for EC2 and on-premises resources. Each service is optimized for specific use cases, balancing performance, cost, and access patterns.
+
+[CHUNK: CORE_CONCEPTS]
+- Amazon S3 (Simple Storage Service): Object storage for any type of data, highly durable, available, and scalable. Ideal for backups, archives, data lakes, and static website hosting.
+- Amazon EBS (Elastic Block Store): Persistent block storage volumes for use with Amazon EC2 instances. Provides high-performance storage for transactional workloads, databases, and boot volumes.
+- Amazon EFS (Elastic File System): Scalable, elastic, shared file storage for AWS Cloud services and on-premises resources. Supports NFSv4 protocol, suitable for shared file access, content management, and big data analytics.
+- Storage Classes: Different tiers within S3 (Standard, Intelligent-Tiering, Glacier, etc.) offering varying costs and retrieval times based on access frequency.
+- Durability: The likelihood of data loss, typically measured in nines (e.g., 99.999999999% for S3).
+- Availability: The percentage of time a service is accessible and operational.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Designing with AWS storage involves selecting the right service based on data access patterns, performance requirements, and cost constraints. S3 is often used for decoupled, scalable data lakes or content delivery. EBS is critical for stateful applications requiring low-latency block access. EFS enables shared file systems across multiple compute instances, simplifying data sharing in distributed environments. Integration with other AWS services like EC2, Lambda, and RDS is fundamental.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python (Boto3), Java (AWS SDK), Node.js (AWS SDK), Go (AWS SDK)
+- Frameworks: AWS CLI, AWS CloudFormation, AWS CDK
+- Infrastructure: Amazon S3, Amazon EBS, Amazon EFS, AWS Storage Gateway, AWS Backup
+
+[CHUNK: REAL_WORLD_USE]
+S3 is used by Netflix for storing vast amounts of video content and user data, leveraging its scalability and durability. Airbnb utilizes EBS for their database instances requiring high I/O performance. Genomic research institutions employ EFS to provide shared, scalable storage for large-scale bioinformatics pipelines across compute clusters. → See: Tech_Knowledge_System/Cloud_and_Distributed_Computing/AWS_Architecture/Compute_EC2_Lambda_ECS
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include misconfigured S3 bucket policies leading to data exposure, EBS volume corruption due to application errors or ungraceful shutdowns, and EFS performance bottlenecks from incorrect throughput mode selection or excessive small file operations. Data loss can occur from accidental deletion without versioning or inadequate backup strategies. Network latency can impact performance for all services.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimize S3 costs by utilizing appropriate storage classes and lifecycle policies. Enhance EBS performance by selecting suitable volume types (e.g., io2 Block Express for high IOPS) and optimizing I/O operations. Improve EFS throughput by choosing the correct performance mode (e.g., Max I/O for parallel access) and optimizing file operations. Implement caching layers and content delivery networks (CDNs) for frequently accessed data.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Security for AWS storage involves robust access control (IAM policies, S3 bucket policies, EFS access points), encryption at rest (SSE-S3, SSE-KMS, EBS encryption) and in transit (SSL/TLS), and regular auditing (CloudTrail, S3 access logs). Preventing public access to sensitive S3 buckets is paramount. Data residency requirements must be considered for compliance. → See: Tech_Knowledge_System/Cybersecurity/Cloud_Security/AWS_Security
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/AWS_Architecture/Compute_EC2_Lambda_ECS → Integration with compute services for data processing and application hosting.
+- Tech_Knowledge_System/Data_Management/Data_Lakes_and_Warehouses → S3 as a foundational component for data lake architectures.
+- Tech_Knowledge_System/DevOps/CI_CD_Pipelines → Storing build artifacts and deployment packages in S3.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include leveraging S3 Object Lambda for custom code execution on data retrieval, using EBS Multi-Attach for shared block storage across multiple EC2 instances, and integrating EFS with AWS Transfer Family for secure file transfers. Exploring serverless data processing directly on S3 with services like AWS Athena and Glue is also a key area. Implementing cross-region replication for disaster recovery and global data availability.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

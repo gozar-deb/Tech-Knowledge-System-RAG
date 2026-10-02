@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Mathematical_Foundations_of_Computing/Optimization_Theory/Linear_Programming
+DOMAIN: Mathematical_Foundations_of_Computing
+LEVEL: 3
+TAGS: Linear programming, optimization, mathematical modeling, objective function, constraints, decision variables, feasible region, simplex algorithm, duality, operations research, resource allocation, convex optimization, optimization theory, computational mathematics, quantitative analysis
+
+RELATED_NODES:
+- Tech_Knowledge_System/Mathematical_Foundations_of_Computing/Optimization_Theory: parent
+- Tech_Knowledge_System/Mathematical_Foundations_of_Computing/Optimization_Theory/Non_Linear_Programming: sibling
+- Tech_Knowledge_System/Mathematical_Foundations_of_Computing/Optimization_Theory/Integer_Programming: sibling
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Linear Programming (LP) is a mathematical method for determining a way to achieve the best outcome (such as maximum profit or lowest cost) in a mathematical model whose requirements are represented by linear relationships. It involves optimizing a linear objective function subject to linear equality and inequality constraints. This technique is fundamental in operations research and applied mathematics.
+
+[CHUNK: CORE_CONCEPTS]
+- Objective Function: The linear function to be maximized or minimized.
+- Constraints: Linear inequalities or equalities that define the feasible region.
+- Decision Variables: Unknowns in the problem that must be solved for.
+- Feasible Region: The set of all points satisfying all constraints.
+- Simplex Algorithm: An iterative method for solving linear programming problems.
+- Duality: A concept where every LP problem has a corresponding dual problem.
+- Basic Feasible Solution: A solution at a vertex of the feasible region.
+- Sensitivity Analysis: How changes in parameters affect the optimal solution.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+LP models are integrated into decision support systems for resource allocation, scheduling, and logistics. They provide optimal solutions under defined linear conditions, guiding system configurations and operational strategies. The computational complexity can be significant for large-scale problems, requiring efficient solvers and parallel processing architectures. Data input quality directly impacts solution validity.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python (SciPy, PuLP, CVXPY), R (lpSolve), MATLAB (Optimization Toolbox), Julia (JuMP)
+- Frameworks: Gurobi, CPLEX, GLPK, SCIP, OR-Tools
+- Infrastructure: High-performance computing clusters for large-scale LP, cloud-based optimization services.
+
+[CHUNK: REAL_WORLD_USE]
+Used in supply chain optimization for minimizing transportation costs and maximizing delivery efficiency. Applied in financial portfolio optimization to maximize returns while managing risk. Critical for airline scheduling to optimize crew and aircraft assignments. Utilized in manufacturing for production planning and resource allocation to meet demand.
+
+[CHUNK: FAILURE_MODES]
+Model misspecification, where non-linear relationships are incorrectly approximated as linear, leads to suboptimal or incorrect solutions. Inaccurate or outdated input data can render LP solutions irrelevant. Numerical instability in solvers for ill-conditioned problems can cause convergence issues or incorrect results. Over-constraining the problem may lead to no feasible solution.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Techniques include problem decomposition for large-scale LPs, using specialized interior-point methods for faster convergence, and leveraging warm-starts for re-optimizing similar problems. Preprocessing techniques like constraint reduction and variable fixing can significantly reduce problem size. Parallelization of simplex or interior-point algorithms enhances computational speed.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Input data integrity is crucial; malicious alteration of constraints or objective function coefficients can lead to manipulated optimal outcomes. Access control to LP models and solvers prevents unauthorized tampering. Confidentiality of sensitive business data used in LP models must be maintained. Robust validation of model outputs is essential to detect anomalies.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Mathematical_Foundations_of_Computing/Numerical_Analysis: numerical stability of solvers
+- Tech_Knowledge_System/Software_Engineering/Algorithms_and_Data_Structures: simplex algorithm implementation
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning/Reinforcement_Learning: optimization in policy learning
+
+[CHUNK: ADVANCED_TOPICS]
+Stochastic Linear Programming addresses uncertainty in parameters through probabilistic models. Robust Optimization handles parameter uncertainty by seeking solutions that are feasible for all possible realizations within a defined set. Column Generation is an efficient method for solving large-scale LPs with an enormous number of variables. Integer Linear Programming extends LP to discrete variables.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

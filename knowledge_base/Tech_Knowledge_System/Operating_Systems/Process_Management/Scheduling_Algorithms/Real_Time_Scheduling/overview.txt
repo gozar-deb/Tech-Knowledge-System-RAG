@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Operating_Systems/Process_Management/Scheduling_Algorithms/Real_Time_Scheduling
+DOMAIN: Operating_Systems
+LEVEL: 5
+TAGS: real-time scheduling, RTOS, embedded systems, hard real-time, soft real-time, deadline scheduling, rate monotonic, earliest deadline first, priority inversion, jitter, determinism, concurrency, resource management, task synchronization, kernel, preemptive scheduling, non-preemptive scheduling, critical section, response time, latency
+
+RELATED_NODES:
+- Tech_Knowledge_System/Operating_Systems/Process_Management/Scheduling_Algorithms: parent
+- Tech_Knowledge_System/Operating_Systems/Process_Management/Synchronization: related_concept
+- Tech_Knowledge_System/Operating_Systems/Embedded_Systems: application_domain
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Real-time scheduling ensures tasks meet strict timing constraints, crucial for systems where logical correctness depends on both computation results and their delivery time. It prioritizes predictability and determinism over raw throughput, often classifying systems as hard (missing deadline is catastrophic) or soft (degraded performance).
+
+[CHUNK: CORE_CONCEPTS]
+- Hard Real-Time: Systems where missing a deadline leads to catastrophic failure, requiring absolute predictability.
+- Soft Real-Time: Systems where missing a deadline degrades performance but is not catastrophic, allowing some flexibility.
+- Deadline: The time by which a task must complete its execution.
+- Period: The interval at which a periodic task is released.
+- Jitter: Variation in the execution or response time of a task, undesirable in real-time systems.
+- Priority Inversion: A high-priority task is blocked by a lower-priority task holding a required resource.
+- Rate Monotonic Scheduling (RMS): A static-priority algorithm assigning higher priority to tasks with shorter periods.
+- Earliest Deadline First (EDF): A dynamic-priority algorithm assigning higher priority to tasks with earlier deadlines.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Designing real-time systems involves careful task decomposition, resource allocation, and schedulability analysis to guarantee deadlines. It often requires specialized RTOS kernels that support priority-based preemption, low-latency interrupt handling, and deterministic behavior. Predictability is paramount, often at the expense of average-case performance.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: C, C++, Ada, Rust
+- Frameworks: RTOS (FreeRTOS, VxWorks, QNX, RT-Linux), AUTOSAR
+- Infrastructure: Microcontrollers, FPGAs, specialized real-time processors, hardware-in-the-loop (HIL) simulation
+
+[CHUNK: REAL_WORLD_USE]
+Real-time scheduling is fundamental in automotive control systems (ABS, engine management), aerospace (flight control, avionics), industrial automation (robotics, process control), and medical devices (pacemakers, imaging systems). These applications demand immediate and predictable responses to environmental stimuli.
+
+[CHUNK: FAILURE_MODES]
+Common failures include deadline misses due to insufficient CPU capacity, priority inversion leading to unpredictable delays, race conditions from improper synchronization, and resource starvation. Jitter accumulation can also degrade system stability and control loop performance, leading to system instability or malfunction.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizations involve precise task timing analysis, minimizing critical sections, using priority inheritance or ceiling protocols to prevent priority inversion, and optimizing interrupt latency. Schedulability tests (e.g., utilization bounds for RMS, EDF) are crucial to ensure all deadlines can be met under worst-case conditions.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Security in real-time systems often focuses on ensuring integrity and availability, as timing attacks or denial-of-service could have severe physical consequences. Secure boot, memory protection units (MPUs), and trusted execution environments (TEEs) are used to protect critical real-time tasks from malicious interference or faults.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Operating_Systems/Process_Management/Synchronization → Real-time systems heavily rely on robust synchronization mechanisms to manage shared resources without introducing unpredictable delays.
+- Tech_Knowledge_System/Operating_Systems/Embedded_Systems → Real-time scheduling is a core component of most embedded systems, especially those with safety-critical functions.
+- Tech_Knowledge_System/Software_Engineering/Safety_Critical_Systems → Real-time scheduling is a foundational element for achieving the determinism required in safety-critical software.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include mixed-criticality scheduling, where tasks of different criticality levels share resources, and distributed real-time systems, which involve coordinating tasks across multiple networked processors. Formal verification methods and probabilistic real-time analysis are also active research areas.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

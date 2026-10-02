@@ -1,0 +1,77 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Cryptography
+DOMAIN: Cybersecurity
+LEVEL: 3
+TAGS: encryption, decryption, hashing, digital signatures, public-key cryptography, symmetric-key cryptography, key management, cryptanalysis, secure communication, data integrity, authentication, non-repudiation, zero-knowledge proofs, blockchain, quantum cryptography
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Network_Security: related_field
+- Tech_Knowledge_System/Cybersecurity/Secure_Coding: related_field
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Cryptography is the practice and study of techniques for secure communication in the presence of adversarial behavior. It involves constructing and analyzing protocols that prevent third parties or the public from reading private messages. Its core purpose is to ensure confidentiality, integrity, authentication, and non-repudiation of data.
+
+[CHUNK: CORE_CONCEPTS]
+- Encryption: The process of converting information or data into a code to prevent unauthorized access.
+- Decryption: The process of converting encrypted data back into its original form.
+- Hashing: A one-way function that transforms data into a fixed-size string of characters, used for integrity checks.
+- Digital Signatures: Cryptographic mechanisms to verify the authenticity and integrity of digital documents or messages.
+- Public-Key Cryptography: Uses a pair of keys, one public and one private, for encryption and decryption.
+- Symmetric-Key Cryptography: Uses a single secret key for both encryption and decryption.
+- Key Management: The process of handling cryptographic keys, including generation, exchange, storage, and revocation.
+- Cryptanalysis: The study of methods for obtaining the meaning of encrypted information without access to the secret key.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, cryptography is integrated at various layers to protect data at rest, in transit, and in use. It dictates choices for secure protocols (e.g., TLS), secure storage (e.g., disk encryption), and user authentication. Architectural decisions must balance security strength with performance overhead and key management complexity.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python (cryptography library), C/C++ (OpenSSL), Java (JCA/JCE)
+- Frameworks: OpenSSL, Libsodium, Bouncy Castle, Google Tink
+- Infrastructure: Hardware Security Modules (HSMs), Trusted Platform Modules (TPMs), Key Management Systems (KMS)
+
+[CHUNK: REAL_WORLD_USE]
+Cryptography secures online banking transactions via TLS/SSL protocols, protects user data on mobile devices through full disk encryption, and enables secure messaging applications with end-to-end encryption. Blockchain technologies heavily rely on cryptographic hashing and digital signatures for ledger integrity and transaction verification.
+
+[CHUNK: FAILURE_MODES]
+Cryptographic systems can fail due to weak algorithms, improper key management (e.g., compromised keys, weak key generation), implementation flaws (e.g., side-channel attacks), or protocol design vulnerabilities. Human error in configuration or misuse of cryptographic primitives also represents a significant failure vector.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization involves selecting efficient algorithms (e.g., AES-NI hardware acceleration), offloading cryptographic operations to specialized hardware (HSMs), and using hybrid encryption schemes to combine the speed of symmetric ciphers with the key exchange benefits of asymmetric ones. Efficient key rotation and secure caching also contribute.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Cryptography directly addresses confidentiality, integrity, and authentication. Attack surfaces include key compromise, brute-force attacks on weak ciphers, side-channel attacks extracting keys, and protocol downgrade attacks. Defenses involve strong algorithms, robust key management, secure implementations, and regular security audits.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Network_Security → provides secure communication channels
+- Tech_Knowledge_System/Data_Science/Machine_Learning → intersects with homomorphic encryption and privacy-preserving ML
+- Tech_Knowledge_System/Software_Engineering/Distributed_Systems → secures distributed ledger technologies and consensus mechanisms
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include post-quantum cryptography (resilience against quantum computers), fully homomorphic encryption (computation on encrypted data), zero-knowledge proofs (proving knowledge without revealing information), and secure multi-party computation (collaborative computation on private inputs).
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

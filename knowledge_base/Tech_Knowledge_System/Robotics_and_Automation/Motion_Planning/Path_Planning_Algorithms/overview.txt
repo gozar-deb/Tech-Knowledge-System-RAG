@@ -1,0 +1,83 @@
+NODE_PATH: Tech_Knowledge_System/Robotics_and_Automation/Motion_Planning/Path_Planning_Algorithms
+DOMAIN: Robotics_and_Automation
+LEVEL: 3
+TAGS: Path planning, motion planning, robotics, automation, algorithms, navigation, obstacle avoidance, trajectory generation, graph search, sampling-based, optimal path, real-time, autonomous systems, control systems, computational geometry
+
+RELATED_NODES:
+- Tech_Knowledge_System/Robotics_and_Automation/Motion_Planning: parent
+- Tech_Knowledge_System/Robotics_and_Automation/Control_Systems: related_concept
+- Tech_Knowledge_System/Artificial_Intelligence/Search_Algorithms: foundational_concept
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Path planning algorithms compute a collision-free trajectory for a robot or agent from a start configuration to a goal configuration within a given environment. These algorithms consider obstacles, robot kinematics, and dynamic constraints to ensure safe and efficient movement. The primary objective is often to find an optimal or near-optimal path.
+
+[CHUNK: CORE_CONCEPTS]
+- Configuration Space (C-space): A high-dimensional space representing all possible positions and orientations of a robot.
+- Obstacle Avoidance: The process of preventing collisions between the robot and environmental objects.
+- Global Path Planning: Pre-calculating an entire path before execution, typically in static environments.
+- Local Path Planning: Real-time adjustment of paths based on immediate sensor data, suitable for dynamic environments.
+- Graph Search Algorithms: Methods like A* or Dijkstra's that explore a discretized representation of the environment.
+- Sampling-Based Algorithms: Probabilistic methods like RRT and PRM that explore the C-space by sampling random configurations.
+- Trajectory Optimization: Refining a planned path to satisfy dynamic constraints and minimize cost functions (e.g., time, energy).
+- Kinematic Constraints: Limitations on a robot's movement due to its physical structure and joint limits.
+- Dynamic Constraints: Limitations on a robot's movement due to forces, torques, velocities, and accelerations.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Path planning integrates with perception systems for environmental mapping and control systems for execution. It often operates hierarchically, with high-level planners generating global routes and low-level planners handling local obstacle avoidance. Robustness requires handling sensor noise, dynamic environments, and computational resource limitations for real-time performance.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python, C++, MATLAB
+- Frameworks: ROS (Robot Operating System), OMPL (Open Motion Planning Library), MoveIt!
+- Infrastructure: Simulation environments (Gazebo, V-REP), embedded systems, cloud robotics platforms
+
+[CHUNK: REAL_WORLD_USE]
+Autonomous vehicles use path planning for navigation on roads and off-road terrains, avoiding static and dynamic obstacles. Industrial robots employ these algorithms for assembly lines, optimizing movement sequences to maximize throughput and prevent collisions. Drones utilize path planning for package delivery, surveillance, and exploration in complex 3D environments.
+
+[CHUNK: FAILURE_MODES]
+Common ways systems break in this domain:
+Path planning can fail due to incomplete or inaccurate environmental maps, leading to collisions with unmodeled obstacles. Real-time planners may struggle with highly dynamic environments, causing jerky movements or inability to find a path. Computational bottlenecks can prevent timely path generation, especially in high-dimensional spaces or with complex constraints.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Performance, scaling, and efficiency techniques:
+Using hierarchical planning decomposes complex problems into manageable sub-problems. Parallelizing search algorithms or employing GPU acceleration can speed up computation. Incorporating heuristics and machine learning models can guide the search more efficiently. Pre-computation of common path segments or roadmaps reduces online planning time.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Attack surfaces and defenses (if applicable):
+Malicious injection of false sensor data can lead to incorrect environmental models, causing the robot to collide or navigate to unintended locations. Tampering with path planning parameters or algorithms could result in unsafe or inefficient operations. Ensuring data integrity and robust sensor fusion, along with secure communication channels, is crucial for defense.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning/Reinforcement_Learning → used for learning optimal policies in complex environments
+- Tech_Knowledge_System/Robotics_and_Automation/Perception/Sensor_Fusion → provides accurate environmental data for planning
+- Tech_Knowledge_System/Computer_Science/Algorithms/Graph_Theory → foundational for many search-based planning methods
+
+[CHUNK: ADVANCED_TOPICS]
+Cutting-edge or research-level ideas:
+Multi-robot path planning addresses coordination and collision avoidance for multiple agents. Motion planning under uncertainty considers sensor noise and environmental unpredictability. Learning-based path planning uses deep reinforcement learning to adapt to novel situations. Human-robot collaborative planning integrates human intent and safety constraints.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

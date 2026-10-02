@@ -1,0 +1,77 @@
+NODE_PATH: Tech_Knowledge_System/DevOps_and_SRE/Platform_Engineering/Golden_Path_Templates
+DOMAIN: DevOps_and_SRE
+LEVEL: 4
+TAGS: Golden Path, Templates, Platform Engineering, DevOps, SRE, Developer Experience, Self-Service, Automation, Standardization, Best Practices, Infrastructure as Code, IaC, CI/CD, Toolchains, Microservices, Cloud Native, Observability, Security, Governance, Accelerators
+
+RELATED_NODES:
+- Tech_Knowledge_System/DevOps_and_SRE/Platform_Engineering: parent_node
+- Tech_Knowledge_System/DevOps_and_SRE/Infrastructure_as_Code: foundational_concept
+- Tech_Knowledge_System/DevOps_and_SRE/CI_CD: integrated_process
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Golden Path Templates are pre-configured, opinionated, and standardized blueprints for developing and deploying applications within an organization. They encapsulate best practices, security policies, and operational requirements, enabling developers to quickly provision compliant and production-ready environments and services with minimal effort.
+
+[CHUNK: CORE_CONCEPTS]
+- Opinionated Stacks: Curated technology choices and configurations for specific use cases.
+- Self-Service Portals: Interfaces allowing developers to provision resources and services independently.
+- Infrastructure as Code (IaC): Templates defined and managed through code for consistency and versioning.
+- Developer Experience (DevEx): Focus on reducing cognitive load and accelerating development cycles.
+- Compliance by Default: Built-in adherence to security, governance, and operational standards.
+- Automation: Automated provisioning, deployment, and configuration of resources.
+- Reusability: Standardized components and patterns that can be reused across projects.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, Golden Path Templates act as accelerators, abstracting complex infrastructure and deployment logic. They ensure architectural consistency across diverse teams and projects, reducing operational overhead and enforcing security postures from inception. They integrate with CI/CD pipelines to provide automated, reliable delivery.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: HCL (Terraform), YAML (Kubernetes, GitLab CI/CD, GitHub Actions), Python, Go
+- Frameworks: Backstage (Spotify), Humanitec, Internal Developer Platforms (IDP)
+- Infrastructure: Kubernetes, Terraform, AWS CloudFormation, Azure Resource Manager, Google Cloud Deployment Manager
+
+[CHUNK: REAL_WORLD_USE]
+Organizations implement Golden Path Templates to standardize microservice deployments, providing developers with pre-built repositories containing service code, Dockerfiles, Kubernetes manifests, and CI/CD pipelines. This allows new services to go from idea to production in hours, not weeks, while adhering to enterprise security and observability standards.
+
+[CHUNK: FAILURE_MODES]
+Templates can become outdated if not regularly maintained, leading to security vulnerabilities or compatibility issues. Over-prescription can stifle innovation, while insufficient flexibility can lead to developers bypassing the golden path. Poor documentation or complex usage can negate DevEx benefits.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Regularly update templates to incorporate new best practices and security patches. Implement versioning for templates to manage changes and rollbacks. Gather developer feedback to refine templates for usability and flexibility. Automate template generation and validation to ensure consistency and quality.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Golden Path Templates significantly enhance security by embedding security best practices, compliance checks, and secure configurations directly into the development workflow. They reduce misconfigurations, enforce least privilege, and integrate security scanning tools, creating a secure-by-default environment. However, vulnerabilities in the templates themselves can propagate widely.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/DevOps_and_SRE/Platform_Engineering → core component of Platform Engineering strategy
+- Tech_Knowledge_System/DevOps_and_SRE/Infrastructure_as_Code → primary mechanism for defining templates
+- Tech_Knowledge_System/DevOps_and_SRE/Developer_Experience → directly improves developer productivity and satisfaction
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include dynamic template generation based on project metadata, AI-driven template optimization for resource efficiency, and integrating supply chain security directly into template creation. Exploring multi-cloud golden paths and self-healing template systems are also emerging areas.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

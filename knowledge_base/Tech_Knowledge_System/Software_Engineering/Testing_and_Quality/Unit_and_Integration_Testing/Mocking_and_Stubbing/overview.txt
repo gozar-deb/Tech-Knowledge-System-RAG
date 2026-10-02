@@ -1,0 +1,75 @@
+NODE_PATH: Tech_Knowledge_System/Software_Engineering/Testing_and_Quality/Unit_and_Integration_Testing/Mocking_and_Stubbing
+DOMAIN: Software_Engineering
+LEVEL: 5
+TAGS: Mocking, Stubbing, Unit Testing, Integration Testing, Test Doubles, Test Isolation, Dependency Injection, Test-Driven Development, Behavior-Driven Development, Software Testing, Quality Assurance, Test Automation, Object-Oriented Programming, Design Patterns, Verification, Validation
+
+RELATED_NODES:
+- Tech_Knowledge_System/Software_Engineering/Testing_and_Quality/Unit_and_Integration_Testing: Parent
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Mocking involves creating simulated objects that mimic the behavior of real dependencies, allowing tests to focus solely on the unit under test. Stubbing provides predefined responses to method calls, controlling the behavior of dependencies without implementing their full logic. Both are crucial for achieving test isolation and deterministic test results.
+
+[CHUNK: CORE_CONCEPTS]
+- Mock: A test double that records interactions and allows verification of behavior.
+- Stub: A test double that provides canned answers to method calls during a test.
+- Test Double: A generic term for any object that takes the place of a real object for testing purposes.
+- Dependency Injection: A design pattern that facilitates providing dependencies to a component, making it easier to replace them with test doubles.
+- Test Isolation: Ensuring that a test's outcome is independent of other tests or external factors.
+- Behavior Verification: Asserting that specific methods were called on a mock object with expected arguments.
+- State Verification: Asserting that the state of the system under test is correct after an operation.
+- Fakes: Objects with working implementations, but usually simplified, for testing.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Mocking and stubbing are essential for designing testable architectures, promoting loose coupling between components. They enable testing of complex interactions and error conditions without relying on external systems or lengthy setup processes. Proper use informs API design and modularity, ensuring components can be independently validated.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Java (Mockito, EasyMock), C# (Moq, NSubstitute), Python (unittest.mock), JavaScript (Jest, Sinon.js), Ruby (RSpec mocks)
+- Frameworks: JUnit, NUnit, Pytest, Jest, RSpec
+- Infrastructure: CI/CD pipelines (Jenkins, GitLab CI, GitHub Actions) for automated execution of tests utilizing mocks/stubs.
+
+[CHUNK: REAL_WORLD_USE]
+In a microservices architecture, mocking external service calls allows for rapid, isolated testing of individual services without deploying the entire ecosystem. For legacy systems, stubbing complex database interactions or third-party APIs enables incremental refactoring and testing of business logic. They are vital for TDD cycles in enterprise application development.
+
+[CHUNK: FAILURE_MODES]
+Over-mocking can lead to brittle tests that break with minor implementation changes, reducing their value. Incorrect stubbing can mask real bugs by providing unrealistic dependency behavior. Mocks that don't accurately reflect real dependency contracts can lead to false positives in tests, failing to catch integration issues.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Prioritize stubbing for simple data provision and mocking for complex interactions or behavior verification. Use dependency injection frameworks to simplify test double setup. Employ auto-mocking containers to reduce boilerplate code. Focus on mocking only direct dependencies, avoiding transitive mocking to keep tests robust.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+While not directly a security mechanism, well-tested code (facilitated by mocking/stubbing) is generally more secure due to fewer bugs. However, if test doubles are used in production code or expose sensitive test data, it could introduce vulnerabilities. Ensuring test data is sanitized and not leaked is crucial.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Software_Engineering/Design_Patterns: Relates to patterns like Dependency Injection that facilitate testability.
+- Tech_Knowledge_System/Software_Engineering/Testing_and_Quality/Test_Automation: Fundamental for automating tests that use mocks and stubs.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include property-based testing with mocks, using generative testing to create diverse test double configurations, and integrating contract testing with mocks to ensure compatibility between services. Exploration of mock frameworks that support partial mocking or dynamic proxy generation for complex scenarios is also relevant.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

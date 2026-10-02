@@ -1,0 +1,79 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Threat_Intelligence_and_Hunting/MITRE_ATT_CK_Framework/Detection_Engineering
+DOMAIN: Cybersecurity
+LEVEL: 5
+TAGS: detection engineering, threat detection, MITRE ATT&CK, security operations, threat hunting, incident response, security analytics, SIEM, EDR, SOAR, security content, adversary tactics, techniques, procedures, TTPs, cyber defense, security engineering
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Threat_Intelligence_and_Hunting: parent
+- Tech_Knowledge_System/Cybersecurity/Threat_Intelligence_and_Hunting/MITRE_ATT_CK_Framework: sibling
+- Tech_Knowledge_System/Cybersecurity/Threat_Intelligence_and_Hunting/Threat_Hunting: related
+- Tech_Knowledge_System/Cybersecurity/Security_Operations_Center: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Detection Engineering is the systematic process of designing, building, testing, and maintaining threat detection logic. It focuses on identifying malicious activities within an environment by mapping adversary tactics, techniques, and procedures (TTPs) to actionable alerts and security controls. This discipline ensures proactive defense against evolving cyber threats.
+
+[CHUNK: CORE_CONCEPTS]
+- Threat Detection Logic: Rules, signatures, and behavioral analytics used to identify malicious activity.
+- MITRE ATT&CK Framework: A knowledge base of adversary TTPs used to inform and structure detection efforts.
+- Security Information and Event Management (SIEM): Centralized logging and security event management systems.
+- Endpoint Detection and Response (EDR): Tools that monitor and respond to threats on endpoint devices.
+- Security Orchestration, Automation, and Response (SOAR): Platforms that automate and streamline security operations.
+- False Positives/Negatives: Metrics indicating the accuracy and effectiveness of detection mechanisms.
+- Adversary Emulation: Simulating real-world attacks to test and validate detection capabilities.
+- Detection as Code: Managing detection logic through version control and automated deployment.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Detection engineering integrates into the Security Operations Center (SOC) workflow, acting as a bridge between threat intelligence and incident response. It involves architecting robust data collection, processing, and correlation pipelines to feed detection engines. The goal is to create a scalable and resilient detection infrastructure that minimizes blind spots and maximizes threat visibility.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python, KQL (Kusto Query Language), SPL (Splunk Processing Language), YARA
+- Frameworks: MITRE ATT&CK, Sigma, ElastAlert, OpenC2
+- Infrastructure: SIEM (Splunk, Sentinel, Elastic Stack), EDR (CrowdStrike, Microsoft Defender ATP), SOAR (Phantom, Cortex XSOAR)
+
+[CHUNK: REAL_WORLD_USE]
+A financial institution implements detection engineering to build custom alerts for insider threat activities, leveraging behavioral analytics on user activity logs. They use MITRE ATT&CK to identify specific TTPs associated with data exfiltration and develop detection rules that trigger automated responses via their SOAR platform, reducing response times significantly.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include an over-reliance on signature-based detections missing novel threats, excessive false positives leading to alert fatigue, and insufficient coverage of critical attack surfaces. Poorly maintained detection logic, lack of continuous testing, and inadequate integration with threat intelligence also contribute to detection gaps.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization involves continuous tuning of detection rules to reduce false positives, prioritizing detections based on threat criticality and asset value, and leveraging behavioral analytics for anomaly detection. Implementing Detection as Code practices, automating testing, and integrating with up-to-date threat intelligence feeds enhance efficiency and effectiveness.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Detection engineering directly impacts an organization's ability to identify and mitigate cyber threats. Effective detection reduces the attack surface by enabling rapid response to intrusions. Conversely, weak detection capabilities leave systems vulnerable, increasing the risk of successful breaches and data compromise. It is a critical component of a robust security posture.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Threat_Intelligence_and_Hunting/Threat_Hunting → Provides input for detection rule creation and validation.
+- Tech_Knowledge_System/Cybersecurity/Security_Operations_Center/Incident_Response → Receives alerts and initiates response procedures based on detections.
+- Tech_Knowledge_System/Cybersecurity/Security_Architecture_and_Design → Informs the design of systems to facilitate better detection capabilities.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include AI/ML-driven anomaly detection, graph-based analysis for complex attack patterns, and proactive detection validation through purple teaming. Research also focuses on automated generation of detection logic from threat intelligence and the development of self-healing detection systems that adapt to evolving threats.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

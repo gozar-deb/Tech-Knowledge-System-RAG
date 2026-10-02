@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Databases_and_Storage/Distributed_Transactions/Two_Phase_Commit
+DOMAIN: Databases_and_Storage
+LEVEL: 4
+TAGS: Two-Phase Commit, 2PC, distributed transactions, atomic commit, distributed database, transaction coordinator, prepare phase, commit phase, abort phase, distributed consistency, fault tolerance, blocking problem, distributed systems, transaction management, XA, JTA, MSDTC, ACID properties
+
+RELATED_NODES:
+- Tech_Knowledge_System/Databases_and_Storage/Distributed_Transactions/Three_Phase_Commit: alternative_protocol
+- Tech_Knowledge_System/Databases_and_Storage/Distributed_Transactions/Saga_Pattern: alternative_approach
+- Tech_Knowledge_System/Databases_and_Storage/Distributed_Databases: foundational_concept
+- Tech_Knowledge_System/Databases_and_Storage/ACID_Properties: core_principle
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+The Two-Phase Commit (2PC) protocol is a distributed algorithm that ensures atomicity in distributed transactions. It coordinates multiple participating nodes to either collectively commit or abort a transaction, guaranteeing that all operations are either fully completed or entirely rolled back across all involved systems.
+
+[CHUNK: CORE_CONCEPTS]
+- Coordinator: The central entity orchestrating the 2PC protocol, managing the transaction state.
+- Participants: The individual nodes or resource managers involved in the distributed transaction.
+- Prepare Phase: The first phase where the coordinator requests participants to prepare to commit and vote.
+- Commit Phase: The second phase where the coordinator, based on unanimous 'yes' votes, instructs participants to commit or abort.
+- Atomicity: The ACID property ensuring that a transaction is treated as a single, indivisible unit of work.
+- Blocking: A critical failure mode where participants wait indefinitely if the coordinator fails after the prepare phase.
+- Write-Ahead Log (WAL): A mechanism used by participants to durably record their actions before applying them.
+- Transaction Manager: Software component responsible for coordinating distributed transactions, often implementing 2PC.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, 2PC is used to maintain strong consistency across disparate data stores in distributed systems. It simplifies application logic by abstracting distributed transaction complexity but introduces significant latency and a single point of failure (the coordinator), making it less suitable for highly available, high-throughput microservices architectures. → See: Tech_Knowledge_System/Databases_and_Storage/Distributed_Transactions/Saga_Pattern
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Java (via JTA), C# (via MSDTC)
+- Frameworks: Spring Framework (with JTA/XA), .NET Framework (with MSDTC)
+- Infrastructure: XA-compliant databases (e.g., PostgreSQL, Oracle, SQL Server), JBoss/WildFly (transaction managers), Atomikos, Narayana
+
+[CHUNK: REAL_WORLD_USE]
+2PC is commonly found in traditional enterprise application integration (EAI) scenarios, such as financial systems updating multiple ledgers across different databases, or order processing systems that need to atomically update inventory and customer accounts. It's also used in some legacy distributed database systems to ensure data integrity during cross-database operations.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include coordinator failure, which can lead to blocking participants indefinitely, requiring manual intervention. Participant failures during the prepare phase can cause the coordinator to abort the transaction. Network partitions can also lead to inconsistencies if messages are lost, potentially resulting in different participants having different transaction states.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizations for 2PC often focus on reducing blocking or improving performance. These include using presumed abort/commit protocols to reduce messages, or employing a three-phase commit (3PC) to eliminate blocking in certain failure scenarios. However, 3PC introduces its own complexities and higher overhead. → See: Tech_Knowledge_System/Databases_and_Storage/Distributed_Transactions/Three_Phase_Commit
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Security implications for 2PC primarily involve ensuring secure communication channels between the coordinator and participants to prevent message tampering or unauthorized access to transaction details. Proper authentication and authorization are crucial to prevent malicious actors from influencing commit/abort decisions or gaining insight into sensitive distributed operations.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cloud_Computing/Microservices_Architecture → 2PC is often avoided in modern microservices due to its blocking nature and preference for eventual consistency.
+- Tech_Knowledge_System/Networking/Distributed_Consensus → 2PC is a form of distributed consensus, related to algorithms like Paxos or Raft, but simpler and with different failure characteristics.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include exploring alternatives like the Saga pattern for eventual consistency in microservices, or investigating variations like heuristic commit/abort. Research also focuses on non-blocking atomic commit protocols (NBAC) and integrating 2PC with blockchain technologies for enhanced trust and immutability in distributed ledgers.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

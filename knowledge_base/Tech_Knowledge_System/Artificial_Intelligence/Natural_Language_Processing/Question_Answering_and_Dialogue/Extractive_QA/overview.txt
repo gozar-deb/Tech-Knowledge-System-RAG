@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Artificial_Intelligence/Natural_Language_Processing/Question_Answering_and_Dialogue/Extractive_QA
+DOMAIN: Artificial_Intelligence
+LEVEL: 4
+TAGS: Extractive QA, Question Answering, NLP, Information Retrieval, Machine Reading Comprehension, MRC, span prediction, context-based QA, document understanding, text extraction, answer localization, deep learning QA, neural QA
+
+RELATED_NODES:
+- Tech_Knowledge_System/Artificial_Intelligence/Natural_Language_Processing/Question_Answering_and_Dialogue/Generative_QA: sibling_concept
+- Tech_Knowledge_System/Artificial_Intelligence/Natural_Language_Processing/Machine_Reading_Comprehension: foundational_technique
+- Tech_Knowledge_System/Artificial_Intelligence/Natural_Language_Processing/Information_Retrieval: prerequisite_field
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Extractive Question Answering (QA) is a natural language processing task where a system extracts a span of text directly from a given document as the answer to a user's question. Unlike generative QA, it does not synthesize new text but rather identifies the most relevant segment within the provided context. This approach is highly effective for tasks requiring precise, verifiable answers directly supported by source material.
+
+[CHUNK: CORE_CONCEPTS]
+- Machine Reading Comprehension (MRC): The ability of a machine to understand text and answer questions about it.
+- Context: The document or passage from which the answer is to be extracted.
+- Span Prediction: The task of identifying the start and end tokens of the answer within the context.
+- Tokenization: Breaking down text into smaller units (words, subwords) for processing.
+- Embeddings: Dense vector representations of words, sentences, or documents capturing semantic meaning.
+- Attention Mechanisms: Neural network components that allow models to focus on relevant parts of the input.
+- Fine-tuning: Adapting pre-trained language models to specific QA datasets.
+- Evaluation Metrics: F1-score and Exact Match (EM) are common metrics for assessing performance.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Extractive QA systems typically involve a pre-trained language model (e.g., BERT, RoBERTa) fine-tuned on a QA dataset. The system takes a question and context as input, processes them through the model, and outputs start and end logits for potential answer spans. A post-processing step selects the optimal span based on these logits and confidence scores. Performance is heavily dependent on the quality of context retrieval.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python
+- Frameworks: Hugging Face Transformers, PyTorch, TensorFlow, spaCy
+- Infrastructure: GPUs (NVIDIA CUDA), cloud platforms (AWS, GCP, Azure) for model training and deployment
+
+[CHUNK: REAL_WORLD_USE]
+Extractive QA is used in customer support chatbots to quickly find answers in knowledge bases, providing direct quotes from documentation. It powers enterprise search solutions, allowing employees to query internal documents and receive precise answers. Legal tech applications utilize it for contract analysis, extracting specific clauses or facts in response to legal questions.
+
+[CHUNK: FAILURE_MODES]
+Common failures include misinterpreting the question, selecting an incorrect span due to ambiguous context, or failing to find an answer when one exists (false negatives). Out-of-domain questions or contexts can lead to poor performance. Models may also struggle with long documents, suffering from context window limitations or reduced attention effectiveness, resulting in irrelevant answer spans.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Strategies include using larger, more robust pre-trained models, optimizing context retrieval mechanisms (e.g., dense retrieval), and employing advanced fine-tuning techniques like multi-task learning. Techniques such as knowledge distillation can reduce model size for faster inference. Incorporating re-ranking of candidate answers and ensemble methods can further boost accuracy and robustness.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Extractive QA systems can be vulnerable to adversarial attacks where subtle changes to the question or context lead to incorrect or harmful answers. Data poisoning during training can embed biases or vulnerabilities. Ensuring data privacy and preventing the extraction of sensitive information from documents requires careful access control and anonymization techniques, especially in regulated industries.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Artificial_Intelligence/Natural_Language_Processing/Information_Extraction → provides methods for structured data extraction, complementing span prediction.
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning/Deep_Learning/Transformers → foundational architecture for state-of-the-art extractive QA models.
+- Tech_Knowledge_System/Artificial_Intelligence/Natural_Language_Processing/Search_and_Recommendation_Systems → often integrates with QA for efficient document retrieval.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include few-shot and zero-shot extractive QA, where models learn from minimal or no labeled data. Research explores multi-hop QA, requiring reasoning across multiple documents to find an answer. The integration of external knowledge graphs to enhance factual consistency and reduce hallucination is also an active area, as is explainable AI for understanding model decisions.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

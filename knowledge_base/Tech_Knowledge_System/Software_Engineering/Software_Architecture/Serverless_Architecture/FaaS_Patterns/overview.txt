@@ -1,0 +1,75 @@
+NODE_PATH: Tech_Knowledge_System/Software_Engineering/Software_Architecture/Serverless_Architecture/FaaS_Patterns
+DOMAIN: Software Engineering
+LEVEL: 5
+TAGS: FaaS patterns, serverless functions, function as a service, event-driven architecture, microservices, cloud computing, serverless patterns, function orchestration, API gateway, distributed systems
+
+RELATED_NODES:
+- Tech_Knowledge_System/Software_Engineering/Software_Architecture/Serverless_Architecture: Parent/Architectural_Style
+- Tech_Knowledge_System/Software_Engineering/Software_Architecture/Microservices: Sibling/Related_Architectural_Style
+- Tech_Knowledge_System/Software_Engineering/Software_Architecture/Event_Driven_Architecture: Sibling/Related_Architectural_Style
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+FaaS Patterns are established solutions and best practices for designing, implementing, and operating applications using Function as a Service (FaaS) platforms. They address common challenges in serverless development, promoting reusability, scalability, and maintainability. These patterns guide how individual functions interact and integrate within a larger serverless ecosystem.
+
+[CHUNK: CORE_CONCEPTS]
+- Event-Driven Invocation: Functions triggered by events (e.g., HTTP requests, database changes, message queues).
+- Function Composition: Combining multiple functions to achieve complex workflows, often via orchestration.
+- Cold Start Optimization: Strategies to reduce latency when an idle function is invoked for the first time.
+- Idempotent Functions: Functions that produce the same result regardless of how many times they are executed.
+- Fan-out/Fan-in: Pattern for parallel processing of tasks and then aggregating results.
+- API Gateway Integration: Exposing FaaS functions as HTTP endpoints through a managed API gateway.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+From a system design perspective, FaaS patterns enable highly decoupled, scalable, and cost-effective architectures. They shift operational responsibility to the cloud provider, allowing focus on business logic. Effective design involves careful consideration of event sources, function granularity, state management, and integration with other cloud services.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Node.js, Python, Go, Java, C#
+- Frameworks: Serverless Framework, AWS SAM, Azure Functions Core Tools, Google Cloud Functions Framework
+- Infrastructure: AWS Lambda, Azure Functions, Google Cloud Functions, OpenFaaS, Knative
+
+[CHUNK: REAL_WORLD_USE]
+FaaS patterns are concretely implemented in scenarios like real-time data processing pipelines, chatbots, IoT backend services, and webhooks. For instance, an image resizing service might use a FaaS function triggered by an S3 upload event, applying the Event-Driven Invocation and Fan-out patterns.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include cold start latency impacting user experience, excessive function invocation costs due to inefficient design, and complex debugging across distributed functions. Inadequate error handling and lack of idempotency can lead to data inconsistencies or partial processing in event-driven flows.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization involves minimizing cold starts through provisioned concurrency or smaller deployment packages. Cost efficiency is achieved by optimizing execution time and memory. Implementing robust retry mechanisms and dead-letter queues enhances reliability. Asynchronous processing and batching can improve throughput.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Security implications include managing fine-grained permissions for each function, securing API gateway endpoints, and protecting against injection attacks in function code. Ensuring proper input validation and managing secrets securely are critical. Supply chain security for dependencies is also a concern.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cloud_Computing/AWS_Services/Lambda: Implementation/Specific_Platform
+- Tech_Knowledge_System/Software_Engineering/Software_Architecture/Microservices/Event_Sourcing: Related/Data_Pattern
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include serverless-first security models, leveraging WebAssembly for performance-critical functions, and exploring multi-cloud FaaS deployments for resilience. The evolution of serverless orchestration tools and stateful serverless patterns are also areas of ongoing development and research.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

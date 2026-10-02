@@ -1,0 +1,76 @@
+NODE_PATH: Tech_Knowledge_System/Human_Computer_Interaction/Accessibility/Screen_Reader_Compatibility
+DOMAIN: Human_Computer_Interaction
+LEVEL: 4
+TAGS: screen reader, accessibility, compatibility, web accessibility, WCAG, ARIA, assistive technology, visual impairment, semantic HTML, alt text, keyboard navigation, accessibility testing, NVDA, JAWS, VoiceOver
+
+RELATED_NODES:
+- Tech_Knowledge_System/Human_Computer_Interaction/Accessibility: parent
+- Tech_Knowledge_System/Human_Computer_Interaction/Accessibility/Web_Accessibility_Guidelines: related
+- Tech_Knowledge_System/Human_Computer_Interaction/Accessibility/Assistive_Technologies: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Screen reader compatibility ensures digital content is interpretable and navigable by assistive technologies for visually impaired users. It involves structuring web content semantically and providing alternative text for non-text elements. This allows screen readers to convey information accurately and enable effective user interaction.
+
+[CHUNK: CORE_CONCEPTS]
+- Semantic HTML: Using HTML elements according to their meaning to provide structure and context to content.
+- WAI-ARIA: Web Accessibility Initiative - Accessible Rich Internet Applications, a set of attributes to enhance accessibility of dynamic web content.
+- Alternative Text (Alt Text): Textual descriptions for images and other non-text content, read aloud by screen readers.
+- Keyboard Navigation: Ensuring all interactive elements are accessible and operable using only a keyboard.
+- Focus Management: Guiding the screen reader's focus to relevant elements as users interact with the page.
+- Accessibility Tree: A representation of the UI that assistive technologies use to understand and interact with content.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, screen reader compatibility is a fundamental aspect of inclusive user interface (UI) development. It requires developers to integrate accessibility considerations from the initial design phase, focusing on semantic structure and keyboard operability. This ensures that the underlying code provides a robust and interpretable experience for assistive technologies, preventing retrofitting issues.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: HTML5, CSS3, JavaScript
+- Frameworks: React (with accessibility libraries), Angular (with cdk/a11y), Vue.js (with accessibility best practices)
+- Infrastructure: Web browsers (Chrome, Firefox, Safari), Operating Systems (Windows, macOS, Linux, Android, iOS)
+
+[CHUNK: REAL_WORLD_USE]
+Screen reader compatibility is crucial in government websites, ensuring all citizens can access public services and information. E-commerce platforms implement it to allow visually impaired users to browse products, add to cart, and complete purchases independently. Educational platforms use it to provide equal access to learning materials and interactive exercises for students with visual impairments.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include non-semantic HTML, leading to a flat and uninterpretable content structure for screen readers. Missing or uninformative alt text for images renders visual content inaccessible. Poor keyboard focus management can trap users or make navigation impossible. Dynamic content updates without ARIA live regions can also cause information to be missed by screen readers.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization involves rigorous adherence to WCAG guidelines, particularly those related to semantic structure and keyboard accessibility. Regular accessibility audits using automated tools and manual screen reader testing are essential. Implementing WAI-ARIA roles and properties judiciously enhances the experience for complex widgets. Providing clear, concise alt text and proper heading hierarchies improves content comprehension.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+While primarily an accessibility concern, poor screen reader compatibility can indirectly create security vulnerabilities if critical information (e.g., security warnings, CAPTCHA instructions) is inaccessible. This could lead to users bypassing security measures or being unable to complete secure transactions. Ensuring all security-related prompts are screen reader accessible is vital.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Human_Computer_Interaction/User_Experience_Design: foundational_principles
+- Tech_Knowledge_System/Software_Development/Frontend_Development: implementation_techniques
+- Tech_Knowledge_System/Legal_and_Compliance/Accessibility_Laws: regulatory_framework
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include AI-driven accessibility solutions that automatically generate alt text or simplify complex content for screen readers. Research into haptic feedback integration with screen readers offers new interaction paradigms. Exploring personalized accessibility profiles that adapt content presentation based on individual user needs represents a cutting-edge area.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

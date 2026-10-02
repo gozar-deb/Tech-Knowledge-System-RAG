@@ -1,0 +1,76 @@
+NODE_PATH: Tech_Knowledge_System/Cloud_and_Distributed_Computing/AWS_Architecture/Core_Compute_EC2_EKS
+DOMAIN: Cloud_and_Distributed_Computing
+LEVEL: 4
+TAGS: AWS, EC2, EKS, Kubernetes, compute, cloud, containers, virtual machines, orchestration, scalability, elasticity, microservices, infrastructure, serverless, auto-scaling
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/AWS_Architecture: parent
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+AWS EC2 (Elastic Compute Cloud) provides resizable compute capacity as virtual servers (instances) in the cloud. AWS EKS (Elastic Kubernetes Service) is a managed Kubernetes service that simplifies deploying, managing, and scaling containerized applications using Kubernetes on AWS infrastructure, often leveraging EC2 instances as worker nodes.
+
+[CHUNK: CORE_CONCEPTS]
+- EC2 Instances: Virtual servers providing compute capacity.
+- Amazon Machine Images (AMIs): Templates for launching EC2 instances.
+- Security Groups: Virtual firewalls controlling inbound/outbound traffic for instances.
+- Kubernetes Pods: Smallest deployable units in Kubernetes, encapsulating containers.
+- Kubernetes Deployments: Manages desired state for Pods, enabling declarative updates.
+- EKS Control Plane: Managed Kubernetes master nodes, abstracted from the user.
+- Worker Nodes: EC2 instances registered with the EKS control plane to run Pods.
+- Auto Scaling Groups: Automatically adjusts EC2 instance count based on demand.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Core compute with EC2 and EKS involves architecting scalable, resilient, and cost-optimized application environments. EC2 provides foundational IaaS flexibility, while EKS offers container orchestration for microservices, abstracting underlying infrastructure. Design considerations include instance types, networking, storage, and containerization strategies to meet workload demands and operational efficiency.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python, Java, Go, Node.js, Ruby
+- Frameworks: Docker, Kubernetes, Helm, Terraform, CloudFormation
+- Infrastructure: AWS EC2, AWS EKS, VPC, IAM, EBS, ELB, Route 53
+
+[CHUNK: REAL_WORLD_USE]
+EC2 instances are used for traditional web servers, batch processing, and custom applications requiring specific OS configurations. EKS is employed for deploying and managing highly available microservices architectures, CI/CD pipelines for containerized applications, and machine learning workloads requiring scalable compute and GPU resources, such as in e-commerce platforms or data analytics engines.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include EC2 instance crashes due to resource exhaustion or misconfiguration, EKS control plane unavailability (though rare due to AWS management), Pod failures from application errors or insufficient resources, network connectivity issues between Pods or to external services, and misconfigured Kubernetes deployments leading to service disruption or scaling problems.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization involves right-sizing EC2 instances, utilizing Spot Instances for fault-tolerant workloads, implementing Horizontal Pod Autoscaling (HPA) and Cluster Autoscaler for EKS, optimizing container images for size and security, leveraging Fargate for serverless EKS compute, and employing cost allocation tags for granular billing analysis. → See: Tech_Knowledge_System/Cloud_and_Distributed_Computing/Cost_Optimization
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Security for EC2 and EKS involves managing IAM roles and policies for least privilege access, configuring Security Groups and Network ACLs, implementing network segmentation within VPCs, regularly patching EC2 instances, scanning container images for vulnerabilities, and enforcing Kubernetes network policies. Data encryption at rest and in transit is crucial for compliance and protection.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/AWS_Architecture/Networking: network configuration for EC2/EKS
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/Containerization: foundational concepts for EKS
+- Tech_Knowledge_System/Cloud_and_Distributed_Computing/DevOps_and_CI_CD: deployment strategies for EKS
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include leveraging EKS Anywhere for hybrid cloud deployments, integrating service mesh solutions like Istio or Linkerd for advanced traffic management and observability, implementing GitOps workflows with Argo CD or Flux, and optimizing Kubernetes scheduling with custom schedulers or advanced resource management techniques for specialized workloads.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

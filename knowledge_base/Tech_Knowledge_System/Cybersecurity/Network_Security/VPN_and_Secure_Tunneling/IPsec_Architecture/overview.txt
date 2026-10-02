@@ -1,0 +1,79 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Network_Security/VPN_and_Secure_Tunneling/IPsec_Architecture
+DOMAIN: Cybersecurity
+LEVEL: 4
+TAGS: IPsec, Internet Protocol Security, VPN, secure tunneling, network security, cryptography, AH, ESP, IKE, Security Association, Security Policy Database, secure communication, data integrity, confidentiality, authentication
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Network_Security/VPN_and_Secure_Tunneling: parent
+- Tech_Knowledge_System/Cybersecurity/Network_Security/Encryption_Protocols: related
+- Tech_Knowledge_System/Cybersecurity/Network_Security/Authentication_Methods: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+IPsec Architecture defines the framework for securing Internet Protocol (IP) communications by authenticating and encrypting each IP packet. It is a suite of protocols that provides cryptographic security services at the IP layer, ensuring data confidentiality, integrity, and authenticity across networks. This architecture is fundamental for building Virtual Private Networks (VPNs) and other secure communication channels.
+
+[CHUNK: CORE_CONCEPTS]
+- Authentication Header (AH): Provides connectionless integrity, data origin authentication, and an optional anti-replay service.
+- Encapsulating Security Payload (ESP): Offers confidentiality, data origin authentication, connectionless integrity, anti-replay service, and limited traffic flow confidentiality.
+- Internet Key Exchange (IKE): A protocol used to set up a Security Association (SA) in the IPsec protocol suite.
+- Security Association (SA): A simplex logical connection that provides security services to the traffic it carries. It defines parameters for security protocols.
+- Security Policy Database (SPD): Determines which IP traffic should be protected by IPsec and what security services should be applied.
+- Security Association Database (SAD): Stores the parameters for each active Security Association, including keys and algorithms.
+- IPsec Tunnel Mode: Encrypts the entire original IP packet, including the header, and encapsulates it within a new IP packet.
+- IPsec Transport Mode: Encrypts only the payload of the IP packet, leaving the original IP header intact.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+IPsec operates at the network layer, making it transparent to applications. It is typically implemented in network devices like routers, firewalls, or host operating systems. The architecture involves establishing Security Associations (SAs) between communicating peers, which dictate the security parameters and keys used for protection. This design ensures end-to-end or gateway-to-gateway security for IP traffic.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Protocols: AH, ESP, IKEv1, IKEv2
+- Cryptography: AES, 3DES, SHA-2, MD5, Diffie-Hellman
+- Implementations: strongSwan, Libreswan, OpenSwan, Windows IPsec, Linux IPsec (Openswan/Libreswan/strongSwan)
+- Infrastructure: VPN gateways, firewalls, routers
+
+[CHUNK: REAL_WORLD_USE]
+IPsec is widely used to create site-to-site VPNs, connecting entire networks securely over the internet. It also secures remote access VPNs, allowing individual users to connect to corporate networks. Furthermore, IPsec can protect data between individual hosts, such as securing communication between servers in a data center or between a client and a server.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include misconfiguration of Security Policies or SAs, leading to communication breakdowns or insecure connections. Weak cryptographic algorithms or key management practices can expose data to attacks. Denial-of-service attacks targeting IKE negotiations can disrupt secure communication. Implementation flaws in IPsec software can also introduce vulnerabilities.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Performance can be optimized by offloading cryptographic operations to dedicated hardware accelerators. Using efficient cryptographic algorithms (e.g., AES-GCM) and optimizing IKE negotiation parameters can reduce overhead. Proper network segmentation and traffic filtering can minimize the amount of traffic requiring IPsec protection, improving overall efficiency.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+IPsec provides robust security by encrypting and authenticating IP packets, protecting against eavesdropping, tampering, and spoofing. However, its complexity can lead to misconfigurations, creating vulnerabilities. Key management is a critical security aspect; weak key exchange or storage can compromise the entire IPsec tunnel. Proper policy enforcement is essential to prevent unauthorized access.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Cryptography/Symmetric_Key_Cryptography → utilizes symmetric key algorithms for data encryption
+- Tech_Knowledge_System/Cybersecurity/Cryptography/Asymmetric_Key_Cryptography → uses asymmetric key cryptography for key exchange in IKE
+- Tech_Knowledge_System/Networking/Network_Protocols/IP_Protocol → builds security directly on top of the IP protocol
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include the integration of IPsec with Software-Defined Networking (SDN) for dynamic policy enforcement. Research into post-quantum cryptography for IPsec aims to secure communications against future quantum attacks. The use of IPsec in IPv6 environments and its role in securing IoT devices are also areas of ongoing development and study.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

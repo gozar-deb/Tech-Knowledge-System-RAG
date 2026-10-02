@@ -1,0 +1,40 @@
+NODE_PATH: Tech_Knowledge_System/Artificial_Intelligence/AI_Ethics_and_Safety/Explainable_AI
+DOMAIN: Artificial_Intelligence
+LEVEL: 4
+TAGS: Explainable AI, XAI, AI interpretability, AI transparency, AI ethics, AI safety, model explainability, fairness, accountability, trust, machine learning interpretability, decision making, black box models, post-hoc explanations, intrinsic interpretability
+
+RELATED_NODES:
+- Tech_Knowledge_System/Artificial_Intelligence/AI_Ethics_and_Safety: parent_of
+- Tech_Knowledge_System/Artificial_Intelligence/Machine_Learning: explains_models_from
+- Tech_Knowledge_System/Artificial_Intelligence/Deep_Learning: explains_models_from
+- Tech_Knowledge_System/Artificial_Intelligence/Responsible_AI: component_of
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Explainable AI (XAI) refers to methods and techniques that allow human users to understand the output of AI models. It aims to make AI systems more transparent, interpretable, and trustworthy, especially for complex
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

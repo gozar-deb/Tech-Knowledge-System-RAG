@@ -1,0 +1,77 @@
+NODE_PATH: Tech_Knowledge_System/DevOps_and_SRE/Configuration_and_Secret_Management/Feature_Flags
+DOMAIN: DevOps_and_SRE
+LEVEL: 4
+TAGS: feature flags, feature toggles, A/B testing, canary releases, dark launching, progressive delivery, configuration management, secret management, software development, DevOps, SRE, continuous delivery, release management, experimentation, dynamic configuration
+
+RELATED_NODES:
+- Tech_Knowledge_System/DevOps_and_SRE/Configuration_and_Secret_Management: parent
+- Tech_Knowledge_System/DevOps_and_SRE/CI_CD/Deployment_Strategies: related
+- Tech_Knowledge_System/DevOps_and_SRE/Observability/Monitoring: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Feature flags, also known as feature toggles, are a software development technique that allows functionality to be turned on or off dynamically without deploying new code. They decouple feature release from code deployment, enabling controlled rollouts and experimentation. This dynamic control is crucial for modern continuous delivery pipelines.
+
+[CHUNK: CORE_CONCEPTS]
+- Toggle Router: The central component that evaluates flag states and directs traffic.
+- Flag Configuration: Defines the state (on/off) and targeting rules for each feature.
+- Context Attributes: User or system properties used to evaluate targeting rules (e.g., user ID, location, device type).
+- Rollout Strategy: Methods for gradually exposing features to subsets of users (e.g., percentage-based, segment-based).
+- Kill Switch: An emergency mechanism to immediately disable a problematic feature.
+- A/B Testing: Using feature flags to compare different versions of a feature to determine which performs better.
+- Dark Launching: Releasing a feature to production but keeping it hidden from users until ready.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Feature flag systems are typically implemented as a service that applications query at runtime to determine feature visibility. This service must be highly available, low-latency, and scalable to avoid impacting application performance. Client-side SDKs often cache flag states to reduce network overhead and ensure responsiveness. → See: Tech_Knowledge_System/Cloud_Computing/Distributed_Systems/
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Go, Java, Python, Node.js, Ruby, C# (for SDKs)
+- Frameworks: LaunchDarkly, Optimizely, Split.io, Unleash, Flagsmith
+- Infrastructure: Kubernetes, AWS AppConfig, Azure App Configuration, Google Cloud Feature Flags, Redis (for caching)
+
+[CHUNK: REAL_WORLD_USE]
+E-commerce platforms use feature flags to test new checkout flows with a small percentage of users before a full rollout. Streaming services employ them to enable experimental UI features for beta testers. SaaS companies use flags to control access to premium features based on subscription tiers. → See: Tech_Knowledge_System/Software_Engineering/Software_Testing/A_B_Testing
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include incorrect flag evaluation leading to inconsistent user experiences, performance degradation due to excessive flag checks, and security vulnerabilities from improperly managed flag configurations. Accidental exposure of unfinished features or critical system failures if a kill switch is misconfigured are also risks.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizations involve client-side caching of flag states, asynchronous flag evaluation to prevent blocking UI, and efficient targeting rule engines. Batching flag requests and using local fallback configurations during network outages enhance resilience. Regular auditing of flag lifecycle and removal of stale flags reduce complexity.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Security implications include unauthorized access to flag management systems, leading to feature manipulation or denial of service. Sensitive data exposure can occur if targeting rules inadvertently use PII. Ensuring proper authentication, authorization, and audit trails for flag changes is critical. → See: Tech_Knowledge_System/Cybersecurity/Access_Control/Authentication_and_Authorization
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/DevOps_and_SRE/CI_CD/Deployment_Strategies → enables controlled rollouts like canary and blue/green deployments
+- Tech_Knowledge_System/Software_Engineering/Software_Testing/A_B_Testing → fundamental mechanism for conducting A/B tests
+- Tech_Knowledge_System/Cloud_Computing/Distributed_Systems/Microservices → crucial for managing feature releases across independent services
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include integrating feature flags with machine learning models for personalized user experiences, using flags for chaos engineering experiments, and implementing multi-variate testing beyond simple A/B tests. Dynamic flag evaluation based on real-time telemetry and serverless flag management are emerging areas.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

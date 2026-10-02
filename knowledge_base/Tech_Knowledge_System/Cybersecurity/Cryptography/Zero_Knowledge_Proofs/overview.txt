@@ -1,0 +1,54 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Cryptography/Zero_Knowledge_Proofs
+DOMAIN: Cybersecurity
+LEVEL: 4
+TAGS: zero knowledge proofs, ZKP, cryptography, privacy, verifiable computation, proof systems, interactive proofs, non-interactive proofs, SNARKs, STARKs, zk-SNARKs, zk-STARKs, blockchain, privacy-preserving, digital identity, authentication, secure multi-party computation
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Cryptography: foundational_concept
+- Tech_Knowledge_System/Cybersecurity/Blockchain/Privacy_Preserving_Technologies: application_area
+- Tech_Knowledge_System/Cybersecurity/Cryptography/Homomorphic_Encryption: related_cryptographic_primitive
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Zero-Knowledge Proofs (ZKPs) are cryptographic protocols enabling one party (the prover) to convince another party (the verifier) that a statement is true, without revealing any information beyond the veracity of the statement itself. This ensures privacy and data confidentiality while maintaining verifiability.
+
+[CHUNK: CORE_CONCEPTS]
+- Prover: The entity demonstrating knowledge of a secret without revealing it.
+- Verifier: The entity confirming the prover's claim without learning the secret.
+- Witness: The secret information known by the prover that makes the statement true.
+- Soundness: Ensures a dishonest prover cannot convince the verifier of a false statement.
+- Completeness: Guarantees an honest prover can always convince the verifier of a true statement.
+- Zero-Knowledge: The verifier learns nothing about the witness beyond the statement's truth.
+- Interactive ZKP: Requires multiple rounds of communication between prover and verifier.
+- Non-Interactive ZKP (NIZKP): Proof generated once and verified by anyone, often using common reference strings.
+- SNARKs (Succinct Non-interactive ARguments of Knowledge): Compact, fast-to-verify non-interactive proofs.
+- STARKs (Scalable Transparent ARguments of Knowledge): Scalable, post-quantum secure non-interactive proofs without trusted setup.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Integrating ZKPs into systems involves careful consideration of proof generation time, verification time, and proof size. They enable decentralized trust models and privacy-preserving computations, shifting the paradigm from
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

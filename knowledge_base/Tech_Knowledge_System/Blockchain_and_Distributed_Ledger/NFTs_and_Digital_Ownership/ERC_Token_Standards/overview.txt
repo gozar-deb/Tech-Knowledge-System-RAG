@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Blockchain_and_Distributed_Ledger/NFTs_and_Digital_Ownership/ERC_Token_Standards
+DOMAIN: Blockchain_and_Distributed_Ledger
+LEVEL: 4
+TAGS: ERC, token standards, Ethereum, blockchain, fungible, non-fungible, ERC-20, ERC-721, ERC-1155, smart contracts, dApps, digital ownership, cryptocurrency, NFTs, tokenomics, interoperability, security, scalability
+
+RELATED_NODES:
+- Tech_Knowledge_System/Blockchain_and_Distributed_Ledger/NFTs_and_Digital_Ownership: parent
+- Tech_Knowledge_System/Blockchain_and_Distributed_Ledger/Smart_Contracts: related_concept
+- Tech_Knowledge_System/Blockchain_and_Distributed_Ledger/Decentralized_Applications: related_concept
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+ERC (Ethereum Request for Comments) token standards are technical specifications defining how tokens are created, issued, and managed on the Ethereum blockchain. They ensure interoperability and consistent behavior across various decentralized applications (dApps) and wallets. These standards provide a common framework for smart contracts to interact with tokens, facilitating their integration into the broader Ethereum ecosystem.
+
+[CHUNK: CORE_CONCEPTS]
+- ERC-20: Standard for fungible tokens, where each token is identical and interchangeable. Used for cryptocurrencies, utility tokens, and stablecoins.
+- ERC-721: Standard for non-fungible tokens (NFTs), where each token is unique and represents a distinct asset. Used for digital art, collectibles, and gaming items.
+- ERC-1155: A multi-token standard supporting fungible, non-fungible, and semi-fungible tokens within a single contract. Offers efficiency and flexibility for diverse token types.
+- Fungibility: The property of an asset whose individual units are interchangeable, allowing for seamless exchange.
+- Non-Fungibility: The property of an asset whose individual units are unique and not interchangeable, representing distinct ownership.
+- Smart Contract: A self-executing contract with terms directly coded, governing token behavior and transactions on the blockchain.
+- Token Minting: The process of creating new tokens according to a specific standard, bringing them into existence on the blockchain.
+- Token Burning: The process of permanently removing tokens from circulation, often to manage supply or create scarcity.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+ERC token standards are fundamental to the architectural design of Ethereum-based decentralized applications. They dictate how tokens are represented, transferred, and managed within smart contracts, ensuring compatibility with wallets, exchanges, and other dApps. Proper implementation of these standards is crucial for system interoperability and the secure functioning of token-based ecosystems.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Solidity, Vyper
+- Frameworks: Hardhat, Truffle, OpenZeppelin Contracts, Foundry
+- Infrastructure: Ethereum Virtual Machine (EVM), Infura, Alchemy, Etherscan
+
+[CHUNK: REAL_WORLD_USE]
+ERC-20 tokens power decentralized finance (DeFi) protocols, enabling lending, borrowing, and trading of digital assets. ERC-721 tokens are used for digital art marketplaces like OpenSea and blockchain-based gaming. ERC-1155 tokens are employed in games like Enjin Coin for managing diverse in-game assets efficiently.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include reentrancy attacks, integer overflows/underflows in smart contracts, and improper access control leading to unauthorized token minting or burning. Front-running attacks during token launches or transfers can also exploit vulnerabilities. Logic errors in token transfer functions can result in lost or locked funds.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizations involve gas efficiency through careful contract design, using libraries like OpenZeppelin for battle-tested code, and implementing upgradeable contracts to fix bugs without redeploying. Batching transactions for ERC-1155 can reduce gas costs. Off-chain solutions and layer-2 scaling can also improve performance and reduce transaction fees.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Security implications include vulnerability to smart contract exploits, phishing attacks targeting token holders, and rug pulls by malicious project developers. Auditing smart contracts, implementing multi-signature wallets, and adhering to secure coding practices are critical. User education on secure key management is also vital.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Blockchain_and_Distributed_Ledger/Smart_Contracts → foundational for token implementation
+- Tech_Knowledge_System/Blockchain_and_Distributed_Ledger/Decentralized_Applications → tokens are core components of dApps
+- Tech_Knowledge_System/Cybersecurity/Cryptography → underlying principles for token security
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include meta-transactions for gasless transactions, token standards for soulbound tokens (SBTs) like ERC-5114, and token bridging across different blockchain networks. Research into token standards for decentralized autonomous organizations (DAOs) and privacy-preserving tokens is also ongoing.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

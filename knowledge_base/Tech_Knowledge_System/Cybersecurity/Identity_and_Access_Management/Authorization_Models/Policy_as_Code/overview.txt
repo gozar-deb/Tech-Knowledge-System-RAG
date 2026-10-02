@@ -1,0 +1,77 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Authorization_Models/Policy_as_Code
+DOMAIN: Cybersecurity
+LEVEL: 5
+TAGS: Policy as Code, PaC, authorization, access control, declarative policies, infrastructure as code, security automation, compliance, governance, access management, fine-grained authorization, attribute-based access control, role-based access control, policy enforcement, policy definition, security policy, cloud security, microservices security, zero trust
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Authorization_Models: parent_concept
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Authentication_Methods: sibling_concept
+- Tech_Knowledge_System/Cybersecurity/Cloud_Security/Infrastructure_as_Code: related_concept
+- Tech_Knowledge_System/Cybersecurity/Compliance_and_Governance: related_domain
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Policy as Code (PaC) defines and manages authorization policies using machine-readable, declarative languages. These policies are version-controlled, automated, and applied consistently across diverse environments. PaC integrates security directly into the development lifecycle, enabling automated enforcement.
+
+[CHUNK: CORE_CONCEPTS]
+- Declarative Policy Language: Specifies *what* is allowed, not *how* to enforce it, using structured formats like Rego or OPA policies.
+- Policy Enforcement Point (PEP): Component that intercepts access requests and queries a Policy Decision Point (PDP) for authorization.
+- Policy Decision Point (PDP): Evaluates policies against request attributes to render an authorization decision (permit/deny).
+- Policy Information Point (PIP): Source of attributes needed for policy evaluation, such as user roles, resource tags, or environmental context.
+- Version Control: Policies are stored in Git or similar systems, allowing for change tracking, auditing, and rollback capabilities.
+- Automated Deployment: Policies are deployed and updated through CI/CD pipelines, ensuring consistency and reducing manual errors.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+PaC shifts authorization logic from application code to external, centralized policy engines. This decouples policy definition from enforcement, allowing for dynamic updates and consistent application across microservices or cloud resources. It's crucial for achieving fine-grained access control in distributed systems.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Rego (Open Policy Agent), Cedar (AWS Verified Permissions), YAML/JSON (custom DSLs)
+- Frameworks: Open Policy Agent (OPA), AWS Verified Permissions, Google Cloud IAM, Azure Policy
+- Infrastructure: Kubernetes (Gatekeeper), Cloud platforms (native policy services), CI/CD pipelines (GitLab, GitHub Actions)
+
+[CHUNK: REAL_WORLD_USE]
+Netflix uses OPA to manage authorization for its microservices architecture, ensuring consistent access control across thousands of services. Google Cloud's IAM policies are a form of PaC, defining access to resources based on roles and conditions. AWS Verified Permissions uses Cedar for fine-grained authorization in applications.
+
+[CHUNK: FAILURE_MODES]
+Misconfigured policies can lead to unintended access grants (over-permissioning) or legitimate access denials (under-permissioning), causing service disruption. Inconsistent policy deployment across environments can create security gaps. Lack of proper testing can introduce vulnerabilities or operational bottlenecks.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimize policy evaluation by caching PDP decisions and pre-fetching PIP data. Design policies for minimal complexity to reduce evaluation latency. Implement policy bundling and partial evaluation for performance gains in large-scale deployments. Use policy-as-code linting and testing in CI/CD.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+PaC centralizes security policy management, reducing attack surface from scattered authorization logic. However, vulnerabilities in the policy engine or misconfigurations can have widespread impact. Secure policy storage, robust testing, and audit trails are critical for maintaining integrity and compliance.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Cloud_Security/Infrastructure_as_Code → PaC leverages IaC principles for policy management.
+- Tech_Knowledge_System/Cybersecurity/Compliance_and_Governance → PaC provides auditable and enforceable compliance controls.
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Zero_Trust_Architecture → PaC is a foundational component for implementing Zero Trust principles.
+
+[CHUNK: ADVANCED_TOPICS]
+Formal verification of policies to mathematically prove their correctness and absence of vulnerabilities. Policy orchestration across hybrid and multi-cloud environments. Integration with behavioral analytics for adaptive, risk-based authorization decisions. Policy learning from observed access patterns.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

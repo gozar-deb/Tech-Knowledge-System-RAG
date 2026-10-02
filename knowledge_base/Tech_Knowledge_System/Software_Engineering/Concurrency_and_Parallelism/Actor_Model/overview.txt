@@ -1,0 +1,78 @@
+NODE_PATH: Tech_Knowledge_System/Software_Engineering/Concurrency_and_Parallelism/Actor_Model
+DOMAIN: Software_Engineering
+LEVEL: 4
+TAGS: Concurrency, Parallelism, Distributed Systems, Message Passing, Actors, Immutable State, Asynchronous Communication, Event-Driven, Fault Tolerance, Scalability, Isolation, Erlang, Akka, Reactive Programming, Non-blocking I/O, State Management, Process Isolation, Supervision, Location Transparency, Distributed Computing
+
+RELATED_NODES:
+- Tech_Knowledge_System/Software_Engineering/Concurrency_and_Parallelism: parent
+- Tech_Knowledge_System/Software_Engineering/Concurrency_and_Parallelism/Message_Passing: sibling
+- Tech_Knowledge_System/Software_Engineering/Distributed_Systems: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+The Actor Model is a mathematical model of concurrent computation that treats "actors" as the universal primitives of concurrent computation. Each actor is an independent computational entity that can receive messages, make local decisions, create more actors, and send messages to other actors. It promotes isolation and asynchronous communication.
+
+[CHUNK: CORE_CONCEPTS]
+- Actor: A fundamental unit of computation that encapsulates state and behavior.
+- Message Passing: The sole mechanism for actors to communicate, ensuring isolation.
+- Mailbox: A queue where incoming messages for an actor are stored until processed.
+- Immutable State: Actors' internal state is not directly accessible or modifiable by other actors.
+- Asynchronous Communication: Messages are sent without blocking the sender, promoting non-blocking operations.
+- Supervision: A hierarchical mechanism for handling failures and ensuring fault tolerance.
+- Location Transparency: Actors can communicate without knowing if the recipient is local or remote.
+- Behavior: The logic an actor executes upon receiving a message, potentially changing its internal state.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, the Actor Model facilitates building highly concurrent, scalable, and fault-tolerant distributed systems. It naturally maps to microservices architectures, where each service or component can be modeled as an actor or a group of actors. Its message-driven nature simplifies asynchronous workflows and state management across distributed boundaries.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Erlang, Elixir, Scala (with Akka), Pony, C# (with Akka.NET)
+- Frameworks: Akka (JVM), Orleans (.NET), Celluloid (Ruby), Actix (Rust)
+- Infrastructure: Apache Kafka (for message queues in actor systems), Kubernetes (for deploying actor-based services)
+
+[CHUNK: REAL_WORLD_USE]
+Erlang, a language built on the Actor Model, powers telecommunication systems, including Ericsson's AXD 301 ATM switch. Akka is used in high-throughput financial trading platforms and real-time data processing engines. Microsoft Orleans is employed in cloud services like Halo and Azure for scalable backend logic.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include mailbox overflows leading to message loss, deadlocks if not carefully designed (though less common than in shared-memory models), and unhandled exceptions within an actor causing its termination. Improper supervision strategies can lead to cascading failures or system instability. See: Tech_Knowledge_System/Software_Engineering/Concurrency_and_Parallelism/Fault_Tolerance
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizations involve efficient message serialization, judicious use of actor hierarchies for resource management, and strategic placement of actors (e.g., co-locating frequently communicating actors). Load balancing messages across actor pools and implementing backpressure mechanisms are crucial for performance under high load.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Security implications primarily revolve around message integrity and authentication in distributed actor systems. Unauthorized message injection or tampering can compromise system state. Isolation between actors helps contain breaches, but secure communication channels and robust access control are essential. See: Tech_Knowledge_System/Cybersecurity/Network_Security
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Software_Engineering/Distributed_Systems → foundational model for distributed architectures
+- Tech_Knowledge_System/Software_Engineering/Reactive_Programming → shares principles of asynchronous, event-driven processing
+- Tech_Knowledge_System/Software_Engineering/Microservices → natural fit for actor-based decomposition
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include formal verification of actor systems, advanced supervision strategies like self-healing systems, and the integration of actor models with serverless computing paradigms. Research also explores combining actors with other concurrency models for hybrid solutions and optimizing actor scheduling on heterogeneous hardware.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

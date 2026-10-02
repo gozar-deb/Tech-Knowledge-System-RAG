@@ -1,0 +1,50 @@
+NODE_PATH: Tech_Knowledge_System/Blockchain_and_Distributed_Ledger/DeFi
+DOMAIN: Blockchain_and_Distributed_Ledger
+LEVEL: 3
+TAGS: Decentralized Finance, DeFi, blockchain, smart contracts, cryptocurrency, decentralized applications, dApps, liquidity pools, yield farming, staking, lending, borrowing, stablecoins, tokenomics, Web3, financial services, open finance, peer-to-peer, financial innovation, distributed ledger technology
+
+RELATED_NODES:
+- Tech_Knowledge_System/Blockchain_and_Distributed_Ledger: parent
+- Tech_Knowledge_System/Blockchain_and_Distributed_Ledger/Smart_Contracts: foundational_technology
+- Tech_Knowledge_System/Blockchain_and_Distributed_Ledger/Cryptocurrency: core_component
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Decentralized Finance (DeFi) refers to an ecosystem of financial applications built on blockchain technology, primarily Ethereum, that aims to disintermediate traditional financial services. It leverages smart contracts to enable peer-to-peer transactions and financial instruments without the need for central authorities like banks or brokers. DeFi promotes open, transparent, and permissionless access to financial products.
+
+[CHUNK: CORE_CONCEPTS]
+- Smart Contracts: Self-executing agreements with the terms directly written into code, forming the backbone of DeFi protocols.
+- Liquidity Pools: Crowdsourced pools of cryptocurrencies locked in smart contracts, facilitating decentralized trading and lending.
+- Yield Farming: The practice of staking or lending crypto assets to generate high returns or rewards in the form of additional cryptocurrency.
+- Staking: Locking up cryptocurrency to support the operations of a blockchain network, earning rewards in return.
+- Decentralized Exchanges (DEXs): Platforms enabling direct cryptocurrency trading between users without an intermediary.
+- Lending/Borrowing Protocols: Smart contract-based systems allowing users to lend their crypto for interest or borrow against their crypto collateral.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+DeFi systems are architected as a stack of interconnected protocols built on a base layer blockchain, typically Ethereum. This layered design includes settlement layers (blockchain), asset layers (tokens), protocol layers (lending, DEXs), and application layers (user interfaces). Interoperability between protocols is crucial, often achieved through token standards and composable smart contracts, creating a
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

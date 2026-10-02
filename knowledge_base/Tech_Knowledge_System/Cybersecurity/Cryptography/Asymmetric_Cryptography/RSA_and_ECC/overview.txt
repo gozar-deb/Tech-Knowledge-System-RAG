@@ -1,0 +1,104 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Cryptography/Asymmetric_Cryptography/RSA_and_ECC
+DOMAIN: Cybersecurity
+LEVEL: 4
+TAGS: RSA, ECC, Asymmetric Cryptography, Public-key Cryptography, Digital Signatures, Key Exchange, Encryption, Decryption, Elliptic Curve Cryptography, Prime Numbers, Modular Arithmetic, Cryptographic Primitives, Security, Key Management, TLS, SSL, SSH
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Cryptography/Asymmetric_Cryptography: foundational_concept
+- Tech_Knowledge_System/Cybersecurity/Cryptography: broader_field
+- Tech_Knowledge_System/Cybersecurity/Cryptography/Symmetric_Cryptography: contrasting_concept
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+RSA (Rivest–Shamir–Adleman) and ECC (Elliptic Curve Cryptography) are fundamental asymmetric cryptographic algorithms.
+They enable secure communication, digital signatures, and key exchange by using a pair of mathematically linked public and private keys.
+RSA relies on the difficulty of factoring large numbers, while ECC leverages the complexity of the elliptic curve discrete logarithm problem.
+
+[CHUNK: CORE_CONCEPTS]
+- Public Key: A cryptographic key that can be freely distributed and used for encryption or signature verification.
+- Private Key: A secret cryptographic key known only to its owner, used for decryption or digital signing.
+- Digital Signature: A mathematical scheme for verifying the authenticity and integrity of digital messages or documents.
+- Key Exchange: A method by which two parties can securely establish a shared secret key over an insecure channel.
+- Factoring Problem: The computational difficulty of finding the prime factors of a large composite number, foundational to RSA.
+- Elliptic Curve Discrete Logarithm Problem (ECDLP): The mathematical problem underlying ECC's security, involving points on an elliptic curve.
+- Modulus: A large integer used in RSA, typically the product of two large prime numbers.
+- Point Multiplication: The core operation in ECC, analogous to exponentiation in traditional discrete logarithm systems.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In system design, RSA and ECC are chosen based on security requirements, performance, and key size constraints.
+ECC generally offers equivalent security with smaller key sizes and faster operations compared to RSA, making it suitable for resource-constrained environments.
+They are critical for establishing secure channels (e.g., TLS/SSL) and authenticating entities in distributed systems.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python (cryptography library), Java (JCA/JCE), C/C++ (OpenSSL), Go (crypto/rsa, crypto/ecdsa)
+- Frameworks: OpenSSL, Bouncy Castle, GnuTLS, libsodium
+- Infrastructure: PKI (Public Key Infrastructure), HSMs (Hardware Security Modules), TPMs (Trusted Platform Modules)
+
+[CHUNK: REAL_WORLD_USE]
+RSA is widely used in TLS/SSL for secure web browsing, email encryption (PGP/GPG), and code signing.
+ECC is increasingly adopted for mobile device security, cryptocurrency transactions (e.g., Bitcoin, Ethereum), and IoT device authentication.
+Both are integral to VPNs (Virtual Private Networks) and secure shell (SSH) protocols for remote access.
+
+[CHUNK: FAILURE_MODES]
+Common ways systems break in this domain:
+- Weak key generation: Using insufficient entropy or predictable random number generators.
+- Key compromise: Private keys being stolen, leaked, or improperly stored.
+- Implementation flaws: Side-channel attacks, padding oracle attacks, or incorrect protocol usage.
+- Algorithm deprecation: Continued use of algorithms deemed insecure due to advances in cryptanalysis.
+- Quantum computing threats: Future quantum computers potentially breaking current RSA and ECC schemes.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Performance, scaling, and efficiency techniques:
+- Hardware acceleration: Utilizing dedicated cryptographic hardware (e.g., AES-NI, cryptographic coprocessors).
+- Key caching: Reusing established session keys to avoid repeated computationally expensive key exchanges.
+- ECC over RSA: Employing ECC for its smaller key sizes and faster operations, especially on mobile or embedded systems.
+- Batch operations: Processing multiple cryptographic operations together to reduce overhead.
+- Pre-computation: Performing parts of the cryptographic calculation in advance where possible.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Attack surfaces and defenses:
+- Key management: Secure storage, distribution, and revocation of private keys are paramount.
+- Man-in-the-Middle (MitM) attacks: Defended by robust certificate validation and trust chains.
+- Side-channel attacks: Mitigated by constant-time implementations and hardware countermeasures.
+- Brute-force attacks: Prevented by sufficiently large key sizes and strong algorithms.
+- Quantum resistance: Research into post-quantum cryptography (PQC) to counter future quantum threats.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Network_Security/TLS_SSL: secures_web_communication
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management/Digital_Certificates: relies_on_PKI
+- Tech_Knowledge_System/Software_Development/Blockchain/Cryptocurrency: fundamental_to_transaction_security
+
+[CHUNK: ADVANCED_TOPICS]
+Cutting-edge or research-level ideas:
+- Post-Quantum Cryptography (PQC): Developing new algorithms resistant to quantum computer attacks.
+- Homomorphic Encryption: Performing computations on encrypted data without decrypting it first.
+- Zero-Knowledge Proofs (ZKPs): Proving knowledge of a secret without revealing the secret itself.
+- Fully Homomorphic Encryption (FHE): A specific type of homomorphic encryption allowing arbitrary computations.
+- Lattice-based Cryptography: A promising candidate for post-quantum security, offering strong theoretical foundations.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

@@ -1,0 +1,76 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Application_Security/OWASP_Top_10/Broken_Authentication
+DOMAIN: Cybersecurity
+LEVEL: 4
+TAGS: authentication, broken authentication, session management, OWASP Top 10, access control, identity management, security vulnerabilities, web security, application security, credential stuffing, brute force, MFA bypass
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Application_Security/OWASP_Top_10: parent
+- Tech_Knowledge_System/Cybersecurity/Application_Security/Access_Control: related
+- Tech_Knowledge_System/Cybersecurity/Identity_and_Access_Management: related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Broken Authentication refers to vulnerabilities in authentication or session management functions that allow attackers to compromise user accounts, impersonate users, or bypass authentication mechanisms. This often leads to unauthorized access to sensitive data or system functions. It is a critical security risk listed in the OWASP Top 10.
+
+[CHUNK: CORE_CONCEPTS]
+- Session Management: How user sessions are created, maintained, and destroyed securely.
+- Credential Stuffing: Automated attacks using stolen credentials from other breaches.
+- Brute Force Attacks: Repeated, systematic attempts to guess credentials or session tokens.
+- Multi-Factor Authentication (MFA): Requires two or more verification factors for access.
+- Session Fixation: An attack where an attacker fixes a victim's session ID before login.
+- Insecure Credential Storage: Storing passwords or tokens in an easily retrievable format.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+From a system design perspective, robust authentication involves secure credential storage, strong session management, and multi-factor authentication integration. It requires careful design of login flows, password reset mechanisms, and session token handling to prevent various attack vectors. Stateless authentication with JWTs also needs careful validation.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python (Flask, Django), Java (Spring Security), Node.js (Passport.js), PHP (Laravel)
+- Frameworks: OAuth 2.0, OpenID Connect, SAML, JWT (JSON Web Tokens)
+- Infrastructure: Identity Providers (Okta, Auth0), Web Application Firewalls (WAFs), API Gateways
+
+[CHUNK: REAL_WORLD_USE]
+Broken authentication manifests in scenarios like an attacker gaining access to an administrative panel by guessing weak default credentials, or a compromised session token allowing unauthorized access to a banking application without re-authenticating. Another example is a web application failing to invalidate session IDs after logout, enabling session hijacking.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include weak or default credentials, lack of MFA, insecure session ID generation or management, improper invalidation of sessions after logout or password change, and susceptibility to credential stuffing or brute-force attacks. Improper handling of password reset functionality can also lead to account takeover.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization involves implementing strong password policies, enforcing MFA, using secure session management frameworks, and regularly rotating session keys. Employing rate limiting on login attempts, CAPTCHAs, and IP-based access restrictions can mitigate brute-force and credential stuffing attacks. Utilizing secure, salted hashing for password storage is crucial.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Broken authentication directly leads to unauthorized access, data breaches, and complete system compromise. Attackers can impersonate legitimate users, escalate privileges, and bypass security controls. The primary defense involves implementing robust authentication and session management controls, including MFA and secure credential handling.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Network_Security/Firewalls → WAFs can help mitigate brute-force attacks.
+- Tech_Knowledge_System/Cybersecurity/Data_Protection/Encryption → Secure storage of credentials requires strong encryption.
+- Tech_Knowledge_System/Software_Engineering/API_Design/RESTful_APIs → API authentication often uses tokens vulnerable to improper handling.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include behavioral analytics for anomaly detection in login patterns, FIDO2/WebAuthn for passwordless authentication, zero-trust architecture integration for continuous authentication, and advanced threat intelligence feeds to identify compromised credentials proactively. Also, post-quantum cryptography for future-proofing authentication protocols.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

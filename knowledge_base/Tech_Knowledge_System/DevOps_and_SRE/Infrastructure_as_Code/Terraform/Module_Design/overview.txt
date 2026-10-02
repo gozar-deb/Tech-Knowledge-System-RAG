@@ -1,0 +1,76 @@
+NODE_PATH: Tech_Knowledge_System/DevOps_and_SRE/Infrastructure_as_Code/Terraform/Module_Design
+DOMAIN: DevOps_and_SRE
+LEVEL: 5
+TAGS: Terraform, Module Design, Infrastructure as Code, IaC, reusable infrastructure, module composition, input variables, output values, local values, providers, resource abstraction, module registry, versioning, best practices, infrastructure patterns, configuration management
+
+RELATED_NODES:
+- Tech_Knowledge_System/DevOps_and_SRE/Infrastructure_as_Code/Terraform: Parent
+- Tech_Knowledge_System/DevOps_and_SRE/Infrastructure_as_Code/Terraform/State_Management: Related
+- Tech_Knowledge_System/DevOps_and_SRE/Infrastructure_as_Code/Terraform/Providers: Related
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Terraform Module Design involves structuring reusable, self-contained configurations for infrastructure components. Modules encapsulate resources, variables, and outputs, promoting consistency, reducing boilerplate, and enabling efficient scaling of infrastructure deployments across various environments or projects.
+
+[CHUNK: CORE_CONCEPTS]
+- Module: A self-contained package of Terraform configurations managed as a group.
+- Root Module: The top-level directory containing the main Terraform configuration for a deployment.
+- Child Module: A module called from within another module (root or other child).
+- Input Variables: Parameters passed into a module to customize its behavior or resources.
+- Output Values: Data exposed by a module for use by calling modules or for external consumption.
+- Local Values: Named expressions within a module to avoid repeating complex logic or values.
+- Module Registry: A public or private repository for sharing and discovering Terraform modules.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+Effective module design is crucial for scalable and maintainable IaC systems. It enables architectural patterns like component-based infrastructure, where complex systems are composed of smaller, independently manageable, and testable infrastructure units. This approach supports rapid iteration and reduces the blast radius of changes.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: HCL (HashiCorp Configuration Language)
+- Frameworks: Terraform CLI, Terragrunt (for DRY configurations)
+- Infrastructure: AWS, Azure, GCP, Kubernetes (via Terraform providers)
+
+[CHUNK: REAL_WORLD_USE]
+Organizations use module design to standardize common infrastructure patterns, such as VPCs, EKS clusters, or database instances. For example, a 'network' module might define a VPC, subnets, and routing tables, which can then be instantiated multiple times with different parameters for development, staging, and production environments.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include overly complex modules with too many responsibilities, tight coupling between modules, insufficient input validation leading to unexpected resource creation, and poor versioning practices causing breaking changes in downstream deployments. Inadequate testing of modules can also lead to widespread infrastructure issues.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization involves designing small, focused modules with clear responsibilities, using semantic versioning for module releases, implementing robust input validation, and leveraging remote state management for collaboration. Employing module composition patterns and automated testing (e.g., Terratest) enhances reliability and efficiency.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Poor module design can introduce security vulnerabilities through misconfigured resources or overly permissive access policies. Modules should enforce security best practices by default, such as least privilege, encryption, and network segmentation. Regular security audits of module code are essential to prevent supply chain attacks within IaC.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/DevOps_and_SRE/CI_CD: Module design integrates with CI/CD pipelines for automated testing and deployment of infrastructure changes.
+- Tech_Knowledge_System/Cybersecurity/Cloud_Security: Secure module design is fundamental to building secure cloud infrastructure.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include dynamic module generation using tools like Terraform CDK, meta-programming with HCL, integrating policy-as-code frameworks (e.g., OPA, Sentinel) directly into module workflows, and exploring advanced module testing strategies for complex, multi-cloud environments.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

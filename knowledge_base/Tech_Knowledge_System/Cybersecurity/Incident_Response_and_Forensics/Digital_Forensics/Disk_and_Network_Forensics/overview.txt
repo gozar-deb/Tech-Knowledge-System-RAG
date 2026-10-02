@@ -1,0 +1,79 @@
+NODE_PATH: Tech_Knowledge_System/Cybersecurity/Incident_Response_and_Forensics/Digital_Forensics/Disk_and_Network_Forensics
+DOMAIN: Cybersecurity
+LEVEL: 5
+TAGS: disk forensics, network forensics, digital evidence, incident response, data acquisition, forensic analysis, volatile data, non-volatile data, packet analysis, memory forensics, file system analysis, log analysis, timeline reconstruction, chain of custody, evidence preservation, network traffic, intrusion detection, malware analysis, cybercrime investigation, digital investigation
+
+RELATED_NODES:
+- Tech_Knowledge_System/Cybersecurity/Incident_Response_and_Forensics/Digital_Forensics: parent_node
+- Tech_Knowledge_System/Cybersecurity/Incident_Response_and_Forensics: broader_context
+- Tech_Knowledge_System/Cybersecurity/Threat_Intelligence: related_analysis
+- Tech_Knowledge_System/Cybersecurity/Malware_Analysis: related_investigation
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Disk and network forensics involve the systematic collection, preservation, analysis, and reporting of digital evidence from storage devices and network traffic. This process aims to identify the root cause of security incidents, reconstruct events, and attribute actions to specific entities for legal or investigative purposes.
+
+[CHUNK: CORE_CONCEPTS]
+- Chain of Custody: Documented process ensuring integrity and authenticity of evidence from collection to presentation.
+- Volatile Data: Information that is lost when a system is powered off, such as RAM contents, network connections, and running processes.
+- Non-Volatile Data: Persistent information stored on devices like hard drives, SSDs, and USB drives, including file systems and registry.
+- Data Acquisition: The process of creating forensically sound copies (images) of digital media or capturing network traffic without alteration.
+- File System Analysis: Examination of file system structures (e.g., NTFS, EXT4) to recover deleted files, identify hidden data, and reconstruct activity.
+- Packet Analysis: Deep inspection of network packets to understand communication patterns, identify malicious traffic, and reconstruct network events.
+- Timeline Reconstruction: Creating a chronological sequence of events from various digital artifacts to understand the flow of an incident.
+- Memory Forensics: Analyzing the contents of a computer's RAM to extract running processes, open files, network connections, and malware artifacts.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+In real systems, disk and network forensics are integrated into incident response frameworks, requiring robust logging, centralized data collection, and secure storage for evidence. Automated tools often triage initial alerts, but deep analysis necessitates specialized forensic workstations and skilled analysts to handle complex data sets and diverse operating environments.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python, PowerShell, Bash
+- Frameworks: Volatility Framework, Autopsy, Wireshark, Splunk, ELK Stack
+- Infrastructure: Forensic workstations, write blockers, network taps, SIEM systems, cloud-based forensic platforms
+
+[CHUNK: REAL_WORLD_USE]
+Used in post-breach investigations to determine attack vectors, data exfiltration, and attacker persistence mechanisms. Also applied in insider threat investigations to uncover unauthorized data access or intellectual property theft, and in legal cases to provide admissible digital evidence for prosecution or defense.
+
+[CHUNK: FAILURE_MODES]
+Common failures include incomplete data acquisition leading to missed evidence, improper handling of evidence breaking the chain of custody, analyst bias affecting interpretation, and lack of expertise in analyzing complex or encrypted data. Failure to adapt to new technologies (e.g., cloud, IoT) also poses significant challenges.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimizations involve automating initial data collection and triage, leveraging cloud resources for scalable analysis, implementing advanced indexing and search capabilities for large datasets, and continuously updating forensic toolkits. Pre-positioning forensic agents and network sensors can significantly reduce response times.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+Forensic processes themselves can be attack surfaces if not secured; evidence storage must be immutable and access controlled. The integrity of forensic tools and environments is paramount. Network forensics can reveal vulnerabilities in network segmentation or misconfigurations that attackers exploited.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Cybersecurity/Incident_Response_and_Forensics/Incident_Response_Planning → Provides context for when and how forensics are initiated.
+- Tech_Knowledge_System/Cybersecurity/Threat_Intelligence/Indicators_of_Compromise → IoCs identified during forensics can feed into threat intelligence.
+- Tech_Knowledge_System/Cybersecurity/Security_Operations_Center/SIEM → SIEM data is often a primary source for network forensic investigations.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include anti-forensics detection, live memory analysis of virtualized environments, blockchain forensics for cryptocurrency investigations, and the application of machine learning for automated anomaly detection in network traffic and disk images. Quantum computing's impact on cryptographic evidence is also an emerging area.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

@@ -1,0 +1,76 @@
+NODE_PATH: Tech_Knowledge_System/Software_Engineering/Testing_and_Quality/Unit_and_Integration_Testing/Test_Driven_Development
+DOMAIN: Software_Engineering
+LEVEL: 5
+TAGS: Test-Driven Development, TDD, unit testing, integration testing, software development, agile, refactoring, red-green-refactor, test automation, clean code, design quality, continuous integration, behavior-driven development, BDD, extreme programming
+
+RELATED_NODES:
+- Tech_Knowledge_System/Software_Engineering/Testing_and_Quality/Unit_and_Integration_Testing: parent
+- Tech_Knowledge_System/Software_Engineering/Testing_and_Quality/Unit_and_Integration_Testing/Unit_Testing: sibling
+- Tech_Knowledge_System/Software_Engineering/Testing_and_Quality/Unit_and_Integration_Testing/Integration_Testing: sibling
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+Test-Driven Development (TDD) is a software development methodology where automated tests are written before the functional code. It emphasizes a short, iterative development cycle known as Red-Green-Refactor. This approach ensures code correctness, improves design, and fosters a deeper understanding of requirements.
+
+[CHUNK: CORE_CONCEPTS]
+- Red Phase: Write a failing test case that defines a new piece of functionality or a desired behavior. This test should initially fail because the corresponding code does not yet exist.
+- Green Phase: Write the minimum amount of production code necessary to make the previously failing test pass. The focus here is solely on passing the test, not on optimal design or elegance.
+- Refactor Phase: Improve the design of the newly written code without changing its external behavior. This involves cleaning up code, removing duplication, and enhancing readability while ensuring all tests still pass.
+- Test Automation: The practice of writing tests that can be run automatically, forming the backbone of TDD's rapid feedback loop and continuous verification.
+- Unit Tests: Small, isolated tests that verify individual components or functions of a software system, crucial for the granular feedback TDD provides.
+- Design Emergence: TDD encourages a more modular and testable code design, as the act of writing tests first naturally leads to better architecture and separation of concerns.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+TDD influences system design by promoting modularity, loose coupling, and clear interfaces. It forces developers to consider the testability of components from the outset, leading to more robust and maintainable architectures. This iterative process helps validate design decisions early, reducing the cost of change in later stages.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Languages: Python, Java, C#, JavaScript, Ruby, Go, PHP
+- Frameworks: JUnit (Java), Pytest (Python), NUnit (C#), Jest (JavaScript), RSpec (Ruby), Mocha (JavaScript)
+- Infrastructure: Continuous Integration (CI) systems like Jenkins, GitLab CI, GitHub Actions for automated test execution.
+
+[CHUNK: REAL_WORLD_USE]
+TDD is widely adopted in agile software development teams for building high-quality, maintainable applications. For instance, a financial trading platform might use TDD to ensure the accuracy of complex calculation algorithms, where each rule is first defined by a failing test. Similarly, web application backends leverage TDD to validate API endpoints and business logic before UI development.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes in TDD include writing overly complex tests that are hard to maintain, or writing tests that are too coarse-grained, failing to provide precise feedback. Another pitfall is skipping the refactor phase, leading to technical debt and a codebase that becomes difficult to evolve. Poor test isolation can also cause cascading failures, masking the true source of bugs.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization in TDD focuses on writing fast, reliable, and isolated tests to maintain a rapid feedback loop. Strategies include using in-memory databases or mocks for external dependencies to speed up test execution. Parallelizing test runs and optimizing test suites for efficiency are also critical. Regularly reviewing and refactoring tests themselves ensures their continued value and maintainability.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+While not directly a security methodology, TDD can indirectly enhance security by improving code quality and reducing defects. Writing tests for security-critical functions can help prevent common vulnerabilities. However, TDD does not replace dedicated security testing or threat modeling; it complements them by ensuring the intended behavior of security controls is correctly implemented.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Software_Engineering/Agile_Methodologies: promotes iterative development
+- Tech_Knowledge_System/Software_Engineering/DevOps/Continuous_Integration: integrates automated tests
+- Tech_Knowledge_System/Software_Engineering/Software_Design_Principles: encourages good design
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced TDD topics include applying TDD to complex distributed systems, exploring property-based testing as a complement to example-based tests, and integrating TDD with Behavior-Driven Development (BDD) for higher-level specification. Test doubles (mocks, stubs, fakes) and their strategic use in complex scenarios also represent an advanced area of study.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers

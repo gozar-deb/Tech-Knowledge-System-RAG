@@ -1,0 +1,80 @@
+NODE_PATH: Tech_Knowledge_System/Human_Computer_Interaction/UX_Research_and_Methods/User_Interviews
+DOMAIN: Human_Computer_Interaction
+LEVEL: 4
+TAGS: user interviews, qualitative research, UX research, user experience, research methods, ethnographic research, contextual inquiry, usability testing, data collection, empathy, design thinking, product development, stakeholder interviews, semi-structured interviews, open-ended questions, user-centered design, insights, data analysis, research synthesis
+
+RELATED_NODES:
+- Tech_Knowledge_System/Human_Computer_Interaction/UX_Research_and_Methods: parent
+- Tech_Knowledge_System/Human_Computer_Interaction/UX_Research_and_Methods/Usability_Testing: sibling
+- Tech_Knowledge_System/Human_Computer_Interaction/UX_Research_and_Methods/Surveys: sibling
+- Tech_Knowledge_System/Human_Computer_Interaction/Design_Principles: related_concept
+VERSION: 2.0
+LAST_UPDATED: 2026-10-02
+CONFIDENCE_SCORE: 0.88
+SOURCES: original + schema-enrichment
+DIFFICULTY: Intermediate
+ESTIMATED_READ_TIME: 8m
+PREREQUISITES: See parent and related nodes
+
+[CHUNK: DEFINITION]
+User interviews are a primary qualitative research method involving direct, one-on-one conversations with target users to understand their behaviors, needs, motivations, and pain points. This method aims to gather rich, in-depth insights into user perspectives that quantitative data alone cannot provide, informing design and product development decisions.
+
+[CHUNK: CORE_CONCEPTS]
+- Semi-structured Interviews: A flexible interview format with a guide but allowing for conversational flow.
+- Open-ended Questions: Questions designed to elicit detailed responses beyond simple 'yes' or 'no'.
+- Active Listening: Paying full attention to verbal and non-verbal cues to understand user context.
+- Probing Techniques: Follow-up questions to delve deeper into user responses and uncover underlying motivations.
+- Affinity Mapping: A method for organizing and synthesizing qualitative data from multiple interviews.
+- Empathy Mapping: Visualizing user attitudes and behaviors to build a deeper understanding of their experience.
+- Contextual Inquiry: Observing users in their natural environment while asking questions about their actions.
+- Interview Protocol: A structured guide outlining questions, topics, and procedures for consistency.
+
+[CHUNK: SYSTEM_DESIGN_PERSPECTIVE]
+User interviews inform system design by providing foundational user requirements and validating assumptions early in the development cycle. Insights gained directly influence feature prioritization, interaction design, and overall user experience strategy, ensuring the system addresses real user needs. They help identify critical user flows and potential usability issues before extensive development.
+
+[CHUNK: TOOLS_AND_TECH]
+Categorized tools:
+- Recording: Zoom, Google Meet, Otter.ai, Rev.com
+- Transcription: Otter.ai, Trint, Happy Scribe
+- Analysis: Dovetail, Miro, Mural, Excel, Google Sheets
+- Scheduling: Calendly, Doodle Poll
+
+[CHUNK: REAL_WORLD_USE]
+In product development, user interviews are used to define minimum viable product (MVP) features by understanding core user needs. For example, a software company might interview target users to identify their most critical workflow challenges, leading to the development of specific tools to address those pain points. They are crucial for validating prototypes and iterative design.
+
+[CHUNK: FAILURE_MODES]
+Common failure modes include leading questions that bias user responses, insufficient participant recruitment leading to unrepresentative data, and poor interview facilitation resulting in superficial insights. Additionally, a lack of systematic data analysis can lead to misinterpretation of findings or failure to identify key themes, rendering the research ineffective.
+
+[CHUNK: OPTIMIZATION_STRATEGIES]
+Optimization involves developing robust interview protocols, practicing active listening and unbiased questioning, and recruiting diverse participant groups. Utilizing pilot interviews to refine questions and techniques, and employing systematic qualitative data analysis methods like thematic analysis or grounded theory, enhance the depth and validity of insights.
+
+[CHUNK: SECURITY_IMPLICATIONS]
+User interviews involve collecting sensitive personal data, necessitating strict adherence to privacy regulations like GDPR and CCPA. Researchers must obtain informed consent, anonymize data where appropriate, and securely store all recordings and transcripts. Ethical considerations include avoiding coercion and ensuring participant well-being throughout the process.
+
+[CHUNK: CROSS_DOMAIN_LINKS]
+- Tech_Knowledge_System/Human_Computer_Interaction/Design_Thinking → User interviews are a core method in the Empathize phase of Design Thinking.
+- Tech_Knowledge_System/Data_Science/Qualitative_Data_Analysis → User interview data requires specific qualitative analysis techniques.
+- Tech_Knowledge_System/Project_Management/Agile_Methodologies → Insights from user interviews inform agile sprint planning and backlog refinement.
+
+[CHUNK: ADVANCED_TOPICS]
+Advanced topics include integrating AI for automated transcription and sentiment analysis, conducting ethnographic studies for deeper contextual understanding, and employing narrative analysis to uncover user stories. Research also explores remote interviewing techniques and the use of virtual reality for immersive contextual inquiries to simulate real-world scenarios.
+
+[CHUNK: COMMON_MISCONCEPTIONS]
+- Oversimplified explanations often blur important distinctions.
+- Performance claims must be evaluated against the specific workload and metrics.
+- Newer techniques are not automatically better for every use case.
+
+[CHUNK: BENCHMARKS_AND_METRICS]
+Report task metrics together with efficiency numbers (latency, memory, cost). Use strong baselines and ablations.
+
+[CHUNK: IMPLEMENTATION_CHECKLIST]
+1. Confirm prerequisites and environment.
+2. Implement a minimal correct version.
+3. Validate on realistic examples.
+4. Measure performance and resources.
+5. Add monitoring, safety, and documentation.
+
+[CHUNK: FURTHER_READING]
+- Canonical textbooks and survey papers
+- Official documentation of major tools
+- Recent high-impact research papers
